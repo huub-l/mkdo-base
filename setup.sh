@@ -3,12 +3,12 @@
 # NOTE: This script Requires a Bash shell on OSX
 # -----------------------------------------------------------------------------
 
-OAUTHTOKEN=$(<~/.kapow_token)
+OAUTHTOKEN=$(<~/.mkdobase_token)
 
 if [ ! "$OAUTHTOKEN" ]
 	then
 
-	echo "$(tput setaf 1)Aborting; no GitHub token found in ~/.kapow_token$(tput setaf 9)"
+	echo "$(tput setaf 1)Aborting; no GitHub token found in ~/.mkdobase_token$(tput setaf 9)"
 	echo
 
 	exit 1;
