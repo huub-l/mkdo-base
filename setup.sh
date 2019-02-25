@@ -244,23 +244,6 @@ find . -name '*.bak' -delete
 # Rename the Theme
 mv build/wp-content/themes/my-project build/wp-content/themes/"$slug"
 
-# Rename the .pot file
-if [ "$slug" ]
-	then
-	potdir="build/wp-content/themes/$slug/languages"
-	potfile="my-project"
-	rootdir="$PWD"
-
-	if [ "$potdir" ]
-		then
-
-		cd "$potdir" || exit
-		mv "$potfile.pot" "$slug.pot"
-		cd "$rootdir" || exit
-	fi
-
-fi
-
 # Create MySQL database.
 echo "$(tput setaf 3)Creating MySQL database (if it's not already there)...$(tput setaf 9)"
 echo
