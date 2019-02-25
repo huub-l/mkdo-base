@@ -156,7 +156,7 @@
 					// hashtag famous last words
 					featureNameSplit = featureName.split('.');
 
-					if (featureNameSplit.length === 1) {
+					if (1 === featureNameSplit.length) {
 						Modernizr[featureNameSplit[0]] = result;
 					} else {
 						// cast to a Boolean, if not one already
@@ -193,7 +193,7 @@
 	 * @returns {boolean}
 	 */
 
-	var isSVG = docElement.nodeName.toLowerCase() === 'svg';
+	var isSVG = 'svg' === docElement.nodeName.toLowerCase();
 
 	/**
 	 * setClasses takes an array of class names and adds them to the root element
@@ -325,7 +325,7 @@
 	 */
 
 	function createElement() {
-		if (typeof document.createElement !== 'function') {
+		if ('function' !== typeof document.createElement) {
 			// This is the case in IE7, where the type of createElement is "object".
 			// For this reason, we cannot call apply() as Object is not a Function.
 			return document.createElement(arguments[0]);
@@ -498,10 +498,10 @@
 				'@media ' + mq + ' { #modernizr { position: absolute; } }',
 				function(node) {
 					bool =
-						(window.getComputedStyle
+						'absolute' == (window.getComputedStyle
 							? window.getComputedStyle(node, null)
 							: node.currentStyle
-						).position == 'absolute';
+						).position;
 				},
 			);
 
@@ -590,7 +590,7 @@
 			result = getComputedStyle.call(window, elem, pseudo);
 			var console = window.console;
 
-			if (result !== null) {
+			if (null !== result) {
 				if (prop) {
 					result = result.getPropertyValue(prop);
 				}
@@ -648,7 +648,7 @@
 					conditionText +
 					') { #modernizr { position: absolute; } }',
 				function(node) {
-					return computedStyle(node, null, 'position') == 'absolute';
+					return 'absolute' == computedStyle(node, null, 'position');
 				},
 			);
 		}
@@ -746,14 +746,14 @@
 					// CSS.supports()
 					if (mStyle.style[prop] != before) {
 						cleanElems();
-						return prefixed == 'pfx' ? prop : true;
+						return 'pfx' == prefixed ? prop : true;
 					}
 				}
 				// Otherwise just return true, or the property name if this is a
 				// `prefixed()` call
 				else {
 					cleanElems();
-					return prefixed == 'pfx' ? prop : true;
+					return 'pfx' == prefixed ? prop : true;
 				}
 			}
 		}
@@ -794,7 +794,7 @@
 		for (var i in props) {
 			if (props[i] in obj) {
 				// return the property name as a string
-				if (elem === false) {
+				if (false === elem) {
 					return props[i];
 				}
 
@@ -884,7 +884,7 @@
 		var cssrule = window.CSSRule;
 		var rule;
 
-		if (typeof cssrule === 'undefined') {
+		if ('undefined' === typeof cssrule) {
 			return undefined;
 		}
 
@@ -983,11 +983,11 @@
 	 */
 
 	var prefixed = (ModernizrProto.prefixed = function(prop, obj, elem) {
-		if (prop.indexOf('@') === 0) {
+		if (0 === prop.indexOf('@')) {
 			return atRule(prop);
 		}
 
-		if (prop.indexOf('-') != -1) {
+		if (-1 != prop.indexOf('-')) {
 			// Convert kebab-case to camelCase
 			prop = cssToDOM(prop);
 		}
@@ -1147,7 +1147,7 @@ Detects whether or not elements can be animated using CSS
 		var angle;
 
 		for (var i = 0, len = prefixes.length - 1; i < len; i++) {
-			angle = i === 0 ? 'to ' : '';
+			angle = 0 === i ? 'to ' : '';
 			css +=
 				str1 +
 				prefixes[i] +
@@ -1166,7 +1166,7 @@ Detects whether or not elements can be animated using CSS
 		style.cssText = css;
 
 		// IE6 returns undefined so cast to string
-		return ('' + style.backgroundImage).indexOf('gradient') > -1;
+		return -1 < ('' + style.backgroundImage).indexOf('gradient');
 	});
 
 	/*!
@@ -1182,7 +1182,7 @@ Detects whether or not elements can be animated using CSS
 		// Android < 3.0 is buggy, so we sniff and blacklist
 		// http://git.io/hHzL7w
 		return (
-			navigator.userAgent.indexOf('Android 2.') === -1 &&
+			-1 === navigator.userAgent.indexOf('Android 2.') &&
 			testAllProps('transform', 'scale(1)', true)
 		);
 	});
@@ -1243,9 +1243,9 @@ Detects whether or not elements can be animated using CSS
 
 			// break-before, break-after & break-inside are not "column"-prefixed in spec
 			if (
-				name === 'breakbefore' ||
-				name === 'breakafter' ||
-				name == 'breakinside'
+				'breakbefore' === name ||
+				'breakafter' === name ||
+				'breakinside' == name
 			) {
 				test = test || testAllProps(props[i]);
 			}
@@ -1468,9 +1468,9 @@ Detects support for inline SVG in HTML (not within XHTML).
 		var div = createElement('div');
 		div.innerHTML = '<svg/>';
 		return (
-			(typeof SVGRect != 'undefined' &&
+			'http://www.w3.org/2000/svg' == ('undefined' != typeof SVGRect &&
 				div.firstChild &&
-				div.firstChild.namespaceURI) == 'http://www.w3.org/2000/svg'
+				div.firstChild.namespaceURI)
 		);
 	});
 
