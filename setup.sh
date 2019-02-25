@@ -185,9 +185,9 @@ echo
 
 downloadurl="https://github.com/mkdo/mkdo-base/archive/master.zip";
 
-curl -s -Lo "$downloadurl" mkdo-base-master
+curl -s -Lo "mkdo-base-master.zip" "$downloadurl"
 
-unzip "$downloadurl" &> /dev/null 2>&1
+unzip "mkdo-base-master.zip" &> /dev/null 2>&1
 
 echo "$(tput setaf 3)Scaffolding your MKDO Base instance...$(tput setaf 9)"
 echo
