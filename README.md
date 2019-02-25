@@ -61,4 +61,4 @@ The parameters must be added in the following order:
 
 An example using all of the above would look like this:
 
-`./setup.sh stark-industries "Stark Industries"
+`./setup.sh stark-industries "Stark Industries"`
