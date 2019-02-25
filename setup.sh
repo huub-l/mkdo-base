@@ -185,7 +185,7 @@ echo
 
 downloadurl="https://github.com/mkdo/mkdo-base/archive/master.zip";
 
-curl -s -Lo "$downloadurl" .
+curl -s -Lo "$downloadurl" mkdo-base-master
 
 unzip "$downloadurl" &> /dev/null 2>&1
 
