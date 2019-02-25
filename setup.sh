@@ -390,6 +390,7 @@ if [ "$configurevalet" = "y" ] || [ "$configurevalet" = "Y" ]
 	cd build
 	valet link "$slug" &> /dev/null
 	valet secure &> /dev/null
+	cd ..
 
 fi
 
