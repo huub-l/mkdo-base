@@ -277,16 +277,16 @@ if [ ! -d build/wordpress/wp-admin ]
 	rm -rf build/wp-content/plugins/akismet
 
 	# Install.
-	wp plugin install better-search-replace --activate
-	wp plugin install debug-bar --activate
-	wp plugin install regenerate-thumbnails --activate
-	wp plugin install imsanity --activate
-	wp plugin install wp-smushit --activate
-	wp plugin install so-clean-up-wp-seo --activate
-	wp plugin install user-switching --activate
-	wp plugin install wp-mail-catcher --activate
-	wp plugin install wordpress-seo --activate
-	wp plugin install https://github.com/wp-premium/gravityforms/archive/master.zip --activate
+	wp plugin install better-search-replace --activate --path=build/wordpress &> /dev/null
+	wp plugin install debug-bar --activate --path=build/wordpress &> /dev/null
+	wp plugin install regenerate-thumbnails --activate --path=build/wordpress &> /dev/null
+	wp plugin install imsanity --activate --path=build/wordpress &> /dev/null
+	wp plugin install wp-smushit --activate --path=build/wordpress &> /dev/null
+	wp plugin install so-clean-up-wp-seo --activate --path=build/wordpress &> /dev/null
+	wp plugin install user-switching --activate --path=build/wordpress &> /dev/null
+	wp plugin install wp-mail-catcher --activate --path=build/wordpress &> /dev/null
+	wp plugin install wordpress-seo --activate --path=build/wordpress &> /dev/null
+	wp plugin install https://github.com/wp-premium/gravityforms/archive/master.zip --activate --path=build/wordpress &> /dev/null
 
 	# Load our mu-plugins.
 	echo "require_once( plugin_dir_path( __FILE__ ) . 'mkdo-core/plugin.php' );" >> build/wp-content/mu-plugins/loader.php
