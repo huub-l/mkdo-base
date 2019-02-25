@@ -12,7 +12,6 @@ You will need the following installed on your system before attempting to set-up
 - [MySQL](https://www.mysql.com/downloads/)
 - [PHP](http://php.net/downloads.php)
 - [WP Cli](https://wp-cli.org/#installing)
-- [Composer](https://getcomposer.org/download/)
 - [Yarn](https://yarnpkg.com/lang/en/docs/getting-started/)
 - [Webpack CLI](http://github.com/webpack/webpack-cli)
 
