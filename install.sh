@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Make Do Boilerplate Setup Script - v1.0.0
+# Make Do Base Setup Script - v1.1.0
 # NOTE: This script Requires a Bash shell on OSX
 # -----------------------------------------------------------------------------
 slug="my-project"
 underslug="my_project"
 
-echo "$(tput setaf 3)Initialising Make Do Boilerplate Setup script...$(tput setaf 9)"
+echo "$(tput setaf 3)Initialising Make Do Base Setup script...$(tput setaf 9)"
 echo
 
 # Check for software dependencies
@@ -18,8 +18,6 @@ hash mysql 2>&- || { echo >&2 "MySQL is required but missing. Exiting."; exit 1;
 hash php 2>&- || { echo >&2 "PHP is required but missing. Exiting."; exit 1; }
 hash curl 2>&- || { echo >&2 "cURL is required but missing. Exiting."; exit 1; }
 hash wp 2>&- || { echo >&2 "WP CLI is required but missing. Exiting."; exit 1; }
-hash webpack 2>&- || { echo >&2 "Webpack CLI is required but missing. Exiting."; exit 1; }
-hash composer 2>&- || { echo >&2 "Composer is required but missing. Exiting."; exit 1; }
 hash yarn 2>&- || { echo >&2 "Yarn is required but missing. Exiting."; exit 1; }
 
 # Create MySQL database.
@@ -79,7 +77,7 @@ echo
 yarn run dev &> /dev/null
 
 # Success!
-echo "$(tput setaf 2)Success! Your Make Do Boilerplate based project has now been installed.$(tput setaf 9)"
+echo "$(tput setaf 2)Success! Your Make Do Base project has now been installed.$(tput setaf 9)"
 echo
 
 # Setup Valet
@@ -98,8 +96,8 @@ if [ "$configurevalet" = "y" ] || [ "$configurevalet" = "Y" ]
 
 fi
 
-# Remove Make Do Boilerplate Setup script
-echo "$(tput setaf 3)Removing Make Do Boilerplate Setup script...$(tput setaf 9)"
+# Remove Make Do Base Setup script
+echo "$(tput setaf 3)Removing Make Do Base Setup script...$(tput setaf 9)"
 echo
 
 setupscript="kapow.sh"
