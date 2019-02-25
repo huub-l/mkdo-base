@@ -3,6 +3,7 @@ const tasks = arr => arr.join(' && ');
 module.exports = {
 	hooks: {
 		'pre-commit': tasks([
+			'lint-staged',
 			'echo ""',
 			'echo "$(tput setaf 3)Tidying up PHP if needed...$(tput setaf 7)"',
 			'git diff --name-only --cached --diff-filter=ACMRTUXB | xargs phpcbf -q &> /dev/null  || :',
