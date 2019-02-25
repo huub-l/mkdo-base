@@ -40,9 +40,3 @@ window.addEventListener(
 		responsiveBackgroundImages('.js-bg-img');
 	}, 100),
 );
-
-function testPrettQuick() {
-	console.log('Test this');
-
-	const arrtest = [one, thing, two];
-}
