@@ -1,0 +1,316 @@
+// Site containers
+@mixin site-wrap($size: null) {
+	@include mkdo-clearfix;
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: mkdo-rem($global--container-width);
+	position: relative;
+
+	padding-left: $global--gutter-width;
+	padding-right: $global--gutter-width;
+	// @include mkdo-mq(sm) {
+	// 	padding-left: ($global--gutter-width + 20px);
+	// 	padding-right: ($global--gutter-width + 20px);
+	// }
+	// @include mkdo-mq(md) {
+	// 	padding-left: ($global--gutter-width + 30px);
+	// 	padding-right: ($global--gutter-width + 30px);
+	// }
+	// @include mkdo-mq(lg) {
+	// 	padding-left: ($global--gutter-width + 50px);
+	// 	padding-right: ($global--gutter-width + 50px);
+	// }
+
+	@if $size == normal {
+		max-width: mkdo-rem($global--container-width);
+	}
+
+	@if $size == narrow {
+		max-width: mkdo-rem(800px);
+	}
+
+	@if $size == readability {
+		max-width: mkdo-rem(570px);
+	}
+}
+
+// Column spacing
+@mixin columns($x: true, $y: true, $size: $global--gutter-width) {
+	@include mkdo-clearfix;
+	position: relative;
+	display: block;
+	@if $x {
+		margin-right: -mkdo-rem($size);
+	}
+	@if $y {
+		margin-bottom: -mkdo-rem($size);
+	}
+	@supports (display: flex) {
+		display: flex;
+		flex-flow: row wrap;
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+	> * {
+		float: left;
+		width: auto;
+		@if $x {
+			padding-right: mkdo-rem($size);
+		}
+		@if $y {
+			padding-bottom: mkdo-rem($size);
+		}
+	}
+}
+
+/// Clearfix.
+/// @group helpers
+/// @example scss - Apply a clear to a row.
+/// 	.row {
+/// 		@include mkdo-clearfix();
+/// 	}
+@mixin mkdo-clearfix {
+	*zoom: 1;
+
+	&::before,
+	&::after {
+		content: ' ';
+		display: table;
+	}
+
+	&::after {
+		clear: both;
+	}
+}
+
+@mixin padding($type: null) {
+	@if $type == 'internal-hero' {
+		padding-top: mkdo-rem($global--gutter-width + 25px);
+		padding-bottom: mkdo-rem($global--gutter-width + 25px);
+		@include mkdo-mq(sm) {
+			padding-top: mkdo-rem($global--gutter-width + 50px);
+			padding-bottom: mkdo-rem($global--gutter-width + 50px);
+		}
+		@include mkdo-mq(md) {
+			padding-top: mkdo-rem($global--gutter-width + 70px);
+			padding-bottom: mkdo-rem($global--gutter-width + 70px);
+		}
+		@include mkdo-mq(lg) {
+			padding-top: mkdo-rem($global--gutter-width + 100px);
+			padding-bottom: mkdo-rem($global--gutter-width + 100px);
+		}
+	}
+
+	@if $type == 'internal-hero-small' {
+		padding-top: mkdo-rem($global--gutter-width + 25px);
+		padding-bottom: mkdo-rem($global--gutter-width + 25px);
+		@include mkdo-mq(sm) {
+			padding-top: mkdo-rem($global--gutter-width + 40px);
+			padding-bottom: mkdo-rem($global--gutter-width + 40px);
+		}
+		@include mkdo-mq(md) {
+			padding-top: mkdo-rem($global--gutter-width + 40px);
+			padding-bottom: mkdo-rem($global--gutter-width + 40px);
+		}
+		@include mkdo-mq(lg) {
+			padding-top: mkdo-rem($global--gutter-width + 40px);
+			padding-bottom: mkdo-rem($global--gutter-width + 40px);
+		}
+	}
+
+	@if $type == 'homepage-panel' {
+		padding-top: mkdo-rem(40px);
+		padding-bottom: mkdo-rem(40px);
+		@include mkdo-mq(sm) {
+			padding-top: mkdo-rem(40 * 1.5);
+			padding-bottom: mkdo-rem(40 * 1.5);
+		}
+		@include mkdo-mq(md) {
+			padding-top: mkdo-rem(40 * 2);
+			padding-bottom: mkdo-rem(40 * 2);
+		}
+	}
+
+	@if $type == 'content-element' {
+		padding-bottom: mkdo-rem(40px);
+		@include mkdo-mq(xs) {
+			padding-bottom: mkdo-rem(40px);
+		}
+		@include mkdo-mq(sm) {
+			padding-bottom: mkdo-rem(40px);
+		}
+		@include mkdo-mq(md) {
+			padding-bottom: mkdo-rem(40px);
+		}
+		@include mkdo-mq(lg) {
+			padding-bottom: mkdo-rem(40px);
+		}
+	}
+
+	@if $type == 'sidebar-element' {
+		padding-bottom: mkdo-rem(40px);
+		border-bottom: 1px solid $mantis-offwhite;
+		margin-bottom: mkdo-rem(40px);
+		@include mkdo-mq(xs) {
+			padding-bottom: mkdo-rem(40px);
+		}
+		@include mkdo-mq(sm) {
+			padding-bottom: mkdo-rem(40px);
+		}
+		@include mkdo-mq(md) {
+			padding-bottom: mkdo-rem(40px);
+		}
+		@include mkdo-mq(lg) {
+			padding-bottom: mkdo-rem(40px);
+		}
+	}
+
+	@if $type == 'site-element' {
+		padding: mkdo-rem(20px) 0;
+		@include mkdo-mq(xs) {
+			padding: mkdo-rem(20px) 0;
+		}
+		@include mkdo-mq(sm) {
+			padding: mkdo-rem(30px) 0;
+		}
+		@include mkdo-mq(md) {
+			padding: mkdo-rem(40px) 0;
+		}
+		@include mkdo-mq(lg) {
+			padding: mkdo-rem(40px) 0;
+		}
+	}
+}
+
+// Trim margins
+@mixin trim($type: margin, $depth: 1) {
+	$first: '';
+	$last: '';
+	@for $i from 0 to $depth {
+		$first: $first + ' > :first-child';
+		$last: $last + ' > :last-child';
+
+		#{$first} {
+			#{$type}-top: 0;
+		}
+
+		#{$last} {
+			#{$type}-bottom: 0;
+		}
+	}
+}
+
+/// Shorthand for element positioning.
+/// @group helpers
+/// @param {String} $type - Either absolute, fixed or relative
+/// @param {Length} $top [null] - Top
+/// @param {Length} $right [null] - Right
+/// @param {Length} $bottom [null] - Bottom
+/// @param {Length} $left [null] - Left
+/// @example scss - Position an element to the top left of its parent.
+/// 	.hamburger {
+/// 		@include mkdo-abs-position('absolute', $top: 20px, $left: 20px);
+/// 	}
+@mixin mkdo-abs-position(
+	$type,
+	$top: null,
+	$right: null,
+	$bottom: null,
+	$left: null
+) {
+	position: $type;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+/// Center block.
+/// @group helpers
+/// @example scss - Center an image.
+/// 	img {
+/// 		@include mkdo-center-block;
+/// 	}
+/// @example markup - Center an image
+/// 	<div>
+/// 		<img src="blue-sky.jpg" alt="Blue Sky"/>
+/// 	</div>
+@mixin mkdo-center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/// Horizontally and vertically centers block elements.
+/// @group helpers
+/// @param {Bool} top ['50%'] - Override for the top position.
+/// @example scss - Set the (modified) top position of a centered button.
+/// 	.click-to-enter {
+/// 		@include mkdo-center-both(45%);
+/// 	}
+@mixin mkdo-center-both($top: 50%) {
+	left: 50%;
+	position: absolute;
+	top: $top;
+	transform: translate(-50%, -50%);
+}
+
+/// Vertically center block elements.
+/// @group helpers
+/// @example scss - Vertically centre a search icon element, and make the parent relative.
+/// 	.search-icon {
+/// 		@include mkdo-center-vert();
+/// 	}
+@mixin mkdo-center-vert() {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/// No horizontal margin.
+/// @group helpers
+/// @example scss - Remove horizontal margin.
+/// 	.no-hmargin {
+/// 		@include mkdo-no-hmargin();
+/// 	}
+@mixin mkdo-no-hmargin {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/// No horizontal padding.
+/// @group helpers
+/// @example scss - Remove horizontal padding.
+/// 	.no-hpadding {
+/// 		@include mkdo-no-hpadding();
+/// 	}
+@mixin mkdo-no-hpadding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/// No vertical margin.
+/// @group helpers
+/// @example scss - Remove vertical margin.
+/// 	.no-vmargin {
+/// 		@include mkdo-no-vmargin();
+/// 	}
+@mixin mkdo-no-vmargin {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+/// No vertical padding.
+/// @group helpers
+/// @example scss - Remove vertical padding.
+/// 	.no-vpadding {
+/// 		@include mkdo-no-vpadding();
+/// 	}
+@mixin mkdo-no-vpadding {
+	padding-bottom: 0;
+	padding-top: 0;
+}

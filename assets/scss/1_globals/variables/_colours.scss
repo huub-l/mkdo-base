@@ -1,0 +1,22 @@
+// Specific Colours.
+// -------------------------------------
+$mkdo--primary: #27b285;
+$mkdo--dark-primary: darken($mkdo--primary, 15%);
+$mkdo--secondary: #1d9cd6;
+$mkdo--dark-secondary: darken($mkdo--secondary, 15%);
+
+// Greyscale
+$mkdo--dark: #404c4f;
+$mkdo--dark-o: rgba($mkdo--dark, 0.7);
+$mkdo--grey: #788c91;
+$mkdo--offwhite: #f5f5f5;
+$mkdo--white: #fff;
+
+// Colours.
+// -------------------------------------
+$mkdo-colour-body--background: $mkdo--offwhite !default;
+$mkdo-colour-content--copy: $mkdo--dark !default;
+$mkdo-colour-content--heading: $mkdo--dark !default;
+$mkdo-colour-content--link: $mkdo--dark-secondary !default;
+$mkdo-colour-content--link-hover: $mkdo--secondary !default;
+$mkdo-colour-content--link-visited: $mkdo--dark-secondary !default;

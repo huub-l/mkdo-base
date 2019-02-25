@@ -1,0 +1,29 @@
+@mixin heading($size: null) {
+	font-family: $mkdo-font-stack--sans-serif;
+	line-height: $mkdo-line-height--small;
+
+	@if $size == '1' {
+		font-size: mkdo-rem($mkdo-font-size--h1);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $size == '2' {
+		font-size: mkdo-rem($mkdo-font-size--h2);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $size == '3' {
+		font-size: mkdo-rem($mkdo-font-size--h3);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $size == '4' {
+		font-size: mkdo-rem($mkdo-font-size--h4);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $size == '5' {
+		font-size: mkdo-rem($mkdo-font-size--h5);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $size == '6' {
+		font-size: mkdo-rem($mkdo-font-size--h6);
+		font-weight: $mkdo-font-weight--normal;
+	}
+}

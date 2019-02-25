@@ -1,0 +1,8 @@
+// Page specific layout/styles.
+// -----------------------------------------------------------------------------
+.template-page {
+}
+
+.template-page__wrap {
+	@include site-wrap(normal);
+}

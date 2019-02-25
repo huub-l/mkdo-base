@@ -1,0 +1,79 @@
+// Form styles.
+// --------------------------------------------------------------------------
+
+// Form fields.
+// -------------------------------------
+[type='tel'],
+[type='text'],
+[type='email'],
+[type='number'],
+[type='password'],
+[type='search'],
+[type='url'],
+textarea {
+	appearance: none;
+	background-color: $mkdo--offwhite;
+	border-radius: $global--border-radius-small;
+	border: 1px solid $mkdo--offwhite;
+	color: $mkdo--dark;
+	padding: mkdo-rem(8px);
+	transition-property: background-color, color, border-color, opacity;
+	transition-duration: 300ms;
+	transition-timing-function: ease-in-out;
+
+	&:focus {
+		background-color: $mkdo--white;
+		border-color: $mkdo--secondary;
+		color: $mkdo--dark;
+	}
+}
+
+select {
+	border: 1px solid $mkdo--offwhite;
+	color: $mkdo--dark;
+	padding: mkdo-rem(8px);
+}
+
+// Forms - Placeholder Styles.
+$mkdo-ph--styles: (
+	color: $mkdo--dark-o,
+	opacity: 1,
+) !default;
+
+input {
+	@include mkdo-placeholder-styles($mkdo-ph--styles);
+}
+
+textarea {
+	@include mkdo-placeholder-styles($mkdo-ph--styles);
+	height: mkdo-rem(150px);
+}
+
+// Gravity forms
+body .gform_wrapper {
+	li.gfield.gfield_error {
+		background-color: transparent;
+		border-top: 0;
+		border-bottom: 0;
+	}
+
+	div.validation_error {
+		border-top: 0;
+		border-bottom: 0;
+		font-weight: 400;
+		text-align: left;
+	}
+
+	.gfield_required,
+	.gfield_error .gfield_label,
+	.validation_message,
+	div.validation_error {
+		color: $mkdo--error;
+	}
+
+	li.gfield_error
+		input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+	li.gfield_error textarea {
+		border: 1px solid $mkdo--error;
+	}
+}

@@ -1,0 +1,45 @@
+// Static Styleguide
+
+$static--white: #fff;
+$static--offwhite: #f7f7f7;
+$static--palegrey: #abb2ba;
+$static--lightgrey: #3c4049;
+$static--grey: #323841;
+$static--offdark: #282c35;
+$static--dark: #21252c;
+$static--green: #27b285;
+
+.static-main {
+	background: $static--white;
+	min-height: 100vh;
+	padding-bottom: 30vh;
+	.static-page {
+		display: none;
+		opacity: 0;
+		transition: all 150ms ease;
+		&.display {
+			display: block;
+		}
+		&.active {
+			opacity: 1;
+			// Applys 150ms after display.
+		}
+	}
+
+	.site-content,
+	.site-container {
+		margin: 0;
+		padding: 0;
+	}
+
+	// Hide main site visual header and footer
+	> * > {
+		.site-header,
+		.site-footer {
+			display: none;
+		}
+	}
+}
+
+@import 'styleguide';
+@import 'flags';

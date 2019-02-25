@@ -1,0 +1,13 @@
+// Global header region layout/styles.
+// -----------------------------------------------------------------------------
+
+.site-header {
+	#menu-toggle svg {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+.site-header__wrap {
+	@include site-wrap(normal);
+}

@@ -1,0 +1,175 @@
+// Global element styles to be applied throughout the site without context.
+
+a {
+	// Intentionally left out :focus to due WCAG.
+	&:active,
+	&:hover {
+		outline: 0;
+	}
+
+	img {
+		// Death to anchor image borders in IE.
+		border: 0;
+	}
+}
+
+a,
+button,
+[type='reset'],
+[type='submit'] {
+	cursor: pointer;
+	transition: all ease-in-out 0.3s;
+}
+
+abbr,
+acronym {
+	cursor: help;
+}
+
+address {
+	font-style: normal;
+}
+
+// Prevents gap at the bottom of the element.
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+b,
+dt,
+strong {
+	font-weight: $mkdo-font-weight--bold;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $mkdo-colour-content--copy;
+	font-family: $mkdo-font-stack--sans-serif;
+	font-size: mkdo-rem($mkdo-font-size--medium);
+	line-height: $mkdo-line-height--medium;
+}
+
+code,
+kbd,
+pre,
+tt,
+var {
+	font-family: $mkdo-font-stack--monospaced;
+	font-size: mkdo-rem($mkdo-font-size--medium);
+	line-height: $mkdo-line-height--large;
+}
+
+dd {
+	margin: 0 0 mkdo-rem($global--spacing-common);
+}
+
+dl {
+	padding-left: mkdo-rem($global--spacing-common);
+}
+
+dl,
+ol,
+ul {
+	margin: mkdo-rem($global--spacing-common) 0;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+embed,
+iframe,
+object,
+pre {
+	margin: mkdo-rem($global--spacing-common) auto;
+	// Keep the contents inside the container
+	max-width: 100%;
+}
+
+fieldset {
+	// Reset spacing
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+figure {
+	margin: mkdo-rem($global--spacing-common) 0;
+}
+
+figcaption,
+small {
+	font-size: mkdo-rem($mkdo-font-size--small);
+}
+
+form {
+	margin: 0;
+}
+
+hr {
+	// Make the HR look better by default.
+	border: 0;
+	border-top: 1px solid $mkdo--offwhite;
+	display: block;
+	height: 1px;
+	margin: mkdo-rem($global--spacing-common) 0;
+	padding: 0;
+}
+
+img {
+	// Make them responsive
+	height: auto;
+	max-width: 100%;
+
+	figure & {
+		margin-bottom: 0;
+		margin-top: 0;
+		padding: 0;
+	}
+}
+
+ins,
+mark {
+	text-decoration: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	padding: 0;
+}
+
+q {
+	quotes: '\201c''\201d';
+
+	&::before {
+		content: open-quote;
+	}
+
+	&::after {
+		content: close-quote;
+	}
+}
+
+textarea {
+	// Allow vertical resizing only
+	resize: vertical;
+	width: 100%;
+}
+
+select {
+	max-width: 100%;
+}
