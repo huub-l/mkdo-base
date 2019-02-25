@@ -18,8 +18,6 @@ You will need the following installed on your system before attempting to set-up
 
 ## [Two-Factor Authentication for GitHub API](#2fa)
 
-**@TODO - Migrate this to `.mkdo_token`**
-
 As this script leverages the GitHub API for repository creation, you will need to take some additional steps before being able to use it to scaffold a new project instance, due to the additional authentication required. If you do not have 2FA enabled on your GitHub account, please do so [here](https://github.com/settings/security) ASAP.
 
 1. Head over to https://github.com/settings/tokens.
