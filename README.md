@@ -20,12 +20,12 @@ You will need the following installed on your system before attempting to set-up
 As this script leverages the GitHub API for repository creation, you will need to take some additional steps before being able to use it to scaffold a new project instance, due to the additional authentication required. If you do not have 2FA enabled on your GitHub account, please do so [here](https://github.com/settings/security) ASAP.
 
 1. Head over to https://github.com/settings/tokens.
-2. Generate a new token, giving it `repo` privileges, and name it so that you know it relates to MKDO Boilerplate
+2. Generate a new token, giving it `repo` privileges, and name it so that you know it relates to MKDO Base
 3. Copy the token before moving away from this page.
-4. Create a new file `~/.kapow_token` on your machine.
+4. Create a new file `~/.mkdobase_token` on your machine.
 5. Paste the token into this file and save.
 
-This script will look for `~/.kapow_token` before doing anything else, and will abort if the token is not present. This file should **only** contain the personal access token you copied from Github, and nothing else.
+This script will look for `~/.mkdobase_token` before doing anything else, and will abort if the token is not present. This file should **only** contain the personal access token you copied from Github, and nothing else.
 
 ## [Installation](#installation)
 
