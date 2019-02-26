@@ -1,6 +1,9 @@
 {
+	"*.css": ["stylelint --max-warnings=0", "git add"],
 	"*.css": ["stylelint --fix", "git add"],
+	"*.scss": ["stylelint --syntax=scss --max-warnings=0", "git add"],
 	"*.scss": ["stylelint --fix --syntax=scss", "git add"],
+	"*.{js,jsx}": "eslint --max-warnings=0",
 	"*.js": ["eslint --fix", "git add"],
-	"*": ["prettier --write", "git add"],
+	"*": ["prettier --write", "git add"]
 }
