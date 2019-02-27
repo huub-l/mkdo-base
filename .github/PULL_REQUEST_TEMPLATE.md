@@ -24,7 +24,8 @@ Brief Description of Contents:
 *Please provide a visual reference if applicable e.g. front-end updates*
 
 **Reviewer Checklist**
-*Does the code pass the following criteria? (where applicable)
+
+*Does the code pass the following criteria? (where applicable)*
 
 - Adopts best WordPress development practices?
 - Optimised for performance; front-end and back-end?
