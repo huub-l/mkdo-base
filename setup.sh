@@ -288,9 +288,6 @@ if [ ! -d build/wordpress/wp-admin ]
 	wp plugin install wordpress-seo --activate --path=build/wordpress &> /dev/null
 	wp plugin install https://github.com/wp-premium/gravityforms/archive/master.zip --activate --path=build/wordpress &> /dev/null
 
-	# Load our mu-plugins.
-	echo "require_once( plugin_dir_path( __FILE__ ) . 'mkdo-core/plugin.php' );" >> build/wp-content/mu-plugins/loader.php
-
 	# Copy the MKDO Core configuration template
 	# into the theme includes folder.
 	mkdocoredir="build/wp-content/mu-plugins/mkdo-core"
