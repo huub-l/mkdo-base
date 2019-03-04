@@ -16,8 +16,8 @@ import initResponsiveBackgroundImages from './modules/rwd-bg-images.js';
 
 // Ready.
 window.addEventListener('DOMContentLoaded', function() {
-	skipLink();
 	trackFocus(document.body);
+	skipLink();
 	styleGuide();
 	initResponsiveBackgroundImages($);
 });

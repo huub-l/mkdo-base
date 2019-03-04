@@ -11,7 +11,6 @@ const initResponsiveBackgroundImages = function($) {
 	// and be used in the global scope.
 	// -------------------------------------
 	window.responsiveBackgroundImages = function(selector) {
-
 		// Abort if matchMedia API not supported.
 		// ----------------------------------------
 		if (!window.matchMedia) {

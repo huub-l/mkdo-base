@@ -5,25 +5,19 @@ window.jQuery = window.$ = jQuery;
 import { deBounce } from './modules/utils.js';
 
 // Ready.
-window.addEventListener(
-	'DOMContentLoaded',
-	function() {
-		// Do something.
-	}
-);
+window.addEventListener('DOMContentLoaded', function() {
+	// Do something.
+});
 
 // Load.
-window.addEventListener(
-	'load',
-	function() {
-		// Do something.
-	}
-);
+window.addEventListener('load', function() {
+	// Do something.
+});
 
 // Resize
 window.addEventListener(
 	'resize',
 	deBounce(() => {
 		// Do something.
-	}, 100)
+	}, 100),
 );
