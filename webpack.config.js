@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const minimatch = require('minimatch');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
@@ -8,7 +9,33 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const TerserPlugin = require('terser-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const globImporter = require('node-sass-glob-importer');
-const devMode = process.env.NODE_ENV === 'development';
+const devMode = 'development' === process.env.NODE_ENV;
+
+class MiniCssExtractPluginCleanup {
+	apply(compiler) {
+		compiler.hooks.emit.tapAsync(
+			'MiniCssExtractPluginCleanup',
+			(compilation, callback) => {
+				Object.keys(compilation.assets)
+					.filter(asset => {
+						return [
+							'themes/my-project/assets/css/*.js',
+							'themes/my-project/assets/css/*.js.map',
+							'themes/my-project/style.js',
+							'themes/my-project/style.js.map',
+						].some(pattern => {
+							return minimatch(asset, pattern);
+						});
+					})
+					.forEach(asset => {
+						delete compilation.assets[asset];
+					});
+
+				callback();
+			},
+		);
+	}
+}
 
 module.exports = {
 	mode: process.env.NODE_ENV,
@@ -17,12 +44,15 @@ module.exports = {
 		'themes/my-project/assets/js/footer': './assets/js/footer.js',
 		'themes/my-project/assets/js/admin': './assets/js/admin.js',
 		'themes/my-project/assets/js/customizer': './assets/js/customizer.js',
+		'themes/my-project/assets/css/admin': './assets/scss/admin.scss',
+		'themes/my-project/assets/css/editor': './assets/scss/editor.scss',
+		'themes/my-project/style': './assets/scss/style.scss',
 	},
 	output: {
 		path: path.resolve(__dirname, 'build/wp-content/'),
 		filename: '[name].js',
 	},
-	devtool: devMode ? 'cheap-eval-source-map' : 'source-map',
+	devtool: devMode ? 'source-map' : 'cheap-eval-source-map',
 	performance: {
 		maxAssetSize: 1000000,
 	},
@@ -165,13 +195,14 @@ module.exports = {
 			syntax: 'scss',
 		}),
 		new MiniCssExtractPlugin({
-			filename: 'themes/my-project/style.css',
+			filename: '[name].css',
 		}),
 		!devMode &&
 			new ImageminPlugin({
 				test: /\.(jpe?g|png|gif)$/i,
 				cacheFolder: './imgcache',
 			}),
+		new MiniCssExtractPluginCleanup(),
 		devMode && new LiveReloadPlugin(),
 	].filter(Boolean),
 };

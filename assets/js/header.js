@@ -1,6 +1,3 @@
-// Styles
-import '../scss/style.scss';
-
 // Images, svgs and fonts.
 function requireAll(r) {
 	r.keys().forEach(r);
