@@ -37,32 +37,24 @@
 }
 
 // Column spacing
-@mixin columns($x: true, $y: true, $size: $global--gutter-width) {
-	@include mkdo-clearfix;
+@mixin spacing($x: true, $y: true, $size: $global--gutter-width) {
+	display: flex;
+	flex-flow: row wrap;
 	position: relative;
-	display: block;
 	@if $x {
-		margin-right: -mkdo-rem($size);
+		margin-right: -$size;
 	}
 	@if $y {
-		margin-bottom: -mkdo-rem($size);
+		margin-bottom: -$size;
 	}
-	@supports (display: flex) {
-		display: flex;
-		flex-flow: row wrap;
-		&::before,
-		&::after {
-			display: none;
-		}
-	}
+
 	> * {
-		float: left;
 		width: auto;
 		@if $x {
-			padding-right: mkdo-rem($size);
+			padding-right: $size;
 		}
 		@if $y {
-			padding-bottom: mkdo-rem($size);
+			padding-bottom: $size;
 		}
 	}
 }
