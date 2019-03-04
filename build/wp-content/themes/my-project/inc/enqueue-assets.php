@@ -86,13 +86,21 @@ function mkdo_theme_enqueue_admin_assets() {
 		filemtime( $admin_style_path ),
 		false
 	);
-
-	// Editor stylesheet.
-	$editor_css_url  = get_stylesheet_directory_uri() . '/assets/css/editor' . $mkdo_theme_asset_suffix . '.css';
-	$editor_css_path = dirname( MKDO_THEME_ROOT ) . '/assets/css/editor' . $mkdo_theme_asset_suffix . '.css';
-	add_editor_style( $editor_css_url . '?v=' . filemtime( $editor_css_path ) );
 }
 add_action( 'admin_enqueue_scripts', 'mkdo_theme_enqueue_admin_assets', 10 );
+
+/**
+ * Enqueue assets for the editor.
+ */
+function mkdo_theme_enqueue_editor_assets() {
+
+	global $mkdo_theme_asset_suffix;
+
+	// Editor stylesheet.
+	$editor_css_url = '/assets/css/editor' . $mkdo_theme_asset_suffix . '.css';
+	add_editor_style( $editor_css_url );
+}
+add_action( 'after_theme_setup', 'mkdo_theme_enqueue_admin_assets', 10 );
 
 /**
  * Enqueue JS handlers to make the Customizer

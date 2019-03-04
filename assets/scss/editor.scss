@@ -1,2 +1,26 @@
 // Styles and imports used for elements found within the WordPress editor.
 // -----------------------------------------------------------------------------
+
+// Vendor.
+// -------------------------------------
+@import '../../node_modules/normalize-scss/sass/normalize/_import-now.scss';
+
+// Config.
+// -------------------------------------
+@import '1_globals/_globals';
+
+// Project Sass.
+// -------------------------------------
+// @import '2_components/*.scss';
+// @import '3_modules/*.scss';
+// @import '4_structures/*.scss';
+// @import '5_templates/*.scss';
+
+// Hacks (to be refactored).
+// -------------------------------------
+// @import 'hacks';
+
+body {
+	background: $mkdo--dark;
+	line-height: 5em;
+}
