@@ -10,7 +10,7 @@
  */
 function mkdo_theme_is_styleguide() {
 	$output = false;
-	if ( is_page_template( 'page-templates/page-static.php' ) ) {
+	if ( 'page-static.php' === basename( get_page_template() ) ) {
 		$output = true;
 	}
 	return $output;
@@ -69,109 +69,4 @@ function mkdo_theme_get_array_path( $path, $array ) {
 	}
 
 	return false;
-}
-
-/**
- * Helper function to render the content in the components/meta partial.
- *
- * @param  array   $data The full $data array from the meta partial, so we've got all the context.
- *
- * @param  boolean $echo Whether to echo the HTML, or return it in a string.
- *
- * @return null|string
- */
-function mkdo_theme_get_meta_content( $data, $echo = false ) {
-
-	$content = mkdo_theme_get_array_path( 'content', $data );
-	$label   = mkdo_theme_get_array_path( 'label', $data );
-
-	if ( ! $content || ! $label ) {
-		return;
-	}
-
-	$output = '';
-	$label  = sprintf(
-		'<span class="meta__label">%s</span>',
-		$label
-	);
-
-	if ( is_numeric( $content ) && mkdo_theme_get_array_path( 'user', $data ) ) {
-
-		// If it's one user ID.
-		$user = get_userdata( $content );
-		if ( $user ) {
-			$output .= '<div class="user-avatar"></div>';
-			$output .= $label;
-			$output .= sprintf(
-				'<a class="meta__content" href="%s">%s</a>',
-				get_author_posts_url( $user->ID ),
-				$user->display_name
-			);
-		}
-	} elseif ( mkdo_theme_get_array_path( 'user', $data ) && is_array( $content ) && array_filter( $content, 'is_int' ) === $content ) {
-
-		// If it's an array of user IDs.
-		$output .= $label;
-		$output .= '<ul class="meta__content-list">';
-		foreach ( $content as $user_id ) {
-			$user = get_userdata( $user_id );
-			if ( $user ) {
-				$output .= '<li class="meta__content-item">';
-				$output .= sprintf(
-					'<div class="user-avatar" style="background-image:%s;"></div><a href="%s">%s</a>',
-					get_avatar_url( $user_id ),
-					get_author_posts_url( $user->ID ),
-					$user->display_name
-				);
-				$output .= '</li>';
-			}
-		}
-		$output .= '</ul>';
-
-	} elseif ( is_array( $content ) ) {
-
-		// If it's an array of items.
-		$output .= $label;
-		$output .= '<ul class="meta__content-list">';
-		foreach ( $content as $item ) {
-			$output .= '<li class="meta__content-item">';
-			$link    = mkdo_theme_get_array_path( 'link', $item );
-			$title   = mkdo_theme_get_array_path( 'title', $item );
-			if ( $link && $title ) {
-				$output .= sprintf(
-					'<a href="%s">%s</a>',
-					$link,
-					$title
-				);
-			} elseif ( is_string( $item ) ) {
-				$output .= '<span>' . $item . '</span>';
-			}
-			$output .= '</li>';
-		}
-		$output .= '</ul>';
-
-	} else {
-
-		// Else, treat it as HTML.
-		if ( mkdo_theme_get_array_path( 'link', $data ) ) {
-
-?>
-			<span class="meta__label"><?php echo esc_html( $data['label'] ); ?></span>
-			<a class="meta__content" href="<?php echo esc_url( $data['link'] ); ?>">
-				<?php echo wp_kses_post( $data['content'] ); ?>
-			</a>
-<?php
-		} else {
-?>
-			<span class="meta__label"><?php echo esc_html( $data['label'] ); ?></span>
-			<span class="meta__content"><?php echo wp_kses_post( $data['content'] ); ?></span>
-<?php
-		}
-	}
-
-	if ( true === $echo ) {
-		echo wp_kses_post( $output );
-	} else {
-		return $output;
-	}
 }
