@@ -19,28 +19,28 @@ h3,
 h4,
 h5,
 h6 {
-	@include heading;
+	@include typography;
 	clear: both;
 	margin: mkdo-rem($global--spacing-common * 1.5) 0
 		mkdo-rem($global--spacing-common);
 }
 h1 {
-	@include heading(heading-1);
+	@include typography('heading-1');
 }
 h2 {
-	@include heading(heading-2);
+	@include typography('heading-2');
 }
 h3 {
-	@include heading(heading-3);
+	@include typography('heading-3');
 }
 h4 {
-	@include heading(heading-4);
+	@include typography('heading-4');
 }
 h5 {
-	@include heading(heading-5);
+	@include typography('heading-5');
 }
 h6 {
-	@include heading(heading-6);
+	@include typography('heading-6');
 }
 
 // Paragraph
