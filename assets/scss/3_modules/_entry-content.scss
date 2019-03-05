@@ -2,6 +2,7 @@
 // editor.
 .entry-content {
 	@include site-wrap('readability');
+	line-height: 1.6;
 
 	// Default blocks
 	.wp-block-button {
@@ -12,6 +13,42 @@
 	ul.wp-block-gallery {
 		li.blocks-gallery-item {
 		}
+	}
+
+	// Fix broken Gutenberg cols.
+	.wp-block-column {
+		margin-bottom: 0;
+	}
+	@media (min-width: 600px) {
+		.wp-block-columns {
+			flex-wrap: nowrap;
+		}
+	}
+
+	// Example custom theme colours and fonts applied in Gutenberg.
+	// Font sizes
+	.has-lead-font-size {
+		font-size: mkdo-rem(22px);
+	}
+
+	// Colours
+	.has-offwhite-color {
+		color: $mkdo--offwhite;
+		@include mkdo-on-event {
+			color: $mkdo--offwhite;
+		}
+	}
+	.has-offwhite-background-color {
+		background-color: $mkdo--offwhite;
+	}
+	.has-dark-color {
+		color: $mkdo--dark;
+		@include mkdo-on-event {
+			color: $mkdo--dark;
+		}
+	}
+	.has-dark-background-color {
+		background-color: $mkdo--dark;
 	}
 
 	// Alignment
