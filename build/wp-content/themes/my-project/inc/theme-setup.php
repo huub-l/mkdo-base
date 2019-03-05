@@ -93,8 +93,29 @@ function mkdo_theme_theme_setup() {
 		array(
 			array(
 				'name'  => __( 'Offwhite', 'mkdo-theme' ),
-				'slug'  => 'Offwhite',
-				'color' => '#ededed',
+				'slug'  => 'offwhite',
+				'color' => '#f5f5f5',
+			),
+			array(
+				'name'  => __( 'Dark', 'mkdo-theme' ),
+				'slug'  => 'dark',
+				'color' => '#404c4f',
+			),
+		)
+	);
+
+	add_theme_support(
+		'editor-font-sizes',
+		array(
+			array(
+				'name' => __( 'Normal', 'mkdo-theme' ),
+				'size' => 18,
+				'slug' => 'normal',
+			),
+			array(
+				'name' => __( 'Lead', 'mkdo-theme' ),
+				'size' => 22,
+				'slug' => 'lead',
 			),
 		)
 	);
@@ -103,20 +124,8 @@ function mkdo_theme_theme_setup() {
 	 * Gutenberg disables.
 	 */
 	add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'disable-custom-font-sizes' );
 
-	// @codingStandardsIgnoreStart
-	// add_theme_support(
-	// 	'editor-font-sizes',
-	// 	array(
-	// 		array(
-	// 			'name' => __( 'Normal', 'mkdo-theme' ),
-	// 			'size' => 18,
-	// 			'slug' => 'normal',
-	// 		),
-	// 	)
-	// );
-	//
-	// add_theme_support( 'disable-custom-font-sizes' );
 	//
 	// @codingStandardsIgnoreEnd
 }

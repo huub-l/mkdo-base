@@ -82,7 +82,7 @@ function mkdo_theme_enqueue_editor_assets() {
 	$editor_css_url = '/assets/css/editor.css';
 	add_editor_style( $editor_css_url );
 }
-add_action( 'after_theme_setup', 'mkdo_theme_enqueue_admin_assets', 10 );
+add_action( 'after_setup_theme', 'mkdo_theme_enqueue_editor_assets', 10 );
 
 /**
  * Enqueue JS handlers to make the Customizer

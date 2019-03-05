@@ -1,26 +1,42 @@
 // Styles and imports used for elements found within the WordPress editor.
 // -----------------------------------------------------------------------------
 
-// Vendor.
-// -------------------------------------
-@import '../../node_modules/normalize-scss/sass/normalize/_import-now.scss';
-
 // Config.
 // -------------------------------------
-@import '1_globals/_globals';
+@import '1_globals/variables/colours';
+@import '1_globals/variables/typography';
+@import '1_globals/variables/base-values';
+@import '1_globals/variables/media-queries';
+@import '1_globals/functions/colours';
+@import '1_globals/functions/utilities';
+@import '1_globals/mixins/utility';
+@import '1_globals/mixins/background';
+@import '1_globals/mixins/effects';
+@import '1_globals/mixins/hide';
+@import '1_globals/mixins/layout';
+@import '1_globals/mixins/resets';
+@import '1_globals/mixins/typography';
+@import '1_globals/mixins/z-index';
+@import '1_globals/reset/reset';
+@import '1_globals/reset/print';
+@import '1_globals/reset/wordpress';
+@import '1_globals/helpers';
+@import '1_globals/font-face';
+@import '1_globals/base';
 
 // Project Sass.
 // -------------------------------------
-// @import '2_components/*.scss';
-// @import '3_modules/*.scss';
-// @import '4_structures/*.scss';
-// @import '5_templates/*.scss';
+@import '2_components/*.scss';
+@import '3_modules/*.scss';
+@import '4_structures/*.scss';
+@import '5_templates/*.scss';
 
-// Hacks (to be refactored).
-// -------------------------------------
-// @import 'hacks';
+body .mce-content-body,
+body p {
+	line-height: 1.6;
+}
 
-body {
-	background: $mkdo--dark;
-	line-height: 5em;
+// Default Gutenberg editor page title.
+.editor-post-title__block .editor-post-title__input {
+	@include typography('heading-1');
 }
