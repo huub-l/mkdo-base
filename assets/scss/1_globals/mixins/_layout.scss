@@ -7,21 +7,8 @@
 	margin-right: auto;
 	max-width: mkdo-rem($global--container-width);
 	position: relative;
-
 	padding-left: $global--gutter-width;
 	padding-right: $global--gutter-width;
-	// @include mkdo-mq(sm) {
-	// 	padding-left: ($global--gutter-width + 20px);
-	// 	padding-right: ($global--gutter-width + 20px);
-	// }
-	// @include mkdo-mq(md) {
-	// 	padding-left: ($global--gutter-width + 30px);
-	// 	padding-right: ($global--gutter-width + 30px);
-	// }
-	// @include mkdo-mq(lg) {
-	// 	padding-left: ($global--gutter-width + 50px);
-	// 	padding-right: ($global--gutter-width + 50px);
-	// }
 
 	@if $size == normal {
 		max-width: mkdo-rem($global--container-width);
@@ -32,7 +19,7 @@
 	}
 
 	@if $size == readability {
-		max-width: mkdo-rem(570px);
+		max-width: mkdo-rem(610px);
 	}
 }
 
