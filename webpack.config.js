@@ -55,12 +55,14 @@ module.exports = {
 	performance: {
 		maxAssetSize: 1000000,
 	},
-	minimize: true,
-	minimizer: [
-		new TerserPlugin({
-			sourceMap: true,
-		}),
-	],
+	optimization: {
+		minimize: true,
+		minimizer: [
+			new TerserPlugin({
+				sourceMap: true,
+			}),
+		],
+	},
 	stats: {
 		assets: !devMode,
 		builtAt: !devMode,
