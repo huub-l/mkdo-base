@@ -40,7 +40,6 @@ class MiniCssExtractPluginCleanup {
 module.exports = {
 	mode: process.env.NODE_ENV,
 	entry: {
-		'themes/my-project/assets/js/header': './assets/js/header.js',
 		'themes/my-project/assets/js/footer': './assets/js/footer.js',
 		'themes/my-project/assets/js/admin': './assets/js/admin.js',
 		'themes/my-project/assets/js/customizer': './assets/js/customizer.js',
