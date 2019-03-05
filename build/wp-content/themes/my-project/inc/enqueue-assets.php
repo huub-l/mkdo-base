@@ -25,23 +25,9 @@ if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
  */
 function mkdo_theme_enqueue_assets() {
 
-	global $mkdo_theme_asset_suffix;
-
-	// Header JS.
-	$header_js_url  = get_stylesheet_directory_uri() . '/assets/js/header' . $mkdo_theme_asset_suffix . '.js';
-	$header_js_path = dirname( MKDO_THEME_ROOT ) . '/assets/js/header' . $mkdo_theme_asset_suffix . '.js';
-
-	wp_enqueue_script(
-		'mkdo-theme-header-js',
-		$header_js_url,
-		array(),
-		filemtime( $header_js_path ),
-		true
-	);
-
 	// Footer JS.
-	$footer_js_url  = get_stylesheet_directory_uri() . '/assets/js/footer' . $mkdo_theme_asset_suffix . '.js';
-	$footer_js_path = dirname( MKDO_THEME_ROOT ) . '/assets/js/footer' . $mkdo_theme_asset_suffix . '.js';
+	$footer_js_url  = get_stylesheet_directory_uri() . '/assets/js/footer.js';
+	$footer_js_path = dirname( MKDO_THEME_ROOT ) . '/assets/js/footer.js';
 
 	wp_enqueue_script(
 		'mkdo-theme-footer-js',
@@ -56,7 +42,7 @@ function mkdo_theme_enqueue_assets() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// Stylesheet.
+	// Main stylesheet.
 	$mkdo_theme_style_url  = get_stylesheet_uri();
 	$mkdo_theme_style_path = dirname( MKDO_THEME_ROOT ) . '/style.css';
 
@@ -74,11 +60,9 @@ add_action( 'wp_enqueue_scripts', 'mkdo_theme_enqueue_assets', 10 );
  */
 function mkdo_theme_enqueue_admin_assets() {
 
-	global $mkdo_theme_asset_suffix;
-
 	// Admin stylesheet.
-	$admin_style_url  = get_stylesheet_directory_uri() . '/assets/css/admin' . $mkdo_theme_asset_suffix . '.css';
-	$admin_style_path = dirname( MKDO_THEME_ROOT ) . '/assets/css/admin' . $mkdo_theme_asset_suffix . '.css';
+	$admin_style_url  = get_stylesheet_directory_uri() . '/assets/css/admin.css';
+	$admin_style_path = dirname( MKDO_THEME_ROOT ) . '/assets/css/admin.css';
 	wp_enqueue_script(
 		'mkdo-theme-admin-style',
 		$admin_style_url,
@@ -94,10 +78,8 @@ add_action( 'admin_enqueue_scripts', 'mkdo_theme_enqueue_admin_assets', 10 );
  */
 function mkdo_theme_enqueue_editor_assets() {
 
-	global $mkdo_theme_asset_suffix;
-
 	// Editor stylesheet.
-	$editor_css_url = '/assets/css/editor' . $mkdo_theme_asset_suffix . '.css';
+	$editor_css_url = '/assets/css/editor.css';
 	add_editor_style( $editor_css_url );
 }
 add_action( 'after_theme_setup', 'mkdo_theme_enqueue_admin_assets', 10 );
@@ -108,10 +90,9 @@ add_action( 'after_theme_setup', 'mkdo_theme_enqueue_admin_assets', 10 );
  */
 function mkdo_theme_enqueue_customize_preview_js() {
 
-	global $mkdo_theme_asset_suffix;
-
-	$live_preview_js_url  = get_stylesheet_directory_uri() . '/assets/js/customizer' . $mkdo_theme_asset_suffix . '.js';
-	$live_preview_js_path = dirname( MKDO_THEME_ROOT ) . '/assets/js/customizer' . $mkdo_theme_asset_suffix . '.js';
+	// Customizer JS.
+	$live_preview_js_url  = get_stylesheet_directory_uri() . '/assets/js/customizer.js';
+	$live_preview_js_path = dirname( MKDO_THEME_ROOT ) . '/assets/js/customizer.js';
 
 	wp_enqueue_script(
 		'mkdo-theme-customizer',
