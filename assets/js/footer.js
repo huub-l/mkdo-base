@@ -11,6 +11,9 @@ import initResponsiveBackgroundImages from './modules/rwd-bg-images.js';
 window.addEventListener(
 	'DOMContentLoaded',
 	function() {
+		// Replace no-js with js on the root HTML element.
+		document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+		
 		skipLink();
 		styleGuide();
 		initResponsiveBackgroundImages($);
