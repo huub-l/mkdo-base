@@ -102,6 +102,7 @@ require_once 'php/class-post-types.php';
 require_once 'php/class-settings.php';
 require_once 'php/class-shortcodes.php';
 require_once 'php/class-taxonomies.php';
+require_once 'php/class-allow-svg.php';
 
 /**
  * Namespaces (Comment out as appropriate).
@@ -132,6 +133,7 @@ use MKDO_Core\Post_Types;
 use MKDO_Core\Settings;
 use MKDO_Core\Shortcodes;
 use MKDO_Core\Taxonomies;
+use MKDO_Core\Allow_Svg;
 
 /**
  * Instances (Comment out as appropriate).
@@ -161,6 +163,7 @@ $mkdo_core_post_types = new Post_Types();
 $mkdo_core_settings   = new Settings();
 $mkdo_core_shortcodes = new Shortcodes();
 $mkdo_core_taxonomies = new Taxonomies();
+$mkdo_core_allow_svg  = new Allow_Svg();
 
 /**
  * Textdomain.
@@ -203,3 +206,4 @@ $mkdo_core_post_types->run();
 $mkdo_core_settings->run();
 $mkdo_core_shortcodes->run();
 $mkdo_core_taxonomies->run();
+$mkdo_core_allow_svg->run();
