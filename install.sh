@@ -66,7 +66,7 @@ echo "$(tput setaf 3)Adding local-config.php...$(tput setaf 9)"
 echo
 
 touch build/local-config.php
-curl -Ls https://raw.githubusercontent.com/kapow-wp/kapow-boilerplate/master/build/local-config.php > build/local-config.php
+curl -Ls https://raw.githubusercontent.com/mkdo/mkdo-base/master/build/local-config.php > build/local-config.php
 
 bakfile=".bak"
 sed -i$bakfile "s/my_project/$underslug/g" build/local-config.php
@@ -92,7 +92,7 @@ if [ "$configurevalet" = "y" ] || [ "$configurevalet" = "Y" ]
 
 	cd build
 	valet link "$slug" &> /dev/null
-	valet secure
+	valet secure &> /dev/null
 
 fi
 
@@ -100,12 +100,13 @@ fi
 echo "$(tput setaf 3)Removing Make Do Base Setup script...$(tput setaf 9)"
 echo
 
-setupscript="kapow.sh"
+setupscript="setup.sh"
 if [ -f "$setupscript" ]
 	then
 
+	rm setup.sh
 	cd ..
-	rm kapow.sh
+	rm setup.sh
 	cd "$slug"
 fi
 

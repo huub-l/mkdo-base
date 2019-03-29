@@ -16,12 +16,17 @@ import styleGuide from './modules/style-guide.js';
 import initResponsiveBackgroundImages from './modules/rwd-bg-images.js';
 
 // Ready.
-window.addEventListener('DOMContentLoaded', function() {
-	trackFocus(document.body);
-	skipLink();
-	styleGuide();
-	initResponsiveBackgroundImages($);
-});
+window.addEventListener(
+	'DOMContentLoaded',
+	function() {
+		// Replace no-js with js on the root HTML element.
+		document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+		trackFocus(document.body);
+		skipLink();
+		styleGuide();
+		initResponsiveBackgroundImages($);
+	}
+);
 
 // Load.
 window.addEventListener('load', function() {

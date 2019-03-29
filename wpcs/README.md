@@ -8,7 +8,7 @@ PHPCS version 3.x is required to use these standards; either run `composer globa
 depending on your set-up. It is also recommended that you `<PATH-TO-YOUR>/phpcs --config-delete installed_paths` to
 prevent pointers to any locally hosted copies of WPCS from causing issues.
 
-NOTE: Updating your global Composer dependencies has as strong change of breaking Valet; you will have to re-run Valet install to fix the issue.
+NOTE: Updating your global Composer dependencies has as strong change of breaking Valet; you will have to re-run Valet install to fix the issue. Also, you may receive an error along these lines `dyld: Library not loaded: /usr/local/opt/icu4c/lib/libicui18n.62.dylib` when PHPCS runs, this can be resolved by `composer global update` OR, `brew upgrade && brew cleanup` depending on your setup.
 
 Native WPCS "whitelist" style comments such as `// WPCS: XSS OK.` have been deprecated in favour of native PHPCS
 comments, for more information visit: https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki/Whitelisting-code-which-flags-errors
