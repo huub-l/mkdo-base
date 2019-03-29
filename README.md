@@ -1,5 +1,6 @@
 # MKDO Base
-A modern, best-practice filled base for bespoke WordPress site development. 
+
+A modern, best-practice filled base for bespoke WordPress site development.
 
 **NOTE: This readme is automatically deleted when the setup.sh script completes.**
 
@@ -13,7 +14,6 @@ You will need the following installed on your system before attempting to set-up
 - [PHP](http://php.net/downloads.php)
 - [WP Cli](https://wp-cli.org/#installing)
 - [Yarn](https://yarnpkg.com/lang/en/docs/getting-started/)
-- [Webpack CLI](http://github.com/webpack/webpack-cli)
 
 ## [Two-Factor Authentication for GitHub API](#2fa)
 
@@ -29,9 +29,9 @@ This script will look for `~/.mkdobase_token` before doing anything else, and wi
 
 ## [Installation](#installation)
 
-1) Navigate to your projects root e.g. `~/Valet`.
+1. Navigate to your projects root e.g. `~/Valet`.
 
-2) Grab the script directly via the terminal using the command below:
+2. Grab the script directly via the terminal using the command below:
 
 `curl -O https://raw.githubusercontent.com/mkdo/mkdo-base/master/setup.sh`
 
@@ -39,22 +39,22 @@ This script will look for `~/.mkdobase_token` before doing anything else, and wi
 
 `wget https://raw.githubusercontent.com/mkdo/mkdo-base/master/setup.sh`
 
-3) Make the `setup.sh` script executable via the command line using `chmod a+x setup.sh`.
+3. Make the `setup.sh` script executable via the command line using `chmod a+x setup.sh`.
 
-4) Run the script with `./setup.sh` and the two additional parameters to facilitate string replacement.
+4. Run the script with `./setup.sh` and the two additional parameters to facilitate string replacement.
 
-*TIP: Create an alias called `getbase` on your machine that invokes the curl/wget commands above to fetch the MKDO Base before making it executable.*
+_TIP: Create an alias called `getbase` on your machine that invokes the curl/wget commands above to fetch the MKDO Base before making it executable._
 
-5) Answer questions as you are prompted, while sipping your beverage of choice.
+5. Answer questions as you are prompted, while sipping your beverage of choice.
 
 ## [Command Line Parameters](#command-line-parameters)
 
 The parameters must be added in the following order:
 
-- Project Slug e.g. `stark-industries` *
+- Project Slug e.g. `stark-industries` \*
 - Project Nice Name e.g `"Stark Industries"`
 
-*NB: The project slug will be used for the theme folder name and database name.*
+_NB: The project slug will be used for the theme folder name and database name._
 
 An example using all of the above would look like this:
 

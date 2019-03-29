@@ -30,3 +30,11 @@ Text Domain: mkdo-theme
 // Hacks (to be refactored).
 // -------------------------------------
 @import 'hacks';
+
+.blue {
+	color: red;
+}
+
+body.col {
+	background: pink;
+}
