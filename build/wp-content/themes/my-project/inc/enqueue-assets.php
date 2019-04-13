@@ -91,7 +91,7 @@ function mkdo_theme_enqueue_admin_assets() {
 	$editor_css_url  = get_stylesheet_directory_uri() . '/assets/css/editor' . $mkdo_theme_asset_suffix . '.css';
 	$editor_css_path = dirname( MKDO_THEME_ROOT ) . '/assets/css/editor' . $mkdo_theme_asset_suffix . '.css';
 	add_editor_style( $editor_css_url . '?v=' . filemtime( $editor_css_path ) );
-	
+
 	// Admin script.
 	$admin_script_url  = get_stylesheet_directory_uri() . '/assets/js/admin' . $mkdo_theme_asset_suffix . '.js';
 	$admin_script_path = dirname( MKDO_THEME_ROOT ) . '/assets/js/admin' . $mkdo_theme_asset_suffix . '.js';
@@ -102,10 +102,29 @@ function mkdo_theme_enqueue_admin_assets() {
 		filemtime( $admin_script_path ),
 		true
 	);
-	
+
 	wp_localize_script(
 		'mkdo-theme-admin-script',
 		'mkdoAdminScriptData',
+		array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+		)
+	);
+
+	// Admin scripts.
+	$admin_scripts_url  = get_stylesheet_directory_uri() . '/assets/js/admin.js';
+	$admin_scripts_path = dirname( MKDO_THEME_ROOT ) . '/assets/js/admin.js';
+	wp_enqueue_script(
+		'mkdo-theme-admin-scripts',
+		$admin_scripts_url,
+		array( 'jquery' ),
+		filemtime( $admin_scripts_path ),
+		true
+	);
+
+	wp_localize_script(
+		'mkdo-theme-admin-scripts',
+		'scriptVars',
 		array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
 		)
