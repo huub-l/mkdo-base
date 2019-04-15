@@ -19,6 +19,7 @@
 }
 
 .static-header {
+	overflow: hidden;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -46,7 +47,7 @@
 	padding-bottom: 30px;
 	display: flex;
 	flex-flow: row wrap;
-	@include columns;
+	@include spacing;
 }
 
 .static-text-content {
@@ -67,7 +68,7 @@
 }
 
 .static-info__row {
-	@include columns(true, true, 20px);
+	@include spacing(true, true, 20px);
 }
 
 .static-info__col {
@@ -79,16 +80,16 @@
 	justify-content: space-between;
 
 	// Match default site-wrap padding so no overflow occurs
-	@include columns(true, false, 20);
+	@include spacing(true, false, 20);
 
 	@include mkdo-mq(sm) {
-		@include columns(true, false, 40);
+		@include spacing(true, false, 40);
 	}
 	@include mkdo-mq(md) {
-		@include columns(true, false, 50);
+		@include spacing(true, false, 50);
 	}
 	@include mkdo-mq(lg) {
-		@include columns(true, false, 70);
+		@include spacing(true, false, 70);
 	}
 
 	li {
@@ -132,6 +133,11 @@
 .static-heading {
 	text-transform: capitalize;
 	color: $static--lightgrey;
+	font-size: 20px;
+
+	@include mkdo-mq(sm) {
+		font-size: 30px;
+	}
 }
 
 .static-label {
@@ -143,7 +149,7 @@
 
 .static-colours-used {
 	@include mkdo-reset-list(true);
-	@include columns();
+	@include spacing();
 
 	li {
 		margin: 0;

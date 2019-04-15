@@ -1,5 +1,5 @@
 // Site containers
-@mixin site-wrap($size: null) {
+@mixin site-wrap($size: null, $padding: true) {
 	@include mkdo-clearfix;
 	width: 100%;
 	display: block;
@@ -7,62 +7,43 @@
 	margin-right: auto;
 	max-width: mkdo-rem($global--container-width);
 	position: relative;
-
-	padding-left: $global--gutter-width;
-	padding-right: $global--gutter-width;
-	// @include mkdo-mq(sm) {
-	// 	padding-left: ($global--gutter-width + 20px);
-	// 	padding-right: ($global--gutter-width + 20px);
-	// }
-	// @include mkdo-mq(md) {
-	// 	padding-left: ($global--gutter-width + 30px);
-	// 	padding-right: ($global--gutter-width + 30px);
-	// }
-	// @include mkdo-mq(lg) {
-	// 	padding-left: ($global--gutter-width + 50px);
-	// 	padding-right: ($global--gutter-width + 50px);
-	// }
-
-	@if $size == normal {
-		max-width: mkdo-rem($global--container-width);
+	@if $padding == true {
+		padding-left: $global--gutter-width;
+		padding-right: $global--gutter-width;
 	}
 
-	@if $size == narrow {
-		max-width: mkdo-rem(800px);
+	@if $size == 'normal' {
+		max-width: $global--container-width;
 	}
 
-	@if $size == readability {
-		max-width: mkdo-rem(570px);
+	@if $size == 'narrow' {
+		max-width: 900px;
+	}
+
+	@if $size == 'readability' {
+		max-width: $global--container-readability;
 	}
 }
 
 // Column spacing
-@mixin columns($x: true, $y: true, $size: $global--gutter-width) {
-	@include mkdo-clearfix;
+@mixin spacing($x: true, $y: true, $size: $global--gutter-width) {
+	display: flex;
+	flex-flow: row wrap;
 	position: relative;
-	display: block;
 	@if $x {
-		margin-right: -mkdo-rem($size);
+		margin-right: -$size;
 	}
 	@if $y {
-		margin-bottom: -mkdo-rem($size);
+		margin-bottom: -$size;
 	}
-	@supports (display: flex) {
-		display: flex;
-		flex-flow: row wrap;
-		&::before,
-		&::after {
-			display: none;
-		}
-	}
+
 	> * {
-		float: left;
 		width: auto;
 		@if $x {
-			padding-right: mkdo-rem($size);
+			padding-right: $size;
 		}
 		@if $y {
-			padding-bottom: mkdo-rem($size);
+			padding-bottom: $size;
 		}
 	}
 }
@@ -84,105 +65,6 @@
 
 	&::after {
 		clear: both;
-	}
-}
-
-@mixin padding($type: null) {
-	@if $type == 'internal-hero' {
-		padding-top: mkdo-rem($global--gutter-width + 25px);
-		padding-bottom: mkdo-rem($global--gutter-width + 25px);
-		@include mkdo-mq(sm) {
-			padding-top: mkdo-rem($global--gutter-width + 50px);
-			padding-bottom: mkdo-rem($global--gutter-width + 50px);
-		}
-		@include mkdo-mq(md) {
-			padding-top: mkdo-rem($global--gutter-width + 70px);
-			padding-bottom: mkdo-rem($global--gutter-width + 70px);
-		}
-		@include mkdo-mq(lg) {
-			padding-top: mkdo-rem($global--gutter-width + 100px);
-			padding-bottom: mkdo-rem($global--gutter-width + 100px);
-		}
-	}
-
-	@if $type == 'internal-hero-small' {
-		padding-top: mkdo-rem($global--gutter-width + 25px);
-		padding-bottom: mkdo-rem($global--gutter-width + 25px);
-		@include mkdo-mq(sm) {
-			padding-top: mkdo-rem($global--gutter-width + 40px);
-			padding-bottom: mkdo-rem($global--gutter-width + 40px);
-		}
-		@include mkdo-mq(md) {
-			padding-top: mkdo-rem($global--gutter-width + 40px);
-			padding-bottom: mkdo-rem($global--gutter-width + 40px);
-		}
-		@include mkdo-mq(lg) {
-			padding-top: mkdo-rem($global--gutter-width + 40px);
-			padding-bottom: mkdo-rem($global--gutter-width + 40px);
-		}
-	}
-
-	@if $type == 'homepage-panel' {
-		padding-top: mkdo-rem(40px);
-		padding-bottom: mkdo-rem(40px);
-		@include mkdo-mq(sm) {
-			padding-top: mkdo-rem(40 * 1.5);
-			padding-bottom: mkdo-rem(40 * 1.5);
-		}
-		@include mkdo-mq(md) {
-			padding-top: mkdo-rem(40 * 2);
-			padding-bottom: mkdo-rem(40 * 2);
-		}
-	}
-
-	@if $type == 'content-element' {
-		padding-bottom: mkdo-rem(40px);
-		@include mkdo-mq(xs) {
-			padding-bottom: mkdo-rem(40px);
-		}
-		@include mkdo-mq(sm) {
-			padding-bottom: mkdo-rem(40px);
-		}
-		@include mkdo-mq(md) {
-			padding-bottom: mkdo-rem(40px);
-		}
-		@include mkdo-mq(lg) {
-			padding-bottom: mkdo-rem(40px);
-		}
-	}
-
-	@if $type == 'sidebar-element' {
-		padding-bottom: mkdo-rem(40px);
-		border-bottom: 1px solid $mantis-offwhite;
-		margin-bottom: mkdo-rem(40px);
-		@include mkdo-mq(xs) {
-			padding-bottom: mkdo-rem(40px);
-		}
-		@include mkdo-mq(sm) {
-			padding-bottom: mkdo-rem(40px);
-		}
-		@include mkdo-mq(md) {
-			padding-bottom: mkdo-rem(40px);
-		}
-		@include mkdo-mq(lg) {
-			padding-bottom: mkdo-rem(40px);
-		}
-	}
-
-	@if $type == 'site-element' {
-		padding: mkdo-rem(20px) 0;
-		@include mkdo-mq(xs) {
-			padding: mkdo-rem(20px) 0;
-		}
-		@include mkdo-mq(sm) {
-			padding: mkdo-rem(30px) 0;
-		}
-		@include mkdo-mq(md) {
-			padding: mkdo-rem(40px) 0;
-		}
-		@include mkdo-mq(lg) {
-			padding: mkdo-rem(40px) 0;
-		}
 	}
 }
 
