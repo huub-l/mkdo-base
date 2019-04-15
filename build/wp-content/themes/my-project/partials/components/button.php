@@ -34,36 +34,36 @@
 </button>
 
 <button class="button button--secondary">
-	<?php mkdo_theme_get_svg( 'edit-pencil' ); ?>
-	Sign up
+	<?php mkdo_theme_get_svg( 'icon-chat' ); ?>
+	<span>Sign up</span>
 </button>
 
 <button class="button button--grey">
-	<?php mkdo_theme_get_svg( 'trash' ); ?>
-	Delete
+	<?php mkdo_theme_get_svg( 'icon-code' ); ?>
+	<span>Delete</span>
 </button>
 
 <button class="button button--ghost-dark">
-	<?php mkdo_theme_get_svg( 'cog' ); ?>
-	Dismiss
+	<?php mkdo_theme_get_svg( 'icon-chevron-right' ); ?>
+	<span>Dismiss</span>
 </button>
 
 <button class="button button--ghost-dark button--icon-right">
-	<?php mkdo_theme_get_svg( 'cog' ); ?>
-	Take registration
+	<?php mkdo_theme_get_svg( 'icon-chevron-right' ); ?>
+	<span>Take registration</span>
 </button>
 
 <button class="button button--ghost-dark-blue">
-	<?php mkdo_theme_get_svg( 'cog' ); ?>
-	Take registration
+	<?php mkdo_theme_get_svg( 'icon-map' ); ?>
+	<span>Take registration</span>
 </button>
 
 <button class="button button--ghost-dark-blue button--disabled">
-	Disabled (class)
+	<span>Disabled (class)</span>
 </button>
 
 <button class="button button--secondary" disabled>
-	<?php mkdo_theme_get_svg( 'cog' ); ?>
+	<?php mkdo_theme_get_svg( 'icon-news' ); ?>
 	<span>Disabled (attribute)</span>
 </button>
 
@@ -72,7 +72,7 @@
 </button>
 
 <button class="button button--ghost-dark button--loading button--loading__active">
-	<?php mkdo_theme_get_svg( 'cog' ); ?>
+	<?php mkdo_theme_get_svg( 'icon-chevron-right' ); ?>
 	<span>
 		Test Loading Button
 	</span>
