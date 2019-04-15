@@ -19,6 +19,7 @@
 }
 
 .static-header {
+	overflow: hidden;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -132,6 +133,11 @@
 .static-heading {
 	text-transform: capitalize;
 	color: $static--lightgrey;
+	font-size: 20px;
+
+	@include mkdo-mq(sm) {
+		font-size: 30px;
+	}
 }
 
 .static-label {
