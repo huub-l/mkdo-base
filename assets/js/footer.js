@@ -25,7 +25,6 @@ import {
 } from './modules/utils.js';
 import trackFocus from './modules/track-focus.js';
 import skipLink from './modules/skip-link.js';
-import trackFocus from './modules/track-focus.js';
 import styleGuide from './modules/style-guide.js';
 import initResponsiveBackgroundImages from './modules/rwd-bg-images.js';
 
