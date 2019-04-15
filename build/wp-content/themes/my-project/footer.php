@@ -12,14 +12,7 @@ do_action( 'mkdo_theme_after_main' );
 
 			</div> <!-- site-content -->
 
-			<?php
-				mkdo_theme_get_partial(
-					'site-footer',
-					array(
-						'legal' => '<p>&copy; My Project</p>',
-					)
-				);
-			?>
+			<?php get_template_part( 'partials/structures/site-footer' ); ?>
 
 		</div> <!-- hfeed site-container -->
 
