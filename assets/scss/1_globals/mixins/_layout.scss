@@ -7,21 +7,8 @@
 	margin-right: auto;
 	max-width: mkdo-rem($global--container-width);
 	position: relative;
-
 	padding-left: $global--gutter-width;
 	padding-right: $global--gutter-width;
-	// @include mkdo-mq(sm) {
-	// 	padding-left: ($global--gutter-width + 20px);
-	// 	padding-right: ($global--gutter-width + 20px);
-	// }
-	// @include mkdo-mq(md) {
-	// 	padding-left: ($global--gutter-width + 30px);
-	// 	padding-right: ($global--gutter-width + 30px);
-	// }
-	// @include mkdo-mq(lg) {
-	// 	padding-left: ($global--gutter-width + 50px);
-	// 	padding-right: ($global--gutter-width + 50px);
-	// }
 
 	@if $size == normal {
 		max-width: mkdo-rem($global--container-width);
@@ -32,37 +19,29 @@
 	}
 
 	@if $size == readability {
-		max-width: mkdo-rem(570px);
+		max-width: mkdo-rem(610px);
 	}
 }
 
 // Column spacing
-@mixin columns($x: true, $y: true, $size: $global--gutter-width) {
-	@include mkdo-clearfix;
+@mixin spacing($x: true, $y: true, $size: $global--gutter-width) {
+	display: flex;
+	flex-flow: row wrap;
 	position: relative;
-	display: block;
 	@if $x {
-		margin-right: -mkdo-rem($size);
+		margin-right: -$size;
 	}
 	@if $y {
-		margin-bottom: -mkdo-rem($size);
+		margin-bottom: -$size;
 	}
-	@supports (display: flex) {
-		display: flex;
-		flex-flow: row wrap;
-		&::before,
-		&::after {
-			display: none;
-		}
-	}
+
 	> * {
-		float: left;
 		width: auto;
 		@if $x {
-			padding-right: mkdo-rem($size);
+			padding-right: $size;
 		}
 		@if $y {
-			padding-bottom: mkdo-rem($size);
+			padding-bottom: $size;
 		}
 	}
 }

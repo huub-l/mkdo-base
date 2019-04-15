@@ -1,6 +1,6 @@
 {
-	"*.css": ["stylelint", "git add"],
-	"*.scss": ["stylelint --syntax=scss", "git add"],
+	"*.css": ["stylelint --fix", "git add"],
+	"*.scss": ["stylelint --fix --syntax=scss", "git add"],
 	"*.js": ["eslint --fix", "git add"],
-	"*": ["prettier --write", "git add"]
+	"*.{js,scss,md,html}": ["prettier --write", "git add"]
 }
