@@ -34,7 +34,7 @@
 
 <div class="hfeed site-container">
 
-	<?php mkdo_theme_get_partial( 'site-header' ); ?>
+	<?php get_template_part( 'partials/structures/site-header' ); ?>
 
 	<div id="content" class="site-content">
 
