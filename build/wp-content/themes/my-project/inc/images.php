@@ -10,8 +10,9 @@
  *
  * @param string $slug   Slug name of the icon.
  * @param string $title  Optional title for screen readers.
+ * @param bool   $return If set to true, SVG markup will return rather than echo.
  */
-function mkdo_theme_get_svg( $slug, $title = '' ) {
+function mkdo_theme_get_svg( $slug, $title = '', $return = false ) {
 	if ( empty( $slug ) ) {
 		return;
 	}
@@ -34,43 +35,11 @@ function mkdo_theme_get_svg( $slug, $title = '' ) {
 			$search    = '/<title[^>]*>.*?<\/title>/i';
 			$new_title = '<title>' . $text . '</title>';
 
-			echo preg_replace( $search, $new_title, $new_svg ); // phpcs:ignore WordPress.Security.EscapeOutput
-		}
-	}
-}
-
-/**
- * Return SVG Markup instead of echo'ing.
- * This is to assist with storing the SVG markup for later use without
- * immediately printing the image.
- *
- * @param string $slug   Slug name of the icon.
- * @param string $title  Optional title for screen readers.
- */
-function mkdo_theme_return_svg( $slug, $title = '' ) {
-	if ( empty( $slug ) ) {
-		return;
-	}
-
-	foreach ( glob( get_stylesheet_directory() . '/assets/svgs/**/*.svg' ) as $file ) {
-
-		$path_parts = pathinfo( $file );
-		$file_slug  = $path_parts['filename'];
-
-		if ( $file_slug === $slug ) {
-
-			$text          = ( ! empty( $title ) ) ? $title : $file_slug;
-			$old_svg       = file_get_contents( $file ); // @codingStandardsIgnoreLine
-			$find_string   = '<svg';
-			$str_to_insert = '<svg x="0px" y="0px" ';
-			$pos           = strpos( $old_svg, $find_string );
-			$new_svg       = str_replace( $find_string, $str_to_insert, $old_svg );
-
-			// Replace the title text.
-			$search    = '/<title[^>]*>.*?<\/title>/i';
-			$new_title = '<title>' . $text . '</title>';
-
-			return preg_replace( $search, $new_title, $new_svg ); // phpcs:ignore WordPress.Security.EscapeOutput
+			if ( $return && true === $return ) {
+				return preg_replace( $search, $new_title, $new_svg ); // phpcs:ignore WordPress.Security.EscapeOutput
+			} else {
+				echo preg_replace( $search, $new_title, $new_svg ); // phpcs:ignore WordPress.Security.EscapeOutput
+			}
 		}
 	}
 }
