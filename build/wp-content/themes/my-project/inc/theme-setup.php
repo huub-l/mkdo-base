@@ -31,6 +31,7 @@ function mkdo_theme_theme_setup() {
 		array(
 			'primary' => esc_html__( 'Primary Menu', 'mkdo-theme' ),
 			'footer'  => esc_html__( 'Footer Menu', 'mkdo-theme' ),
+			'utility' => esc_html__( 'Utility Menu', 'mkdo-theme' ),
 		)
 	);
 

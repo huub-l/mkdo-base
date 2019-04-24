@@ -43,6 +43,11 @@
 					?>
 				</nav>
 
+				<button class="site-header__menu-toggle" title="Open/Close Menu">
+					<?php mkdo_theme_get_svg( 'icon-mobile-menu' ); ?>
+					<?php mkdo_theme_get_svg( 'icon-close' ); ?>
+				</button>
+
 			</div>
 
 		</div>
