@@ -7,4 +7,7 @@
  * @package WordPress
  */
 
+// Kirki.
+require_once plugin_dir_path( __FILE__ ) . 'kirki/kirki.php';
+
 require_once plugin_dir_path( __FILE__ ) . 'mkdo-core/plugin.php';
