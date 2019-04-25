@@ -71,7 +71,7 @@ if ( version_compare( phpversion(), MKDO_CORE_MIN_PHP_VERSION, '<' ) ) {
  * environment. Lets fix that.
  */
 require_once 'php/mkdo-core/security/const-disallow-file-edit.php'; // Disallow file edit.
-require_once 'php/mkdo-core/security/const-disallow-file-mods.php'; // Disallow file installs unless on .test domain.
+require_once 'php/mkdo-core/security/class-disallow-file-mods.php'; // Disallow file installs unless on .test domain.
 
 /**
  * Classes (Comment out as appropriate).
