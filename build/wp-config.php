@@ -104,6 +104,9 @@ define( 'DISALLOW_FILE_EDIT', true );
 
 /* That's all, stop editing! Happy blogging. */
 
+// GForms Key.
+define( 'GF_LICENSE_KEY', '2875c979d155b8a8868f5db398292747' );
+
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/' ); }
