@@ -75,6 +75,7 @@ class Limit_Login_Attempts {
 
 		add_filter( 'authenticate', array( $this, 'check_attempted_login' ), 30, 3 );
 		add_action( 'wp_login_failed', array( $this, 'login_failed' ), 10, 1 );
+		add_action( 'template_redirect', array( $this, 'mkdo_block_user_enumeration_attempts' ) );
 	}
 
 	/**
@@ -116,6 +117,21 @@ class Limit_Login_Attempts {
 		}
 
 		return $user;
+	}
+
+	/**
+	 * Block User Enumeration
+	 */
+	public function mkdo_block_user_enumeration_attempts() {
+		if ( is_admin() ) {
+			return;
+		}
+
+		$author_by_id = ( isset( $_REQUEST['author'] ) && is_numeric( $_REQUEST['author'] ) ); // @codingStandardsIgnoreLine
+
+		if ( $author_by_id ) {
+			wp_die( 'Author archives have been disabled.' );
+		}
 	}
 
 	/**
