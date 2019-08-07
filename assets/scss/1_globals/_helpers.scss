@@ -109,12 +109,12 @@
 
 // As above but with no list item style.
 .reset-list-style {
-	@include mkdo-reset-list(true);
+	@include mkdo-reset-list;
 }
 
 // As above but with `float: left` on list items.
 .make-list-nav {
-	@include mkdo-reset-list(true, true);
+	@include mkdo-reset-list(true);
 }
 
 // Reset buttons

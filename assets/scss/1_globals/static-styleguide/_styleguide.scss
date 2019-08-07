@@ -42,7 +42,7 @@
 }
 
 .static-contents {
-	@include mkdo-reset-list(true);
+	@include mkdo-reset-list();
 	padding-top: 30px;
 	padding-bottom: 30px;
 	display: flex;
@@ -76,7 +76,7 @@
 }
 
 .static-header__nav {
-	@include mkdo-reset-list(true);
+	@include mkdo-reset-list();
 	justify-content: space-between;
 
 	// Match default site-wrap padding so no overflow occurs
@@ -93,7 +93,6 @@
 	}
 
 	li {
-		margin: 0;
 		padding-top: 10px;
 		padding-bottom: 10px;
 		a {
@@ -148,12 +147,8 @@
 }
 
 .static-colours-used {
-	@include mkdo-reset-list(true);
+	@include mkdo-reset-list();
 	@include spacing();
-
-	li {
-		margin: 0;
-	}
 
 	span {
 		display: block;

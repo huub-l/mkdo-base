@@ -27,7 +27,7 @@ import trackFocus from './modules/track-focus.js';
 import skipLink from './modules/skip-link.js';
 import styleGuide from './modules/style-guide.js';
 import initResponsiveBackgroundImages from './modules/rwd-bg-images.js';
-import { menuToggle, closeToggles } from './modules/toggles.js';
+import { menuToggle } from './modules/toggles.js';
 
 // Ready.
 window.addEventListener('DOMContentLoaded', function() {
@@ -51,6 +51,5 @@ window.addEventListener(
 	'resize',
 	deBounce(() => {
 		responsiveBackgroundImages('.js-bg-img');
-		closeToggles();
 	}, 100),
 );

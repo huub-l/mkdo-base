@@ -81,7 +81,6 @@ build/wp-content/themes/twentyeighteen/
 build/wp-content/themes/twentynineteen/
 
 # Themes - Custom
-build/wp-content/themes/my-project/assets/css/
-build/wp-content/themes/my-project/assets/js/
+build/wp-content/themes/my-project/assets/*
 build/wp-content/themes/my-project/style.css
 build/wp-content/themes/my-project/style.css.map

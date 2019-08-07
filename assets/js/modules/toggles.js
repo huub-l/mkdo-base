@@ -9,7 +9,3 @@ export function menuToggle() {
 		});
 	}
 }
-
-export function closeToggles() {
-	document.body.classList.remove('site-header-search-open');
-}
