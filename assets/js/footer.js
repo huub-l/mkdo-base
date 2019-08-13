@@ -1,3 +1,6 @@
+// Hello? What's all this jQuery? We'll have no libraries here!
+// Are you vanilla? This is a vanilla file, for vanilla people! There's nothing for jQuery folk here!
+
 // Images, svgs and fonts.
 function requireAll(r) {
 	r.keys().forEach(r);
@@ -11,9 +14,6 @@ import userAgentClasses from './modules/user-agent-classes.js';
 
 // Run
 userAgentClasses();
-
-// Map jQuery to $.
-window.jQuery = window.$ = jQuery;
 
 // Modules.
 import {
@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	trackFocus(document.body);
 	skipLink();
 	styleGuide();
-	initResponsiveBackgroundImages($);
+	initResponsiveBackgroundImages();
 	menuToggle();
 });
 
