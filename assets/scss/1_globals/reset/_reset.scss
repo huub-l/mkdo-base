@@ -18,7 +18,11 @@ button,
 [type='reset'],
 [type='submit'] {
 	cursor: pointer;
-	transition: all ease-in-out 0.3s;
+	transition: $global--transition;
+
+	svg {
+		transition: $global--transition;
+	}
 }
 
 abbr,
