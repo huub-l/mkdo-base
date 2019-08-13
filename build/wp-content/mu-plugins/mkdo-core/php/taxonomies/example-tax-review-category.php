@@ -8,7 +8,7 @@
  */
 
 // Unique variable name.
-$mkdo_core_review_category_labels = array(
+$mkdo_core_category_labels = array(
 	'name'                  => __( 'Categories', 'mkdo-core' ),
 	'singular_name'         => __( 'Category', 'mkdo-core' ),
 	'search_items'          => __( 'Search Categories', 'mkdo-core' ),
@@ -39,4 +39,4 @@ $mkdo_core_category_args = array(
 	'rewrite'           => true,
 );
 
-register_taxonomy( 'review_category', 'review', $mkdo_core_review_category_args );
+register_taxonomy( 'review_category', 'review', $mkdo_core_category_args );
