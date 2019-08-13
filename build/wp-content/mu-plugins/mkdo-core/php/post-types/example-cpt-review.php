@@ -42,7 +42,7 @@ $mkdo_core_review_labels = array(
 $mkdo_core_review_args = array(
 	'label'               => __( 'Reviews', 'mkdo-core' ),
 	'description'         => __( 'Custom Post Type for Review', 'mkdo-core' ),
-	'labels'              => $review_labels,
+	'labels'              => $mkdo_core_review_labels,
 	'supports'            => array(
 		'title',
 		'editor',
