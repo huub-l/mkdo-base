@@ -28,7 +28,6 @@ hash php 2>&- || { echo >&2 "PHP is required but missing. Exiting."; exit 1; }
 hash unzip 2>&- || { echo >&2 "Unzip is required but missing. Exiting."; exit 1; }
 hash curl 2>&- || { echo >&2 "cURL is required but missing. Exiting."; exit 1; }
 hash wp 2>&- || { echo >&2 "WP CLI is required but missing. Exiting."; exit 1; }
-hash webpack 2>&- || { echo >&2 "Webpack is required but missing. Exiting."; exit 1; }
 hash composer 2>&- || { echo >&2 "Composer is required but missing. Exiting."; exit 1; }
 hash yarn 2>&- || { echo >&2 "Yarn is required but missing. Exiting."; exit 1; }
 
@@ -197,12 +196,11 @@ bpdir="mkdo-base-master";
 if [ -d "$bpdir" ]
 	then
 	cp -r "$bpdir"/* .
+	cp -r "$bpdir"/.babelrc.js .
 	cp -r "$bpdir"/.deployignore .
+	cp -r "$bpdir"/.eslintrc.js .
 	cp -r "$bpdir"/.gitignore .
 	cp -r "$bpdir"/.github .
-	cp -r "$bpdir"/.huskyrc.js .
-	cp -r "$bpdir"/.babelrc.js .
-	cp -r "$bpdir"/.eslintrc.js .
 	cp -r "$bpdir"/.postcssrc.js .
 	cp -r "$bpdir"/.prettierrc.js .
 	cp -r "$bpdir"/.stylelintrc.js .
