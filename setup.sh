@@ -82,29 +82,36 @@ if [ ! -d "$gitdir" ]
 
 		fi
 
-		# Ask for GitHub password.
-		printf "$(tput setaf 3)Please enter your GitHub password: $(tput setaf 9)"
-		read -s githubpass
-		echo
+		# Public or Private repo?
+		printf "$(tput setaf 3)Is this a private repo? (y|n) $(tput setaf 9)"
+		read -e githubprivate
 		echo
 
 		# Exit if no GitHub password entered.
-		if [ -z "$githubpass" ]
-
+		if [ "$githubprivate" = "y" ] || [ "$githubprivate" = "Y" ]
 			then
 
-			echo "$(tput setaf 1)ERROR: no GitHub password entered!$(tput setaf 9)"
+			# Attempt to create the repository
+			echo "$(tput setaf 3)Creating private repository on GitHub...$(tput setaf 9)"
+			echo
+
+			httpresponse=$(curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" -w 'HTTPSTATUS:%{http_code}' -d "{\"name\":\"$slug\",\"private\":\"true\"}" https://api.github.com/orgs/"$githuborg"/repos)
+
+		elif [ "$githubprivate" = "n" ] || [ "$githubprivate" = "N" ]
+			then
+
+			# Attempt to create the repository
+			echo "$(tput setaf 3)Creating public repository on GitHub...$(tput setaf 9)"
+			echo
+
+			httpresponse=$(curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" -w 'HTTPSTATUS:%{http_code}' -d "{\"name\":\"$slug\"}" https://api.github.com/orgs/"$githuborg"/repos)
+
+		else
+			echo "$(tput setaf 1)ERROR: enter \"y\" or \"n\"$(tput setaf 9)"
 			echo
 
 			exit 1
-
 		fi
-
-		# Attempt to create the repository
-		echo "$(tput setaf 3)Creating repository on GitHub...$(tput setaf 9)"
-		echo
-
-		httpresponse=$(curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" -w 'HTTPSTATUS:%{http_code}' -d "{\"name\":\"$slug\",\"private\":\"true\"}" https://api.github.com/orgs/"$githuborg"/repos)
 
 		httpstatus=$(echo "$httpresponse" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
 
@@ -116,29 +123,29 @@ if [ ! -d "$gitdir" ]
 				echo
 
 				# Delete default labels.
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/bug"
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/duplicate"
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/enhancement"
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/invalid"
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/question"
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/wontfix"
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/help%20wanted"
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/good%20first%20issue"
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/bug"
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/duplicate"
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/enhancement"
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/invalid"
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/question"
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/wontfix"
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/help%20wanted"
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/good%20first%20issue"
 
 				# Add our custom labels.
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Epic","description":"Epic issue that consists of multiple sub-issues.","color":"0052cc"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Sub","description":"Sub-issue belonging to the parent Epic issue.","color":"b60205"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Bug (Confirmed)","description":"Bug that has been confirmed and requires a fix.","color":"b60205"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Bug (Reported)","description":"Bug that has been reported, but not confirmed.","color":"e99695"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Blocked","description":"Blocked by matters that are outside our control.","color":"fbca04"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"On Hold","description":"Feature that is to be frozen until further notice.","color":"d93f0b"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Help Needed","description":"Request for assistance from another Engineer.","color":"d4c5f9"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Do Not Merge","description":"Pull Request that cannot not be merged in yet.","color":"d93f0b"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Needs Merge","description":"Pull Request that can be merged into master.","color":"0e8a16"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Client Review","description":"Feature is now on the Client Review site.","color":"fef2c0"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: MKDO Review","description":"Feature is now on the Make Do Review site.","color":"c2e0c6"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Needs Testing","description":"Pull Request that is ready for independent testing.","color":"#6e5abc"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$githubpass" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Needs Detail","description":"Issue that is not sufficiently fleshed out.","color":"111111"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Epic","description":"Epic issue that consists of multiple sub-issues.","color":"0052cc"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Sub","description":"Sub-issue belonging to the parent Epic issue.","color":"b60205"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Bug (Confirmed)","description":"Bug that has been confirmed and requires a fix.","color":"b60205"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Bug (Reported)","description":"Bug that has been reported, but not confirmed.","color":"e99695"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Blocked","description":"Blocked by matters that are outside our control.","color":"fbca04"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"On Hold","description":"Feature that is to be frozen until further notice.","color":"d93f0b"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Help Needed","description":"Request for assistance from another Engineer.","color":"d4c5f9"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Do Not Merge","description":"Pull Request that cannot not be merged in yet.","color":"d93f0b"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Needs Merge","description":"Pull Request that can be merged into master.","color":"0e8a16"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Client Review","description":"Feature is now on the Client Review site.","color":"fef2c0"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: MKDO Review","description":"Feature is now on the Make Do Review site.","color":"c2e0c6"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Needs Testing","description":"Pull Request that is ready for independent testing.","color":"#6e5abc"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Needs Detail","description":"Issue that is not sufficiently fleshed out.","color":"111111"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
 
 				# Clone the new repository.
 				git clone git@github.com:"$githuborg"/"$slug".git &> /dev/null
@@ -157,12 +164,8 @@ if [ ! -d "$gitdir" ]
 
 			else
 
-				if [ "$httpstatus" = "401" ]
-					then
-					echo "$(tput setaf 1)HTTP status is $httpstatus $(tput setaf 9)"
-				fi
-
 				echo "$(tput setaf 1)ERROR: failed to create the repository!$(tput setaf 9)"
+				echo "$(tput setaf 1)RESPONSE: $httpresponse$(tput setaf 9)"
 				echo
 
 				exit 1
