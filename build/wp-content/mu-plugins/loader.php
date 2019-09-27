@@ -11,3 +11,5 @@
 require_once plugin_dir_path( __FILE__ ) . 'kirki/kirki.php';
 
 require_once plugin_dir_path( __FILE__ ) . 'mkdo-core/plugin.php';
+
+require_once plugin_dir_path( __FILE__ ) . 'mkdo-permissions/plugin.php';
