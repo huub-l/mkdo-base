@@ -13,10 +13,10 @@
 - <Contact Name>: Engineering
 
 ## Environments
-- `master` branch **auto** deploys to **PRODUCTION** (https://domain.com/), only use when you are deploying a feature.
-- `staging` branch **auto** deploys to **STAGING** (https://domain.wpengine.com) use for client demo.
+- `master` branch **auto** deploys to **PRODUCTION** (https://<CLIENT-SLUG>.com/), only use when you are deploying a feature.
+- `staging` branch **auto** deploys to **STAGING** (https://mkdo<CLIENT-SLUG>.wpengine.com) use for client demo.
   - *HTTP Username: demo Password: makedo*
-- `develop` branch **auto** deploys to **DEVELOPMENT** (https://domain.wpengine.com) use for general development work, no restrictions.
+- `develop` branch **auto** deploys to **DEVELOPMENT** (https://mkdo<CLIENT-SLUG>.wpengine.com) use for general development work, no restrictions.
   - *HTTP Username: demo Password: makedo*
 
 ## Managing Issues
@@ -73,13 +73,11 @@
 ## How to get up and running with the code base
 - SQL and Uploads can be accessed directly from WPEngine, however if you do not have access to these they will be provided.
 - Download the repository from Git into your working directory `git clone https://github.com/mkdo/<CLIENT-SLUG>.git`
-- Using the environment of your choice (VVV, Valet, MAMP etc...) create a site called `garthwest.test`
+- Using the environment of your choice (VVV, Valet, MAMP etc...) create a site called `<CLIENT-SLUG>.test`
 - Import the SQL file into the created `<CLIENT-SLUG>` database
 - Import the uploads folder into the `<CLIENT-SLUG>/build/wp-content/uploads` folder
-- From the root of the `garthwest` folder build the assets buy running:
-  - `npm install`
-  - `bower install`
-  - `grunt`
+- From the root of the `<CLIENT-SLUG>` folder build the assets buy running:
+<INSERT PROJECT SPECIFIC BUILD TOOLING STEPS HERE>
 - Navigate to https://<CLIENT-SLUG>.test and you should be ready to start work
 - You can log into the admin at https://<CLIENT-SLUG>.test/wp-admin and the password will be in our 1Password system (if you do not have access this will be provided)
 
