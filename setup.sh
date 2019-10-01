@@ -402,6 +402,7 @@ if [ -f "$setupscript" ]
 
 	rm setup.sh
 	rm README.md
+	mv README-WORKFLOW.md README.md
 	cd ..
 	rm setup.sh
 	cd "$slug"
