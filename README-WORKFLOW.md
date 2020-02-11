@@ -35,8 +35,8 @@
   - `git pull origin master`
   - `git checkout -b 458-make-header-dark-blue`
 - Make regular commits to the branch, and push them to the repository on that branch often. In your commit message be sure to include the issue number, eg: `git commit -m "#458 - Make header dark blue"`
-- When you have completed the issue, create a PR by choosing the branch in GitHub and clicking the `New Pull Request` button
-- Be sure you have setup all the testing steps you need (as per the *Creating a PR* section below)
+- When you post your first commit on the branch, create a PR (known as an "Early PR") by choosing the branch in GitHub and clicking the `New Pull Request` button
+- When you have finished the task, make sure you have added all the testing steps you need (as per the *Creating a PR* section below)
 - When you have created a PR be sure to inform the project channel in Slack that there is a PR ready for review, with a link to the PR.
 - Once the PR has been merged to the `master` or `feature` branch, the branch you created will be deleted
 
