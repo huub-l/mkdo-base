@@ -1,34 +1,28 @@
 ---
-name: Bug Report
+name: New Bug/Feedback
 about: For use as part of the QA process.
 
 ---
-> For help fleshing out this issue see:  
-> http://docs.makedo.net/creating-github-issues-and-pull-requests/
 
-**Relates to**
-Link to the Trello card and Pull Request that this bug relates to
+> For help fleshing out this issue see: http://extranet.makedo.net/how-to-create-a-github-issue
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Source of bug/feedback**  
+...
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**Describe the bug/feedback**  
+...
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Steps to reproduce**  
+1. ...
 
-**Screenshots / Videos**
-If applicable, add screenshots to help explain your problem.
+**Expected behaviour**  
+...
 
-**Device Specifics (where applicable)**
-- Device [e.g. desktop, tablet, mobile]
- - OS: [e.g. Max OS, Windows 10, iOS, Android]
- - Browser [e.g. Chrome, Firefox, Safari]
+**Supporting visuals or documents**  
+...
 
-**Additional context**
-Add any other context about the problem here.
+**Device / OS / Browser information**  
+...
+
+**Additional context**  
+...
