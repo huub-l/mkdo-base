@@ -4,7 +4,7 @@ about: For use as part of the QA process.
 
 ---
 
-> For help fleshing out this issue see: http://extranet.makedo.net/how-to-create-a-github-issue
+> For help fleshing out this issue see: http://extranet.makedo.net/github-issues
 
 **Source of bug/feedback**  
 ...
