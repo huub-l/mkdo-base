@@ -127,7 +127,11 @@ function mkdo_theme_theme_setup() {
 	add_theme_support( 'disable-custom-colors' );
 	add_theme_support( 'disable-custom-font-sizes' );
 
-	//
+	/**
+	 * Remove post formats.
+	 */
+	remove_theme_support( 'post-formats' );
+
 	// @codingStandardsIgnoreEnd
 }
 add_action( 'after_setup_theme', 'mkdo_theme_theme_setup', 10 );
