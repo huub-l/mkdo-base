@@ -23,7 +23,7 @@ function setup() : void {
 function register_custom_post_types() : void {
 	// Automatically require any partials found in the /post-types/ directory
 	// that begin with `cpt-` in the filename.
-	foreach ( glob( dirname( ROOT_DIR ) . '/inc/post-types/cpt-*.php' ) as $filename ) {
+	foreach ( glob( ROOT_DIR . '/inc/post-types/cpt-*.php' ) as $filename ) {
 		require_once $filename;
 	}
 }

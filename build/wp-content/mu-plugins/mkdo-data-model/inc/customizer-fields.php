@@ -51,7 +51,7 @@ function register_customizer_fields( $wp_customize ) {
 
 	// Automatically require any partials found in the customizer/ directory
 	// that begin with `customizer-` in the filename.
-	foreach ( glob( dirname( ROOT_DIR ) . '/inc/customizer-fields/customizer-*.php' ) as $filename ) {
+	foreach ( glob( ROOT_DIR . '/inc/customizer-fields/customizer-*.php' ) as $filename ) {
 		require_once $filename;
 	}
 }

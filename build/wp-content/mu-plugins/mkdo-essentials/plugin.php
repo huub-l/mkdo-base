@@ -5,7 +5,7 @@
  * @package           MKDO\Essentials
  *
  * Plugin Name:       MKDO Essentials
- * Description:       Essential features to support the project.
+ * Description:       Essential re-usable features to support the project.
  * Version:           1.0.0
  * Author:            Make Do <hello@makedo.net>
  * Author URI:        https://makedo.net
@@ -24,24 +24,41 @@ if ( ! defined( 'WPINC' ) ) {
 const ROOT_DIR = __DIR__;
 const PREFIX   = 'mkdo_essentials';
 
-require_once ROOT_DIR . '/inc/accessibility.php';
-require_once ROOT_DIR . '/inc/admin.php';
-require_once ROOT_DIR . '/inc/content.php';
-require_once ROOT_DIR . '/inc/languages.php';
-require_once ROOT_DIR . '/inc/security.php';
-require_once ROOT_DIR . '/inc/media.php';
-require_once ROOT_DIR . '/inc/seo.php';
-require_once ROOT_DIR . '/inc/server.php';
-require_once ROOT_DIR . '/inc/users.php';
+add_action(
+	'plugins_loaded',
+	function() {
+
+		$options = get_option( PREFIX . '_settings' );
+
+		foreach ( glob( ROOT_DIR . '/inc/features/*.php' ) as $filename ) {
+			// NOTE: We are not invoking setup() here because we cannot
+			// use dynamic namespaces.
+			//
+			// Each imported feature should just contain the relevant hook
+			// and filter calls without any kind of wrapper function that
+			// we would normally use to initialise them.
+			require_once $filename;
+		}
+	}
+);
+
+add_action(
+	'admin_init',
+	function() {
+
+		require_once ROOT_DIR . '/inc/settings.php';
+		Settings\register_settings_page();
+		Settings\save_settings_options();
+	}
+);
+
+add_action(
+	'admin_menu',
+	function() {
+
+		require_once ROOT_DIR . '/inc/settings.php';
+		Settings\register_settings_menu();
+	}
+);
 
 load_plugin_textdomain( 'mkdo-essentials', false, ROOT_DIR . '\languages' );
-
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\Accessibility\setup' );
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\Admin\setup' );
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\Content\setup' );
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\Language\setup' );
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\Media\setup' );
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\Security\setup' );
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\SEO\setup' );
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\Server\setup' );
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\User\setup' );

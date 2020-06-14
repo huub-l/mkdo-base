@@ -28,7 +28,7 @@ function setup() {
 function register_meta_boxes() {
 	// Automatically require any partials found in the /meta-boxes/ directory
 	// that begin with `meta-` in the filename.
-	foreach ( glob( dirname( ROOT_DIR ) . '/inc/meta-boxes/meta-*.php' ) as $filename ) {
+	foreach ( glob( ROOT_DIR . '/inc/meta-boxes/meta-*.php' ) as $filename ) {
 		require_once $filename;
 	}
 }

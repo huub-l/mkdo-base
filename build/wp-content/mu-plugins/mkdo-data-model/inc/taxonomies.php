@@ -23,7 +23,7 @@ function setup() : void {
 function register_taxonomies() : void {
 	// Automatically require any partials found in the /taxonomies/ directory
 	// that begin with `tax-` in the filename.
-	foreach ( glob( dirname( ROOT_DIR ) . '/inc/taxonomies/tax-*.php' ) as $filename ) {
+	foreach ( glob( ROOT_DIR . '/inc/taxonomies/tax-*.php' ) as $filename ) {
 		require_once $filename;
 	}
 }
