@@ -13,7 +13,7 @@ namespace MKDO\Essentials\Prevent_Robots_On_WPE_Staging;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
@@ -35,4 +35,4 @@ function prevent_robots_on_wpe_staging() : string {
 
 	return $allow_robots;
 }
-add_filter( 'pre_option_blog_public', __NAMESPACE__ . 'prevent_robots_on_wpe_staging' );
+add_filter( 'pre_option_blog_public', __NAMESPACE__ . '\\prevent_robots_on_wpe_staging' );

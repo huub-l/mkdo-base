@@ -37,6 +37,8 @@ add_action(
 			// Each imported feature should just contain the relevant hook
 			// and filter calls without any kind of wrapper function that
 			// we would normally use to initialise them.
+			//
+			// Each imported feature should live in its own namespace.
 			require_once $filename;
 		}
 	}

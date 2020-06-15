@@ -13,7 +13,7 @@ namespace MKDO\Essentials\Add_WPML_Content_Language_Header;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
@@ -32,4 +32,4 @@ function add_wpml_content_language_header( $headers ) {
 
 	return $headers;
 }
-add_filter( 'wp_headers', __NAMESPACE__ . 'add_wpml_content_language_header', 0 );
+add_filter( 'wp_headers', __NAMESPACE__ . '\\add_wpml_content_language_header', 0 );

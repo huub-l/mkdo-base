@@ -15,7 +15,7 @@ use const MKDO\Essentials\PREFIX;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
@@ -66,7 +66,7 @@ function check_attempted_login( $user, $username, $password ) {
 
 	return $user;
 }
-add_filter( 'authenticate', __NAMESPACE__ . 'check_attempted_login', 30, 3 );
+add_filter( 'authenticate', __NAMESPACE__ . '\\check_attempted_login', 30, 3 );
 
 /**
  * Block User Enumeration
@@ -83,7 +83,7 @@ function block_user_enumeration_attempts() {
 		wp_die( 'Author archives have been disabled.' );
 	}
 }
-add_action( 'template_redirect', __NAMESPACE__ . 'block_user_enumeration_attempts' );
+add_action( 'template_redirect', __NAMESPACE__ . '\\block_user_enumeration_attempts' );
 
 /**
 * Add transient
@@ -115,7 +115,7 @@ function login_failed( $username ) {
 		set_transient( $transient_name, $datas, LOCKOUT_DURATION );
 	}
 }
-add_action( 'wp_login_failed', __NAMESPACE__ . 'login_failed', 10, 1 );
+add_action( 'wp_login_failed', __NAMESPACE__ . '\\login_failed', 10, 1 );
 
 /**
 * Return difference between 2 given dates

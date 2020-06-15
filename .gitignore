@@ -80,6 +80,7 @@ build/wp-content/themes/twentysixteen/
 build/wp-content/themes/twentyseventeen/
 build/wp-content/themes/twentyeighteen/
 build/wp-content/themes/twentynineteen/
+build/wp-content/themes/twentytwenty/
 
 # Themes - Custom
 build/wp-content/themes/my-project/assets/*

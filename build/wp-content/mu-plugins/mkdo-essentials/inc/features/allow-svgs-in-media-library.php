@@ -13,7 +13,7 @@ namespace MKDO\Essentials\Allow_SVGs_In_Media_Library;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
@@ -26,7 +26,7 @@ function cc_mime_types( $mimes ) : array {
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
 }
-add_filter( 'upload_mimes', __NAMESPACE__ . 'cc_mime_types' );
+add_filter( 'upload_mimes', __NAMESPACE__ . '\\cc_mime_types' );
 
 /**
  * Allow SVG files.
@@ -57,7 +57,7 @@ function allow_svg( $data, $file, $filename, $mimes ) {
 		'proper_filename' => $data['proper_filename'],
 	];
 }
-add_filter( 'wp_check_filetype_and_ext', __NAMESPACE__ . 'allow_svg', 10, 4 );
+add_filter( 'wp_check_filetype_and_ext', __NAMESPACE__ . '\\allow_svg', 10, 4 );
 
 /**
  * Ajax get_attachment_url_media_library
@@ -77,4 +77,4 @@ function get_attachment_url_media_library() : void {
 
 	die();
 }
-add_action( 'wp_ajax_svg_get_attachment_url', __NAMESPACE__ . 'get_attachment_url_media_library', 10 );
+add_action( 'wp_ajax_svg_get_attachment_url', __NAMESPACE__ . '\\get_attachment_url_media_library', 10 );

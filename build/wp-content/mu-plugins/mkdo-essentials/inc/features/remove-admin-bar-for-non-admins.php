@@ -13,14 +13,16 @@ namespace MKDO\Essentials\Remove_Admin_Bar_For_Non_Admins;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
 /**
  * Prevent non-administrators from viewing the admin bar.
+ *
+ * @return void
  */
-function remove_admin_bar() {
+function remove_admin_bar() : void {
 
 	$hide_menu            = true;
 	$user                 = wp_get_current_user();
@@ -38,4 +40,4 @@ function remove_admin_bar() {
 		// @codingStandardsIgnoreEnd
 	}
 }
-add_action( 'after_setup_theme', __NAMESPACE__ . 'remove_admin_bar' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\remove_admin_bar' );

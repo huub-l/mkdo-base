@@ -13,7 +13,7 @@ namespace MKDO\Essentials\Remove_Comments;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
@@ -34,7 +34,7 @@ function disable_all_comments_and_pings() : void {
 		update_option( 'default_comment_status', '' );
 	}
 }
-add_action( 'after_setup_theme', __NAMESPACE__ . 'disable_all_comments_and_pings' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\disable_all_comments_and_pings' );
 
 /**
  * Hide the comments menu item.
@@ -44,7 +44,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . 'disable_all_comments_and_pings
 function remove_comments_menu_item() : void {
 	remove_menu_page( 'edit-comments.php' );
 }
-add_action( 'admin_menu', __NAMESPACE__ . 'remove_comments_menu_item' );
+add_action( 'admin_menu', __NAMESPACE__ . '\\remove_comments_menu_item' );
 
 /**
  * Remove comment meta boxes.
@@ -60,4 +60,4 @@ function remove_meta_boxes() : void {
 		remove_meta_box( 'commentsdiv', $post_type, 'normal' );
 	}
 }
-add_action( 'admin_menu', __NAMESPACE__ . 'remove_meta_boxes' );
+add_action( 'admin_menu', __NAMESPACE__ . '\\remove_meta_boxes' );

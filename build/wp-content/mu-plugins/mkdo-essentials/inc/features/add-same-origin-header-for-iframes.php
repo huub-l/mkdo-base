@@ -13,14 +13,16 @@ namespace MKDO\Essentials\Add_Same_Origin_Header_For_Iframes;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
 /**
  * Send Headers
+ *
+ * @return void
  */
-function add_same_origin_header_for_iframes() {
+function add_same_origin_header_for_iframes() : void {
 	header( 'X-FRAME-OPTIONS: SAMEORIGIN' );
 }
-add_action( 'send_headers', __NAMESPACE__ . 'add_same_origin_header_for_iframes', 10, 1 );
+add_action( 'send_headers', __NAMESPACE__ . '\\add_same_origin_header_for_iframes', 10, 1 );

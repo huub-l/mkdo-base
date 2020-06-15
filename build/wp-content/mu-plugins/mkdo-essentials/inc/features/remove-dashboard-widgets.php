@@ -13,7 +13,7 @@ namespace MKDO\Essentials\Remove_Dashboard_Widgets;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
@@ -42,4 +42,4 @@ function remove_dashboard_widgets() : void {
 	// WP Engine Widgets.
 	unset( $wp_meta_boxes['dashboard']['normal']['core']['wpe_dify_news_feed'] );
 }
-add_action( 'wp_dashboard_setup', __NAMESPACE__ . 'remove_dashboard_widgets', 99 );
+add_action( 'wp_dashboard_setup', __NAMESPACE__ . '\\remove_dashboard_widgets', 99 );

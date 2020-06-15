@@ -24,6 +24,8 @@ function register_settings_page() : void {
 		PREFIX . '_settings'
 	);
 
+	$options = get_option( PREFIX . '_settings' );
+
 	// Get all of the files in question.
 	foreach ( glob( ROOT_DIR . '/inc/features/*.php' ) as $filename ) {
 
@@ -41,6 +43,7 @@ function register_settings_page() : void {
 			PREFIX . '_settings_section',
 			[
 				'filename' => $slug,
+				'options'  => $options,
 			]
 		);
 	}
@@ -101,7 +104,12 @@ function render_settings_field( $args ) : void {
 	$setting_slug = str_replace( '-', '_', basename( $args['filename'], '.php' ) );
 	?>
 	<label for="<?php esc_attr( $setting_slug ); ?>">
-		<input id="<?php esc_attr( $setting_slug ); ?>" type="checkbox" name="mkdo_essentials[<?php echo esc_attr( $setting_slug ); ?>]" />
+		<input
+		id="<?php esc_attr( $setting_slug ); ?>"
+		type="checkbox"
+		name="mkdo_essentials[<?php echo esc_attr( $setting_slug ); ?>]"
+		<?php echo ( ! empty( $args['options'] ) && array_key_exists( $setting_slug, $args['options'] ) ) ? 'checked' : ''; ?>
+		/>
 		Disable?
 	</label>
 
@@ -119,7 +127,6 @@ function save_settings_options() : void {
 		! isset( $_POST['_wpnonce'] )
 		|| ! isset( $_POST['option_page'] )
 		|| PREFIX . '_settings' !== $_POST['option_page']
-		|| ! isset( $_POST['mkdo_essentials'] )
 		) {
 		return;
 	}
@@ -131,7 +138,10 @@ function save_settings_options() : void {
 	);
 
 	delete_option( PREFIX . '_settings' );
-	update_option( PREFIX . '_settings', $_POST['mkdo_essentials'] );
+
+	if ( ! empty( $_POST['mkdo_essentials'] ) ) {
+		add_option( PREFIX . '_settings', $_POST['mkdo_essentials'] );
+	}
 
 	wp_safe_redirect(
 		add_query_arg(

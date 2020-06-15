@@ -13,7 +13,7 @@ namespace MKDO\Essentials\Add_Yoast_WPML_Sitemap_Per_Language;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
@@ -27,7 +27,7 @@ if ( isset( $options ) && array_key_exists( $base, $options ) ) {
  * @param object $post Post Object.
  * @return array       The modified URL parts
  */
-function yoast_wpml_alternate_links_to_site_map_setup( $url, $type, $post ) {
+function yoast_wpml_alternate_links_to_site_map_setup( $url, $type, $post ) : array {
 
 	$url['id']   = 0;
 	$url['type'] = 'post';
@@ -81,7 +81,7 @@ function yoast_wpml_alternate_links_to_site_map_setup( $url, $type, $post ) {
 	}
 	return $url;
 }
-add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . 'yoast_wpml_alternate_links_to_site_map_setup', 100, 3 );
+add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . '\\yoast_wpml_alternate_links_to_site_map_setup', 100, 3 );
 
 /**
  * Hook into the sitemap links
@@ -92,7 +92,7 @@ add_filter( 'wpseo_sitemap_entry', __NAMESPACE__ . 'yoast_wpml_alternate_links_t
  * @param array  $url    Array of URL parts.
  * @return string        The transformed sitemap URL
  */
-function yoast_wpml_alternate_links_to_site_map( $output, $url ) {
+function yoast_wpml_alternate_links_to_site_map( $output, $url ) : string {
 
 	// If we have some xhtml:link's.
 	if (
@@ -117,7 +117,7 @@ function yoast_wpml_alternate_links_to_site_map( $output, $url ) {
 	}
 	return $output;
 }
-add_filter( 'wpseo_sitemap_url', __NAMESPACE__ . 'yoast_wpml_alternate_links_to_site_map', 100, 2 );
+add_filter( 'wpseo_sitemap_url', __NAMESPACE__ . '\\yoast_wpml_alternate_links_to_site_map', 100, 2 );
 
 /**
  * Yoast SEO Posts Join
@@ -138,4 +138,4 @@ function yoast_wpml_sitemap_per_translation( $join, $type ) {
 	}
 	return $join;
 }
-add_filter( 'wpseo_posts_join', __NAMESPACE__ . 'yoast_wpml_sitemap_per_translation', 10, 2 );
+add_filter( 'wpseo_posts_join', __NAMESPACE__ . '\\yoast_wpml_sitemap_per_translation', 10, 2 );

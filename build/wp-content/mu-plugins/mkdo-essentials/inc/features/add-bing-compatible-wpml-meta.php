@@ -13,14 +13,16 @@ namespace MKDO\Essentials\Add_Bing_Compatible_WPML_Meta;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
 /**
  * Add Bing Compatible language links
+ *
+ * @return void
  */
-function add_bing_compatible_wpml_meta() {
+function add_bing_compatible_wpml_meta() : void {
 
 	global $post;
 
@@ -41,4 +43,4 @@ function add_bing_compatible_wpml_meta() {
 		}
 	}
 }
-add_filter( 'wp_head', __NAMESPACE__ . 'add_bing_compatible_wpml_meta', 0 );
+add_filter( 'wp_head', __NAMESPACE__ . '\\add_bing_compatible_wpml_meta', 0 );

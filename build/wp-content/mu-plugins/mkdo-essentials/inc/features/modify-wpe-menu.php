@@ -13,7 +13,7 @@ namespace MKDO\Essentials\Modify_WPE_Menu;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
@@ -70,9 +70,9 @@ function modify_wpe_menu() : void {
 		}
 	}
 }
-add_action( 'admin_menu', __NAMESPACE__ . 'modify_wpe_menu', 9999 );
+add_action( 'admin_menu', __NAMESPACE__ . '\\modify_wpe_menu', 9999 );
 
 // Only run this action if the install is multisite.
 if ( is_multisite() ) {
-	add_action( 'network_admin_menu', __NAMESPACE__ . 'modify_wpe_menu', 9999 );
+	add_action( 'network_admin_menu', __NAMESPACE__ . '\\modify_wpe_menu', 9999 );
 }

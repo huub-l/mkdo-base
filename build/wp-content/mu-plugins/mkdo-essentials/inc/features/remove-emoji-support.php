@@ -13,7 +13,7 @@ namespace MKDO\Essentials\Remove_Emoji_Support;
  */
 $base = strtolower( str_replace( '-', '_', basename( __FILE__, '.php' ) ) );
 
-if ( isset( $options ) && array_key_exists( $base, $options ) ) {
+if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
@@ -40,7 +40,7 @@ function disable_emoji() {
 	// Remove TinyMCE emojis.
 	add_filter( 'tiny_mce_plugins', __NAMESPACE__ . 'disable_emoji_tinymce' );
 }
-add_action( 'init', __NAMESPACE__ . 'disable_emoji' );
+add_action( 'init', __NAMESPACE__ . '\\disable_emoji' );
 
 /**
  * Remove TinyMCE Emoji
