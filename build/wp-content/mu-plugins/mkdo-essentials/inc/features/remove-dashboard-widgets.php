@@ -31,6 +31,7 @@ function remove_dashboard_widgets() : void {
 
 	// Normal Widgets.
 	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
+	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'] );
 	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
 	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
 	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts'] );

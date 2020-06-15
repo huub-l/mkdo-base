@@ -35,10 +35,10 @@ function disable_emoji() {
 
 	// Remove emoji from feeds.
 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', '\wp_staticize_emoji' );
 
 	// Remove TinyMCE emojis.
-	add_filter( 'tiny_mce_plugins', __NAMESPACE__ . 'disable_emoji_tinymce' );
+	add_filter( 'tiny_mce_plugins', __NAMESPACE__ . '\\disable_emoji_tinymce' );
 }
 add_action( 'init', __NAMESPACE__ . '\\disable_emoji' );
 

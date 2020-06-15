@@ -16,5 +16,6 @@ namespace MKDO\Essentials\Remove_Personal_Data_Menu;
  */
 function remove_submenus() : void {
 	remove_submenu_page( 'tools.php', 'erase-personal-data.php' );
+	remove_submenu_page( 'tools.php', 'export-personal-data.php' );
 }
 add_action( 'admin_menu', __NAMESPACE__ . '\\remove_submenus', 500 );
