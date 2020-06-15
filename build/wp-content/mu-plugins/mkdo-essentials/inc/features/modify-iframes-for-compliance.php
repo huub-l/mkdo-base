@@ -1,11 +1,11 @@
 <?php
 /**
- * Make iFrames WCAG compliant
+ * Modify Iframes for Compliance.
  *
  * @package MKDO\Essentials
  */
 
-namespace MKDO\Essentials\Make_iFrames_WCAG_Compliant;
+namespace MKDO\Essentials\Modify_Iframes_For_Compliance;
 
 /**
  * Abort if a key in our options array exists;
@@ -23,7 +23,7 @@ if ( isset( $options ) && array_key_exists( $base, $options ) ) {
  * @param  string $content Page/post content.
  * @return string
  */
-function make_iframes_wcag_compliant( $content ) :string {
+function modify_iframes_for_compliance( $content ) :string {
 
 	// Find all iFrames in the content.
 	$pattern = '~<iframe.*</iframe>~';
@@ -90,4 +90,4 @@ function make_iframes_wcag_compliant( $content ) :string {
 
 	return $content;
 }
-add_filter( 'the_content', __NAMESPACE__ . '\\make_iframes_wcag_compliant', 20 );
+add_filter( 'the_content', __NAMESPACE__ . '\\modify_iframes_for_compliance', 20 );

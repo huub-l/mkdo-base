@@ -29,7 +29,7 @@ function register_settings_page() : void {
 
 		$base  = basename( $filename, '.php' );
 		$slug  = strtolower( $base );
-		$label = strtoupper( str_replace( '-', ' ', $base ) );
+		$label = ucfirst( str_replace( '-', ' ', $base ) );
 
 		\register_setting( PREFIX . '_settings', PREFIX . '_setting_' . $slug );
 
