@@ -1,6 +1,6 @@
 # WordPress Coding standards
 
-This repository uses version `2.0.0` of these standards. We are intentionally keeping this in version control so that
+This repository uses version `2.3.0` of these standards. We are intentionally keeping this in version control so that
 we may exercise control over when we upgrade; to avoid different engineers having different versions depending on when
 they work on the project.
 
