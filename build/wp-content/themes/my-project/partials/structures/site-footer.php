@@ -40,7 +40,7 @@
 			<div class="site-footer__row">
 
 				<div class="site-footer__legal">
-					<p>&copy; My Project</p>
+					<p>&copy; <?php bloginfo( 'name' ); ?></p>
 				</div>
 
 			</div>

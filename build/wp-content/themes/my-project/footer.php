@@ -7,14 +7,14 @@
  * @package MKDO_Theme
  */
 
-do_action( 'mkdo_theme_after_main' );
-?>
+			do_action( 'mkdo_theme_after_main' );
+			?>
 
-			</div> <!-- site-content -->
+			</div>
 
 			<?php get_template_part( 'partials/structures/site-footer' ); ?>
 
-		</div> <!-- hfeed site-container -->
+		</div>
 
 		<?php
 		do_action( 'mkdo_theme_before_wp_footer' );

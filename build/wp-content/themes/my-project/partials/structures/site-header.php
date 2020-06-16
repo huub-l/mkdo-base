@@ -26,20 +26,20 @@
 				<nav id="header-navigation" class="" role="navigation">
 
 					<?php
-					do_action( 'mkdo_theme_before_primary_nav' );
+					do_action( 'mkdo_theme_before_header_nav' );
 
 					// Check if there is a menu attached to this location.
-					if ( has_nav_menu( 'primary' ) ) {
+					if ( has_nav_menu( 'header' ) ) {
 						// Display menu.
 						wp_nav_menu(
 							array(
-								'theme_location' => 'primary',
+								'theme_location' => 'header',
 								'container'      => false,
 							)
 						);
 					}
 
-					do_action( 'mkdo_theme_after_primary_nav' );
+					do_action( 'mkdo_theme_after_header_nav' );
 					?>
 				</nav>
 

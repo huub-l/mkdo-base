@@ -28,7 +28,6 @@ do_action( 'mkdo_theme_front_page_intro' );
 				the_content();
 
 				do_action( 'mkdo_theme_after_post_content' );
-
 			}
 
 			do_action( 'mkdo_theme_after_main_content' );

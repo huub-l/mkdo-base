@@ -1,4 +1,4 @@
-<?php
+<?php // @codingStandardsIgnoreFile.
 /**
  * Custom template tags for this theme.
  *

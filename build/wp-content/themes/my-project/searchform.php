@@ -9,7 +9,8 @@
 
 <form method="get" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
-	<label for="s" class="sr-only"><?php esc_html_e( 'Search', 'mkdo-theme' ); ?>
+	<label for="s" class="sr-only">
+		<?php esc_html_e( 'Search', 'mkdo-theme' ); ?>
 		<input
 		type="text"
 		class="search-form--field"

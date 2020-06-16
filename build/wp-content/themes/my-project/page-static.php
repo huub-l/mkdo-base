@@ -12,13 +12,13 @@
 	<?php
 	get_header();
 
-		// 1. Scans MKDO_THEME_PARTIALS_DIR for folders.
-		// 2. Creates a view for each folder.
-		// 3. Outputs all php files to that view.
-		// 4. Applies flag classes to a parent div around each teplate part.
-		foreach ( glob( MKDO_THEME_PARTIALS_DIR . '*', GLOB_ONLYDIR ) as $mkdo_theme_dir ) {
-			$mkdo_theme_folders[] = basename( $mkdo_theme_dir );
-		}
+	// 1. Scans MKDO_THEME_PARTIALS_DIR for folders.
+	// 2. Creates a view for each folder.
+	// 3. Outputs all php files to that view.
+	// 4. Applies flag classes to a parent div around each teplate part.
+	foreach ( glob( MKDO_THEME_PARTIALS_DIR . '*', GLOB_ONLYDIR ) as $mkdo_theme_dir ) {
+		$mkdo_theme_folders[] = basename( $mkdo_theme_dir );
+	}
 	?>
 
 	<div class="static-wrap">

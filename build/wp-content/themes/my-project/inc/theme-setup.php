@@ -29,9 +29,8 @@ function mkdo_theme_theme_setup() {
 	 */
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Primary Menu', 'mkdo-theme' ),
-			'footer'  => esc_html__( 'Footer Menu', 'mkdo-theme' ),
-			'utility' => esc_html__( 'Utility Menu', 'mkdo-theme' ),
+			'header' => esc_html__( 'Header Menu', 'mkdo-theme' ),
+			'footer' => esc_html__( 'Footer Menu', 'mkdo-theme' ),
 		)
 	);
 
@@ -74,7 +73,7 @@ function mkdo_theme_theme_setup() {
 	);
 
 	/**
-	 * Add yoast breadcrumb support if the plugin is enabled.
+	 * Add Yoast breadcrumb support if the plugin is enabled.
 	 */
 	include_once ABSPATH . 'wp-admin/includes/plugin.php';
 
@@ -104,7 +103,6 @@ function mkdo_theme_theme_setup() {
 			),
 		)
 	);
-
 	add_theme_support(
 		'editor-font-sizes',
 		array(
@@ -131,7 +129,5 @@ function mkdo_theme_theme_setup() {
 	 * Remove post formats.
 	 */
 	remove_theme_support( 'post-formats' );
-
-	// @codingStandardsIgnoreEnd
 }
 add_action( 'after_setup_theme', 'mkdo_theme_theme_setup', 10 );

@@ -1,6 +1,6 @@
 <?php // @codingStandardsIgnoreFile.
 /**
- * Theme specific functions that act independently of the theme templates.
+ * Custom functions for this theme.
  *
  * @package MKDO_Theme
  */
