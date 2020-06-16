@@ -41,7 +41,7 @@ function yoast_wpml_alternate_links_to_site_map_setup( $url, $type, $post ) : ar
 	}
 
 	// If the relevent WPML function exists.
-	if ( function_exists( 'icl_object_id' ) ) {
+	if ( function_exists( '\icl_object_id' ) ) {
 		$url['wpml']               = array();
 		$url['wpml']['xhtml:link'] = array();
 		$langs                     = \icl_get_languages(); // Already checked WPML so assume this exists.

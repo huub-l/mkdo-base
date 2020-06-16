@@ -19,10 +19,10 @@ if ( ! empty( $options ) && array_key_exists( $base, $options ) ) {
 	return;
 }
 
-const FAILED_LOGIN_LIMIT = 3; // Number of authentification accepted.
-const LOCKOUT_DURATION   = 1800; // Stop authentification process for 30 minutes: 60*30 = 1800.
-const TRANSIENT_NAME     = PREFIX . '_attempted_login'; // Transient used.
-const IS_LOCKOUT_GLOBAL  = false; // Is the lockout global or specific to each user?
+const FAILED_LOGIN_LIMIT = 3;
+const LOCKOUT_DURATION   = 1800; // 30 minutes: 60*30 = 1800.
+const TRANSIENT_NAME     = PREFIX . '_attempted_login';
+const IS_LOCKOUT_GLOBAL  = false;
 
 /**
  * Lock login attempts of failed login limit is reached
