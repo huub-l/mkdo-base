@@ -3,7 +3,7 @@
  * WordPress Coding Standard.
  *
  * @package WPCS\WordPressCodingStandards
- * @link    https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+ * @link    https://github.com/WordPress/WordPress-Coding-Standards
  * @license https://opensource.org/licenses/MIT MIT
  */
 
@@ -120,10 +120,6 @@ class NonceVerificationSniff extends Sniff {
 		}
 
 		$this->mergeFunctionLists();
-
-		if ( $this->is_only_sanitized( $stackPtr ) ) {
-			return;
-		}
 
 		if ( $this->has_nonce_check( $stackPtr ) ) {
 			return;

@@ -3,7 +3,7 @@
  * WordPress Coding Standard.
  *
  * @package WPCS\WordPressCodingStandards
- * @link    https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+ * @link    https://github.com/WordPress/WordPress-Coding-Standards
  * @license https://opensource.org/licenses/MIT MIT
  */
 
@@ -46,7 +46,7 @@ class DiscouragedFunctionsSniff extends AbstractFunctionRestrictionsSniff {
 
 			'wp_reset_query' => array(
 				'type'      => 'warning',
-				'message'   => '%s() is discouraged. Use the wp_reset_postdata() instead.',
+				'message'   => '%s() is discouraged. Use wp_reset_postdata() instead.',
 				'functions' => array(
 					'wp_reset_query',
 				),

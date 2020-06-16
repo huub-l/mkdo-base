@@ -3,7 +3,7 @@
  * WordPress Coding Standard.
  *
  * @package WPCS\WordPressCodingStandards
- * @link    https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+ * @link    https://github.com/WordPress/WordPress-Coding-Standards
  * @license https://opensource.org/licenses/MIT MIT
  */
 
@@ -50,6 +50,7 @@ class ValidVariableNameSniff extends PHPCS_AbstractVariableSniff {
 		'is_winIE'          => true,
 		'PHP_SELF'          => true,
 		'post_ID'           => true,
+		'tag_ID'            => true,
 		'user_ID'           => true,
 	);
 
