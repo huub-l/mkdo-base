@@ -1,6 +1,6 @@
 # MKDO Base
 
-A modern, best-practice filled base for bespoke WordPress site development.
+A modern, best-practice filled base for bespoke WordPress site development on OSX.
 
 **NOTE: This readme is automatically deleted when the setup.sh script completes.**
 
