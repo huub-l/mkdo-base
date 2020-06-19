@@ -1,0 +1,29 @@
+@mixin typography($type: null) {
+	font-family: $mkdo-font-stack--sans-serif;
+	line-height: $mkdo-line-height--small;
+
+	@if $type == 'heading-1' {
+		font-size: mkdo-rem($mkdo-font-size--h1);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $type == 'heading-2' {
+		font-size: mkdo-rem($mkdo-font-size--h2);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $type == 'heading-3' {
+		font-size: mkdo-rem($mkdo-font-size--h3);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $type == 'heading-4' {
+		font-size: mkdo-rem($mkdo-font-size--h4);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $type == 'heading-5' {
+		font-size: mkdo-rem($mkdo-font-size--h5);
+		font-weight: $mkdo-font-weight--normal;
+	}
+	@if $type == 'heading-6' {
+		font-size: mkdo-rem($mkdo-font-size--h6);
+		font-weight: $mkdo-font-weight--normal;
+	}
+}

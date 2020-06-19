@@ -1,0 +1,31 @@
+// Miscellaneous base styles e.g. box-sizing, psuedos, site container etc.
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+
+	&.lt-ie8 {
+		// Internet Explorer browsers.
+		*behavior: url(/polyfills/boxsizing.htc);
+	}
+}
+
+html {
+	background-color: $mkdo--dark;
+	box-sizing: border-box;
+	font-size: mkdo-rem($global--font-size);
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	background-color: $mkdo-colour-body--background;
+}
+
+.focus--keyboard:focus {
+	outline: -webkit-focus-ring-color auto 5px;
+}
+.focus--mouse:focus {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+	-webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+	outline: none !important;
+}

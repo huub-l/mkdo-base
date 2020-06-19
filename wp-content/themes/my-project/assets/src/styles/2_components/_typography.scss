@@ -1,0 +1,90 @@
+// Typographic styles.
+// --------------------------------------------------------------------------
+// The goal is to control as much of the global typography as possible from
+// within this file e.g. family/size/weight/style, line-height, colour etc
+// --------------------------------------------------------------------------
+
+// Links
+a {
+	color: $mkdo-colour-content--link;
+	@include mkdo-on-event {
+		color: $mkdo-colour-content--link-hover;
+	}
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include typography;
+	clear: both;
+	margin: mkdo-rem($global--spacing-common * 1.5) 0
+		mkdo-rem($global--spacing-common);
+}
+h1 {
+	@include typography('heading-1');
+}
+h2 {
+	@include typography('heading-2');
+}
+h3 {
+	@include typography('heading-3');
+}
+h4 {
+	@include typography('heading-4');
+}
+h5 {
+	@include typography('heading-5');
+}
+h6 {
+	@include typography('heading-6');
+}
+
+// Paragraph
+p {
+	margin-bottom: mkdo-rem($global--spacing-common);
+	font-size: mkdo-rem($mkdo-font-size--medium);
+}
+
+// Lists
+li {
+	font-size: mkdo-rem($mkdo-font-size--medium);
+	margin-bottom: mkdo-rem($global--spacing-common / 2);
+	> ol,
+	> ul {
+		margin-bottom: 0;
+		margin-left: mkdo-rem($global--spacing-common);
+	}
+}
+
+ul {
+	list-style-type: square;
+
+	ol,
+	ul {
+		margin-bottom: mkdo-rem($global--spacing-common / 2);
+		margin-top: mkdo-rem($global--spacing-common / 2);
+	}
+}
+
+ol {
+	list-style: decimal;
+
+	ol,
+	ul {
+		margin-bottom: mkdo-rem($global--spacing-common / 2);
+		margin-top: mkdo-rem($global--spacing-common / 2);
+	}
+}
+
+// Pre
+pre {
+	background-color: $mkdo--dark;
+	margin: mkdo-rem($global--spacing-common);
+	overflow: auto;
+	padding: mkdo-rem($global--spacing-common);
+	color: $mkdo--offwhite;
+}

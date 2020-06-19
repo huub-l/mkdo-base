@@ -1,0 +1,32 @@
+// Table styles.
+// --------------------------------------------------------------------------
+
+table {
+	margin-bottom: mkdo-rem($global--spacing-common);
+	max-width: 100%;
+	width: 100%;
+}
+
+// Useful width helper classes
+// ------------------------------------
+// NB: Should be used on <th> & <td>
+// instead of hard coding width values
+// to prevent WCAG validation errors.
+//
+// This loop creates classes for every
+// X percentage points e.g. a modifier
+// of 5 will result in classes .tbl-10
+// for 10%, .tbl-50 for 50% etc.
+// ------------------------------------
+
+@for $i from 1 through 100 {
+	// Change the step value to increase or
+	// decrease the size gap.
+	// ------------------------------------
+	$modifier: 5;
+	@if $i % $modifier == 0 {
+		.tbl-#{$i} {
+			width: #{$i * 1%};
+		}
+	}
+}

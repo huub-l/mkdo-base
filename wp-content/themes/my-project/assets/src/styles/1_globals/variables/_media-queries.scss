@@ -1,0 +1,160 @@
+// Standard Breakpoints & Media Queries.
+// --------------------------------------------------------------------------
+// These are popular viewport sizes that cover the full spectrum of devices
+// including smartphones and tablets, laptops and desktops.
+//
+// Tweak the sizes by a few pixels here and there if you need to, or add your
+// own tweakpoints further down to cater for when the content breaks.
+//
+// To utilise these breakpoints in your Sass, use the `mkdo-mq()` mixin e.g.
+//
+// `@include mkdo-mq(xs) {`.
+//
+// A strictly enforced means of adding and using media queries reduces the
+// headaches caused by Sass files that are littered with `@media` rules!
+//
+// You can also change the breakpoint at which the mobile navigation kicks in
+// by setting the `$mkdo-mobile-nav-breakpoint` to a string matching the name
+// of a breakpoint e.g. sm, md etc.
+// --------------------------------------------------------------------------
+
+// Mobile navigation breakpoint
+$mkdo-mobile-nav-breakpoint: sm;
+
+// Breakpoint - Extra Extra Small.
+$mkdo-bp--xxs: 320px;
+
+// Media Query - Extra Extra Small (Min).
+$mkdo-mq--xxs-min: (
+	min-width: $mkdo-bp--xxs,
+);
+
+// Media Query - Extra Extra Small (Max).
+$mkdo-mq--xxs-max: (
+	max-width: $mkdo-bp--xxs - 1,
+);
+
+// Breakpoint - Extra Small.
+$mkdo-bp--xs: 480px;
+
+// Media Query - Extra Small (Min).
+$mkdo-mq--xs-min: (
+	min-width: $mkdo-bp--xs,
+);
+
+// Media Query - Extra Small (Max).
+$mkdo-mq--xs-max: (
+	max-width: $mkdo-bp--xs - 1,
+);
+
+// Breakpoint - Small.
+$mkdo-bp--sm: 768px;
+
+// Media Query - Small (Min).
+$mkdo-mq--sm-min: (
+	min-width: $mkdo-bp--sm,
+);
+
+// Media Query - Small (Max).
+$mkdo-mq--sm-max: (
+	max-width: $mkdo-bp--sm - 1,
+);
+
+// Breakpoint - Medium.
+$mkdo-bp--md: 1024px;
+
+// Media Query - Medium (Min).
+$mkdo-mq--md-min: (
+	min-width: $mkdo-bp--md,
+);
+
+// Media Query - Medium (Max).
+$mkdo-mq--md-max: (
+	max-width: $mkdo-bp--md - 1,
+);
+
+// Breakpoint - Large.
+$mkdo-bp--lg: 1280px;
+
+// Media Query - Large (Min).
+$mkdo-mq--lg-min: (
+	min-width: $mkdo-bp--lg,
+);
+
+// Media Query - Large (Max).
+$mkdo-mq--lg-max: (
+	max-width: $mkdo-bp--lg - 1,
+);
+
+// Breakpoint - Extra Large.
+$mkdo-bp--xl: 1440px;
+
+// Media Query - Extra Large (Min).
+$mkdo-mq--xl-min: (
+	min-width: $mkdo-bp--xl,
+);
+
+// Media Query - Extra Large (Max).
+$mkdo-mq--xl-max: (
+	max-width: $mkdo-bp--xl - 1,
+);
+
+// Breakpoint - Extra Extra Large.
+$mkdo-bp--xxl: 1600px;
+
+// Media Query - Extra Extra Large (Min).
+$mkdo-mq--xxl-min: (
+	min-width: $mkdo-bp--xxl,
+);
+
+// Media Query - Extra Extra Large (Max).
+$mkdo-mq--xxl-max: (
+	max-width: $mkdo-bp--xxl - 1,
+);
+
+// Breakpoints Map.
+$mkdo-breakpoints: (
+	'xxs': $mkdo-mq--xxs-min,
+	'xxs-max': $mkdo-mq--xxs-max,
+	'xs': $mkdo-mq--xs-min,
+	'xs-max': $mkdo-mq--xs-max,
+	'sm': $mkdo-mq--sm-min,
+	'sm-max': $mkdo-mq--sm-max,
+	'md': $mkdo-mq--md-min,
+	'md-max': $mkdo-mq--md-max,
+	'lg': $mkdo-mq--lg-min,
+	'lg-max': $mkdo-mq--lg-max,
+	'xl': $mkdo-mq--xl-min,
+	'xl-max': $mkdo-mq--xl-max,
+	'xxl': $mkdo-mq--xxl-min,
+	'xxl-max': $mkdo-mq--xxl-max,
+) !default;
+
+// Custom Tweakpoints & Media Queries
+// --------------------------------------------------------------------------
+// Define any new 'tweakpoints' here to keep your specific media queries in
+// order.
+//
+// Use the 'Example' tweakpoint and create your own. You must add new
+// tweakpoints to the `$mkdo-tweakpoints` map so that it may be accessed by the
+// `mkdo-mq` mixin in your Sass e.g. `@include mkdo-mq(example) {`.
+// --------------------------------------------------------------------------
+
+// Tweakpoint - Example.
+$mkdo-tp--example: 380px;
+
+// Media Query - Example (Min).
+$mkdo-mq--example-min: (
+	min-width: $mkdo-tp--example,
+);
+
+// Media Query - Example (Max).
+$mkdo-mq--example-max: (
+	max-width: $mkdo-tp--example - 1,
+);
+
+// Tweakpoints map.
+$mkdo-tweakpoints: (
+	'example': $mkdo-mq--example-min,
+	'example-max': $mkdo-mq--example-max,
+) !default;
