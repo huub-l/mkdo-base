@@ -1,6 +1,6 @@
-# <CLIENT-NAME>
+# My Project
 
-## Project Specific Contacts
+## Contacts
 
 **Client**
 - <Contact Name>: Primary Contact
