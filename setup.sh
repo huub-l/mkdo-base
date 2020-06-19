@@ -246,7 +246,7 @@ done
 find . -name '*.bak' -delete
 
 # Rename the Theme
-mv build/wp-content/themes/my-project build/wp-content/themes/"$slug"
+mv wp-content/themes/my-project wp-content/themes/"$slug"
 
 # Create MySQL database.
 echo "$(tput setaf 3)Creating MySQL database (if it's not already there)...$(tput setaf 9)"
@@ -260,42 +260,42 @@ mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON $underslug.* TO wp@loc
 echo "$(tput setaf 3)Installing and configuring WordPress using WP CLI....$(tput setaf 9)"
 echo
 
-if [ ! -d build/wordpress/wp-admin ]
+if [ ! -d wordpress/wp-admin ]
 	then
 
 	# Download the latest stable release of WordPress.
 	echo "$(tput setaf 3)Downloading WordPress core....$(tput setaf 9)"
 	echo
-	wp core download --path=build/wordpress --allow-root &> /dev/null
+	wp core download --path=wordpress --allow-root &> /dev/null
 
 	# Install the database tables and configure WordPress.
 	echo "$(tput setaf 3)Installing WordPress database...$(tput setaf 9)"
 	echo
-	wp core install --url=my-project.test --title="My Project" --admin_user=admin --admin_password=password --admin_email=hello@makedo.net --allow-root --path=build/wordpress &> /dev/null
+	wp core install --url=my-project.test --title="My Project" --admin_user=admin --admin_password=password --admin_email=hello@makedo.net --allow-root --path=wordpress &> /dev/null
 
 	# Remove/Install/Activate Plugins.
 	echo "$(tput setaf 3)Tinkering with plugins...$(tput setaf 9)"
 	echo
 
 	# Remove.
-	rm -rf build/wp-content/plugins/akismet
+	rm -rf wp-content/plugins/akismet
 
 	# Install.
-	wp plugin install better-search-replace --activate --path=build/wordpress &> /dev/null
-	wp plugin install debug-bar --activate --path=build/wordpress &> /dev/null
-	wp plugin install regenerate-thumbnails --activate --path=build/wordpress &> /dev/null
-	wp plugin install imsanity --activate --path=build/wordpress &> /dev/null
-	wp plugin install wp-smushit --activate --path=build/wordpress &> /dev/null
-	wp plugin install so-clean-up-wp-seo --activate --path=build/wordpress &> /dev/null
-	wp plugin install user-switching --activate --path=build/wordpress &> /dev/null
-	wp plugin install wp-mail-catcher --activate --path=build/wordpress &> /dev/null
-	wp plugin install wordpress-seo --activate --path=build/wordpress &> /dev/null
-	wp plugin install https://github.com/wp-premium/gravityforms/archive/master.zip --activate --path=build/wordpress &> /dev/null
+	wp plugin install better-search-replace --activate --path=wordpress &> /dev/null
+	wp plugin install debug-bar --activate --path=wordpress &> /dev/null
+	wp plugin install regenerate-thumbnails --activate --path=wordpress &> /dev/null
+	wp plugin install imsanity --activate --path=wordpress &> /dev/null
+	wp plugin install wp-smushit --activate --path=wordpress &> /dev/null
+	wp plugin install so-clean-up-wp-seo --activate --path=wordpress &> /dev/null
+	wp plugin install user-switching --activate --path=wordpress &> /dev/null
+	wp plugin install wp-mail-catcher --activate --path=wordpress &> /dev/null
+	wp plugin install wordpress-seo --activate --path=wordpress &> /dev/null
+	wp plugin install https://github.com/wp-premium/gravityforms/archive/master.zip --activate --path=wordpress &> /dev/null
 
 	# Copy the MKDO Core configuration template
 	# into the theme includes folder.
-	mkdocoredir="build/wp-content/mu-plugins/mkdo-core"
-	themeincludesdir="build/wp-content/themes/$slug/inc"
+	mkdocoredir="wp-content/mu-plugins/mkdo-core"
+	themeincludesdir="wp-content/themes/$slug/inc"
 
 	if [ -d "$themeincludesdir" ]
 		then
@@ -306,21 +306,21 @@ if [ ! -d build/wordpress/wp-admin ]
 	# Generate Salts.
 	echo "$(tput setaf 3)Generating salts...$(tput setaf 9)"
 	echo
-	echo '<?php' > build/salt.php && curl -Ls https://api.wordpress.org/secret-key/1.1/salt/ >> build/salt.php
+	echo '<?php' > salt.php && curl -Ls https://api.wordpress.org/secret-key/1.1/salt/ >> salt.php
 
 	# Update WP Options.
 	echo "$(tput setaf 3)Updating WordPress options...$(tput setaf 9)"
 	echo
 
 	# Set the site name to the supplied nice name.
-	wp option update blogname "$nicename" --allow-root --path=build/wordpress &> /dev/null
+	wp option update blogname "$nicename" --allow-root --path=wordpress &> /dev/null
 
 	# Set the permalink structure to 'post name'.
-	wp option update permalink_structure '/%postname%' --allow-root --path=build/wordpress &> /dev/null
+	wp option update permalink_structure '/%postname%' --allow-root --path=wordpress &> /dev/null
 
 	# Set the default 'Sample Page' as the front page.
-	wp option update show_on_front 'page' --allow-root --path=build/wordpress &> /dev/null
-	wp option update page_on_front 2 --allow-root --path=build/wordpress &> /dev/null
+	wp option update show_on_front 'page' --allow-root --path=wordpress &> /dev/null
+	wp option update page_on_front 2 --allow-root --path=wordpress &> /dev/null
 fi
 
 # Install All The Things(tm).
@@ -330,8 +330,8 @@ yarn install &> /dev/null
 
 # Ignore local-config.php
 gitignorefile=".gitignore"
-gitignoretarget="!build/local-config.php"
-gitignorereplace="build/local-config.php"
+gitignoretarget="!local-config.php"
+gitignorereplace="local-config.php"
 
 if [ -f "$gitignorefile" ]
 	then
@@ -388,7 +388,6 @@ if [ "$configurevalet" = "y" ] || [ "$configurevalet" = "Y" ]
 
 	hash valet 2>&- || { echo >&2 "$(tput setaf 1)Valet is not installed. Exiting.$(tput setaf 9)"; exit 1; }
 
-	cd build
 	valet link "$slug" &> /dev/null
 	valet secure &> /dev/null
 	cd ..

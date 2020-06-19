@@ -31,29 +31,29 @@ mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON $underslug.* TO wp@loc
 echo "$(tput setaf 3)Installing and configuring WordPress using WP CLI....$(tput setaf 9)"
 echo
 
-if [ ! -d build/wordpress/wp-admin ]
+if [ ! -d wordpress/wp-admin ]
 	then
 
 	# Download the latest stable release of WordPress.
 	echo "$(tput setaf 3)Downloading WordPress core....$(tput setaf 9)"
 	echo
-	wp core download --path=build/wordpress --allow-root &> /dev/null
+	wp core download --path=wordpress --allow-root &> /dev/null
 
 	# Install the database tables and configure WordPress.
 	echo "$(tput setaf 3)Installing WordPress database...$(tput setaf 9)"
 	echo
-	wp core install --url=my-project.test --title="My Project" --admin_user=admin --admin_password=password --admin_email=hello@makedo.net --allow-root --path=build/wordpress &> /dev/null
+	wp core install --url=my-project.test --title="My Project" --admin_user=admin --admin_password=password --admin_email=hello@makedo.net --allow-root --path=wordpress &> /dev/null
 
 	# Update WP Options.
 	echo "$(tput setaf 3)Updating WordPress options...$(tput setaf 9)"
 	echo
 
 	# Set the permalink structure to 'post name'.
-	wp option update permalink_structure '/%postname%' --allow-root --path=build/wordpress &> /dev/null
+	wp option update permalink_structure '/%postname%' --allow-root --path=wordpress &> /dev/null
 
 	# Set the default 'Sample Page' as the front page.
-	wp option update show_on_front 'page' --allow-root --path=build/wordpress &> /dev/null
-	wp option update page_on_front 2 --allow-root --path=build/wordpress &> /dev/null
+	wp option update show_on_front 'page' --allow-root --path=wordpress &> /dev/null
+	wp option update page_on_front 2 --allow-root --path=wordpress &> /dev/null
 fi
 
 # Install All The Things(tm).
@@ -65,11 +65,11 @@ yarn install &> /dev/null
 echo "$(tput setaf 3)Adding local-config.php...$(tput setaf 9)"
 echo
 
-touch build/local-config.php
-curl -Ls https://raw.githubusercontent.com/mkdo/mkdo-base/master/build/local-config.php > build/local-config.php
+touch local-config.php
+curl -Ls https://raw.githubusercontent.com/mkdo/mkdo-base/master/local-config.php > local-config.php
 
 bakfile=".bak"
-sed -i$bakfile "s/my_project/$underslug/g" build/local-config.php
+sed -i$bakfile "s/my_project/$underslug/g" local-config.php
 
 # Build the project.
 echo "$(tput setaf 3)Building front-end assets...$(tput setaf 9)"
@@ -90,7 +90,6 @@ if [ "$configurevalet" = "y" ] || [ "$configurevalet" = "Y" ]
 
 	hash valet 2>&- || { echo >&2 "$(tput setaf 1)Valet is not installed. Exiting.$(tput setaf 9)"; exit 1; }
 
-	cd build
 	valet link "$slug" &> /dev/null
 	valet secure &> /dev/null
 
