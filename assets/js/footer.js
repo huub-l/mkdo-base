@@ -26,7 +26,6 @@ import {
 import trackFocus from './modules/track-focus.js';
 import skipLink from './modules/skip-link.js';
 import styleGuide from './modules/style-guide.js';
-import initResponsiveBackgroundImages from './modules/rwd-bg-images.js';
 import { menuToggle } from './modules/toggles.js';
 
 // Ready.
@@ -37,19 +36,11 @@ window.addEventListener('DOMContentLoaded', function() {
 	trackFocus(document.body);
 	skipLink();
 	styleGuide();
-	initResponsiveBackgroundImages();
 	menuToggle();
 });
 
 // Load.
-window.addEventListener('load', function() {
-	responsiveBackgroundImages('.js-bg-img');
-});
+window.addEventListener('load', function() {});
 
 // Resize
-window.addEventListener(
-	'resize',
-	deBounce(() => {
-		responsiveBackgroundImages('.js-bg-img');
-	}, 100),
-);
+window.addEventListener('resize', deBounce(() => {}, 100));
