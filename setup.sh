@@ -271,7 +271,7 @@ if [ ! -d wordpress/wp-admin ]
 	# Install the database tables and configure WordPress.
 	echo "$(tput setaf 3)Installing WordPress database...$(tput setaf 9)"
 	echo
-	wp core install --url=my-project.test --title="My Project" --admin_user=admin --admin_password=password --admin_email=hello@makedo.net --allow-root --path=build/wordpress &> /dev/null
+	wp core install --url=my-project.test --title="My Project" --admin_user=admin --admin_password=password --admin_email=hello@makedo.net --allow-root --path=wordpress &> /dev/null
 
 	# Remove/Install/Activate Plugins.
 	echo "$(tput setaf 3)Tinkering with plugins...$(tput setaf 9)"
