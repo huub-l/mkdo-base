@@ -1,0 +1,177 @@
+[25-Feb-2019 16:46:11 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/style.css in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/inc/enqueue-assets.php on line 67
+[25-Feb-2019 16:46:11 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/style.css in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/inc/enqueue-assets.php on line 67
+[04-Mar-2019 15:30:05 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/update.php on line 160
+[04-Mar-2019 15:30:11 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/update.php on line 384
+[04-Mar-2019 15:30:17 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/update.php on line 569
+[04-Mar-2019 16:13:18 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/update.php on line 160
+[15-Apr-2019 15:13:18 UTC] PHP Warning:  include(./partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:13:18 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:13:18 UTC] PHP Warning:  include(./partials/structures/site-footer.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:13:18 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-footer.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:13:36 UTC] PHP Warning:  include(./partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:13:36 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:13:36 UTC] PHP Warning:  include(./partials/structures/site-footer.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:13:36 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-footer.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:13:44 UTC] PHP Warning:  include(./partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:13:44 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:13:44 UTC] PHP Warning:  include(./partials/structures/site-footer.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:13:44 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-footer.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:14:21 UTC] PHP Warning:  include(/partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:14:21 UTC] PHP Warning:  include(): Failed opening '/partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:14:21 UTC] PHP Warning:  include(/partials/structures/site-footer.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:14:21 UTC] PHP Warning:  include(): Failed opening '/partials/structures/site-footer.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:15:36 UTC] PHP Warning:  include(/partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:15:36 UTC] PHP Warning:  include(): Failed opening '/partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:15:36 UTC] PHP Warning:  include(/partials/structures/site-footer.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:15:36 UTC] PHP Warning:  include(): Failed opening '/partials/structures/site-footer.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:15:40 UTC] PHP Warning:  include(/partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:15:40 UTC] PHP Warning:  include(): Failed opening '/partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:15:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:16:15 UTC] PHP Warning:  include(/partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:16:15 UTC] PHP Warning:  include(): Failed opening '/partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:16:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:17:07 UTC] PHP Warning:  include(./partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:17:07 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:17:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:40:54 UTC] PHP Warning:  include(./partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:40:54 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:40:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:41:11 UTC] PHP Warning:  include(./partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:41:11 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:41:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:41:14 UTC] PHP Warning:  include(./partials/structures/site-header.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:41:14 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-header.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/header.php on line 37
+[15-Apr-2019 15:41:14 UTC] PHP Warning:  include(./partials/structures/site-footer.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:41:14 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-footer.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:42:07 UTC] PHP Warning:  include(./partials/structures/site-footer.php): failed to open stream: No such file or directory in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:42:07 UTC] PHP Warning:  include(): Failed opening './partials/structures/site-footer.php' for inclusion (include_path='.:/usr/local/Cellar/php/7.3.2/share/php/pear') in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/footer.php on line 15
+[15-Apr-2019 15:43:06 UTC] PHP Parse error:  syntax error, unexpected end of file in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/structures/site-footer.php on line 52
+[15-Apr-2019 15:43:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:43:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:43:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:43:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:44:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:45:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[15-Apr-2019 15:49:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mkdo_theme_is_styleguide() in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php:45
+Stack trace:
+#0 /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/page-static.php(216): include()
+#1 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/template-loader.php(77): include('/Users/charlie/...')
+#2 /Users/charlie/Sites/mkdo-base/build/wordpress/wp-blog-header.php(19): require_once('/Users/charlie/...')
+#3 /Users/charlie/Sites/mkdo-base/build/index.php(17): require('/Users/charlie/...')
+#4 /Users/charlie/.composer/vendor/laravel/valet/server.php(158): require('/Users/charlie/...')
+#5 {main}
+  thrown in /Users/charlie/Sites/mkdo-base/build/wp-content/themes/my-project/partials/components/meta.php on line 45
+[17-Jun-2020 15:52:25 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/wp-db.php on line 1612
+[17-Jun-2020 15:52:39 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/wp-db.php on line 1612
+[17-Jun-2020 15:52:58 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/wp-db.php on line 1612
+[17-Jun-2020 15:53:02 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/wp-db.php on line 1612
+[19-Jun-2020 11:37:41 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/wp-db.php on line 1612
+[19-Jun-2020 11:37:43 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /Users/charlie/Sites/mkdo-base/build/wordpress/wp-includes/wp-db.php on line 1612
+[19-Jun-2020 11:46:03 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /Users/charlie/Sites/mkdo-base/wordpress/wp-includes/wp-db.php on line 1612
+[19-Jun-2020 11:46:12 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:13 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:20 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:20 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:31 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/charlie/Sites/mkdo-base/wordpress/wp-includes/update.php on line 160
+[19-Jun-2020 11:46:34 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/css/admin.css in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 70
+[19-Jun-2020 11:46:34 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:36 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/css/admin.css in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 70
+[19-Jun-2020 11:46:36 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:39 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:39 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:42 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:42 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:43 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:43 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:50 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:50 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:51 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36
+[19-Jun-2020 11:46:52 UTC] PHP Warning:  filemtime(): stat failed for /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/assets/js/footer.js in /Users/charlie/Sites/mkdo-base/wp-content/themes/my-project/includes/enqueue-assets.php on line 36

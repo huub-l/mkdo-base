@@ -1,88 +1,52 @@
 # Git Ignore for My Project.
 # -----------------------------------------------------------------------------
 
-# Setup script.
-# -------------------------------------
-kapow.sh
-
-# Flotsam & Jetsam.
+# General.
 # -------------------------------------
 .DS_Store
-
-# Nested Git files.
-# -------------------------------------
-build/**/.git
-build/**/.gitignore
-build/**/.gitmodules
-
-# Assets & Grunt files - Stop accidental commits
-# -------------------------------------
-assets/css/*
-assets/glob/
-assets/scss/base/_sprites.scss
-assets/js/lib/_modernizr-custom.js
-assets/scss/glob/*
-assets/js/*.tmp.js
-!assets/css/.gitkeep
-imgcache/*
 yarn-error.log
-
-# Composer.
-# -------------------------------------
-vendor
-!assets/scss/vendor
-!build/wp-content/**/vendor/
-
-# Dependencies.
-# -------------------------------------
-bower_components
 node_modules
-
-# Documentation & Reports.
-# -------------------------------------
 wpcs-errors.md
+**/.git
+**/.gitignore
+**/.gitmodules
 
 # WordPress.
 # -------------------------------------
 
 # Root
-build/*
-!build/static/
-!build/wp-content/
-!build/index.php
-!build/local-config.php
-!build/robots.txt
-!build/wp-config.php
-!build/.htaccess
+wordpress/
 
 # WP Content
-build/wp-content/languages/
-build/wp-content/debug.log
-build/wp-content/advanced-cache.php
-build/wp-content/wp-cache-config.php
-build/wp-content/backup-db/
-build/wp-content/backups/
-build/wp-content/blogs.dir/
-build/wp-content/cache/
-build/wp-content/plugins/hello.php
-build/wp-content/uploads/
-build/wp-content/upgrade/
-!build/wp-content/**/vendor/
+wp-content/languages/
+wp-content/debug.log
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/plugins/hello.php
+wp-content/uploads/
+wp-content/upgrade/
+!wp-content/**/vendor/
 
 # Themes - Stock
-build/wp-content/themes/twentyten/
-build/wp-content/themes/twentyeleven/
-build/wp-content/themes/twentytwelve/
-build/wp-content/themes/twentythirteen/
-build/wp-content/themes/twentyfourteen/
-build/wp-content/themes/twentyfifteen/
-build/wp-content/themes/twentysixteen/
-build/wp-content/themes/twentyseventeen/
-build/wp-content/themes/twentyeighteen/
-build/wp-content/themes/twentynineteen/
-build/wp-content/themes/twentytwenty/
+wp-content/themes/twentyten/
+wp-content/themes/twentyeleven/
+wp-content/themes/twentytwelve/
+wp-content/themes/twentythirteen/
+wp-content/themes/twentyfourteen/
+wp-content/themes/twentyfifteen/
+wp-content/themes/twentysixteen/
+wp-content/themes/twentyseventeen/
+wp-content/themes/twentyeighteen/
+wp-content/themes/twentynineteen/
+wp-content/themes/twentytwenty/
+wp-content/themes/twentytwentyone/
+wp-content/themes/twentytwentytwo/
 
 # Themes - Custom
-build/wp-content/themes/my-project/assets/*
-build/wp-content/themes/my-project/style.css
-build/wp-content/themes/my-project/style.css.map
+wp-content/themes/my-project/assets/dist/
+wp-content/themes/my-project/style.css
+wp-content/themes/my-project/style.css.map

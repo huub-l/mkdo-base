@@ -19,8 +19,8 @@ class MiniCssExtractPluginCleanup {
 				Object.keys(compilation.assets)
 					.filter(asset => {
 						return [
-							'themes/my-project/assets/css/*.js',
-							'themes/my-project/assets/css/*.js.map',
+							'themes/my-project/assets/styles/*.js',
+							'themes/my-project/assets/styles/*.js.map',
 							'themes/my-project/style.js',
 							'themes/my-project/style.js.map',
 						].some(pattern => {
@@ -40,15 +40,21 @@ class MiniCssExtractPluginCleanup {
 module.exports = {
 	mode: process.env.NODE_ENV,
 	entry: {
-		'themes/my-project/assets/js/footer': './assets/js/footer.js',
-		'themes/my-project/assets/js/admin': './assets/js/admin.js',
-		'themes/my-project/assets/js/customizer': './assets/js/customizer.js',
-		'themes/my-project/assets/css/admin': './assets/scss/admin.scss',
-		'themes/my-project/assets/css/editor': './assets/scss/editor.scss',
-		'themes/my-project/style': './assets/scss/style.scss',
+		'themes/my-project/assets/dist/scripts/footer':
+			'./wp-content/themes/my-project/assets/src/scripts/footer.js',
+		'themes/my-project/assets/dist/scripts/admin':
+			'./wp-content/themes/my-project/assets/src/scripts/admin.js',
+		'themes/my-project/assets/dist/scripts/customizer':
+			'./wp-content/themes/my-project/assets/src/scripts/customizer.js',
+		'themes/my-project/assets/dist/styles/admin':
+			'./wp-content/themes/my-project/assets/src/styles/admin.scss',
+		'themes/my-project/assets/dist/styles/editor':
+			'./wp-content/themes/my-project/assets/src/styles/editor.scss',
+		'themes/my-project/style':
+			'./wp-content/themes/my-project/assets/src/styles/style.scss',
 	},
 	output: {
-		path: path.resolve(__dirname, 'build/wp-content/'),
+		path: path.resolve(__dirname, 'wp-content/'),
 		filename: '[name].js',
 	},
 	devtool: devMode ? 'source-map' : 'cheap-eval-source-map',
@@ -140,7 +146,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							outputPath: 'themes/my-project/assets/images',
+							outputPath: 'themes/my-project/assets/dist/images',
 							name: '[name].[ext]',
 						},
 					},
@@ -152,7 +158,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							outputPath: 'themes/my-project/assets/fonts',
+							outputPath: 'themes/my-project/assets/dist/fonts',
 							name: '[name].[ext]',
 						},
 					},
@@ -164,7 +170,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							outputPath: 'themes/my-project/assets/svgs',
+							outputPath: 'themes/my-project/assets/dist/svgs',
 							name: '[name].[ext]',
 						},
 					},
@@ -189,12 +195,12 @@ module.exports = {
 				clearConsole: false,
 			}),
 		!devMode &&
-			new CleanWebpackPlugin(['assets', 'style.css', 'style.css.map'], {
-				root: path.resolve(__dirname, 'build/wp-content/themes/my-project'),
+			new CleanWebpackPlugin(['assets/dist', 'style.css', 'style.css.map'], {
+				root: path.resolve(__dirname, 'wp-content/themes/my-project'),
 				verbose: !devMode,
 			}),
 		new StyleLintPlugin({
-			files: 'assets/scss/**/*.s?(a|c)ss',
+			files: 'wp-content/themes/my-project/assets/styles/src/**/*.s?(a|c)ss',
 			fix: true,
 			failOnError: false,
 			syntax: 'scss',
