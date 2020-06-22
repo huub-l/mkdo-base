@@ -4,7 +4,7 @@ const minimatch = require('minimatch');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const TerserPlugin = require('terser-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
@@ -17,17 +17,17 @@ class MiniCssExtractPluginCleanup {
 			'MiniCssExtractPluginCleanup',
 			(compilation, callback) => {
 				Object.keys(compilation.assets)
-					.filter(asset => {
+					.filter((asset) => {
 						return [
-							'themes/my-project/assets/styles/*.js',
-							'themes/my-project/assets/styles/*.js.map',
+							'themes/my-project/assets/dist/styles/*.js',
+							'themes/my-project/assets/dist/styles/*.js.map',
 							'themes/my-project/style.js',
 							'themes/my-project/style.js.map',
-						].some(pattern => {
+						].some((pattern) => {
 							return minimatch(asset, pattern);
 						});
 					})
-					.forEach(asset => {
+					.forEach((asset) => {
 						delete compilation.assets[asset];
 					});
 
@@ -117,6 +117,7 @@ module.exports = {
 			},
 			{
 				test: /\.s?css$/,
+				exclude: /(node_modules|bower_components)/,
 				use: [
 					MiniCssExtractPlugin.loader,
 					{
@@ -135,13 +136,17 @@ module.exports = {
 						loader: 'sass-loader',
 						options: {
 							sourceMap: true,
-							importer: globImporter(),
+							sassOptions: {
+								sourceMap: true,
+								importer: globImporter(),
+							},
 						},
 					},
 				],
 			},
 			{
 				test: /\.(png|jpg|gif)$/,
+				exclude: /(node_modules|bower_components)/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -154,6 +159,7 @@ module.exports = {
 			},
 			{
 				test: /\.(woff(2)?|ttf|eot)$/,
+				exclude: /(node_modules|bower_components)/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -166,6 +172,7 @@ module.exports = {
 			},
 			{
 				test: /\.(svg)$/,
+				exclude: /(node_modules|bower_components)/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -195,12 +202,17 @@ module.exports = {
 				clearConsole: false,
 			}),
 		!devMode &&
-			new CleanWebpackPlugin(['assets/dist', 'style.css', 'style.css.map'], {
-				root: path.resolve(__dirname, 'wp-content/themes/my-project'),
+			new CleanWebpackPlugin({
+				cleanOnceBeforeBuildPatterns: [
+					path.resolve(__dirname, 'wp-content/themes/my-project/assets/dist'),
+					path.resolve(__dirname, 'wp-content/themes/my-project/style.css'),
+					path.resolve(__dirname, 'wp-content/themes/my-project/style.css.map'),
+				],
+				cleanAfterEveryBuildPatterns: [],
 				verbose: !devMode,
 			}),
 		new StyleLintPlugin({
-			files: 'wp-content/themes/my-project/assets/styles/src/**/*.s?(a|c)ss',
+			files: 'wp-content/themes/my-project/assets/src/styles/**/*.s?(a|c)ss',
 			fix: true,
 			failOnError: false,
 			syntax: 'scss',

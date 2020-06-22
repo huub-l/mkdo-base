@@ -5,5 +5,6 @@ module.exports = {
 		'block-no-empty': null,
 		'no-descending-specificity': null,
 		'declaration-property-unit-whitelist': null,
+		'selector-class-pattern': null,
 	},
 };
