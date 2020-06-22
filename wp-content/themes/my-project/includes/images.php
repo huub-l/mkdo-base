@@ -17,7 +17,7 @@ function mkdo_theme_get_svg( $slug, $title = '', $return = false ) {
 		return;
 	}
 
-	foreach ( glob( get_stylesheet_directory() . '/assets/svgs/*.svg' ) as $file ) {
+	foreach ( glob( get_stylesheet_directory() . '/assets/dist/svgs/*.svg' ) as $file ) {
 
 		$path_parts = pathinfo( $file );
 		$file_slug  = $path_parts['filename'];

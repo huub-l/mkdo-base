@@ -8,7 +8,7 @@
  */
 
 // Output all svgs.
-foreach ( glob( get_stylesheet_directory() . '/assets/svgs/*.svg' ) as $mkdo_theme_file ) {
+foreach ( glob( get_stylesheet_directory() . '/assets/dist/svgs/*.svg' ) as $mkdo_theme_file ) {
 	$mkdo_theme_path_parts    = pathinfo( $mkdo_theme_file );
 	$mkdo_theme_file_slug     = $mkdo_theme_path_parts['filename'];
 	$mkdo_theme_text          = ( ! empty( $mkdo_theme_title ) ) ? $mkdo_theme_title : $mkdo_theme_file_slug;
