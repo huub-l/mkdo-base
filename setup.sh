@@ -203,7 +203,6 @@ if [ -d "$bpdir" ]
 	then
 	cp -r "$bpdir"/* .
 	cp -r "$bpdir"/.babelrc.js .
-	cp -r "$bpdir"/.deployignore .
 	cp -r "$bpdir"/.eslintrc.js .
 	cp -r "$bpdir"/.gitignore .
 	cp -r "$bpdir"/.github .
@@ -357,7 +356,7 @@ if [ -d "$gitdir" ]
 	git commit -m "Initial MKDO Base instance." --no-verify  &> /dev/null
 	git push origin master  &> /dev/null
 
-	echo "$(tput setaf 3)Creating the addition default branches (staging, review)...$(tput setaf 9)"
+	echo "$(tput setaf 3)Creating the addition default branches (staging, develop)...$(tput setaf 9)"
 	echo
 
 	# Staging
@@ -365,10 +364,10 @@ if [ -d "$gitdir" ]
 	git push origin staging  &> /dev/null
 	git branch --set-upstream-to=origin/staging staging  &> /dev/null
 
-	# Review
-	git checkout -b review  &> /dev/null
-	git push origin review  &> /dev/null
-	git branch --set-upstream-to=origin/review review  &> /dev/null
+	# Develop
+	git checkout -b develop  &> /dev/null
+	git push origin develop  &> /dev/null
+	git branch --set-upstream-to=origin/develop develop  &> /dev/null
 
 	# Back to Master
 	git checkout master  &> /dev/null
@@ -390,8 +389,6 @@ if [ "$configurevalet" = "y" ] || [ "$configurevalet" = "Y" ]
 
 	valet link "$slug" &> /dev/null
 	valet secure &> /dev/null
-	cd ..
-
 fi
 
 # Remove MKDO Base Setup script.
@@ -402,7 +399,6 @@ setupscript="setup.sh"
 if [ -f "$setupscript" ]
 	then
 
-	rm setup.sh
 	rm README.md
 	mv README-WORKFLOW.md README.md
 	cd ..
