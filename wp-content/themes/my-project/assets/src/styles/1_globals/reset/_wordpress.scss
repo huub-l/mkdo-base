@@ -5,7 +5,9 @@
 .alignleft,
 .alignright,
 .alignnone {
-	@include mkdo-center-block;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	float: none;
 	margin-bottom: mkdo-rem($global--spacing-common);
 	margin-top: mkdo-rem($global--spacing-common);
@@ -13,7 +15,9 @@
 
 @include mkdo-mq(sm) {
 	.aligncenter {
-		@include mkdo-center-block;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.alignleft {

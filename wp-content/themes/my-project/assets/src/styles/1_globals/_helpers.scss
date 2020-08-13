@@ -9,28 +9,6 @@
 	@include spacing;
 }
 
-.col-half {
-	@include mkdo-mq(sm) {
-		width: 50%;
-	}
-}
-
-// Backgrounds
-// -------------------------------------
-.bg-img {
-	@include mkdo-bg-image;
-}
-
-// Centering.
-// -------------------------------------
-.center-block {
-	@include mkdo-center-block;
-}
-
-.center-both {
-	@include mkdo-center-both;
-}
-
 // Clearfix.
 // -------------------------------------
 .clearfix {
@@ -72,49 +50,11 @@
 	visibility: hidden !important;
 }
 
-// Remove Margin.
-// -------------------------------------
-.no-margin {
-	margin: 0;
-}
-
-.no-hmargin {
-	@include mkdo-no-hmargin;
-}
-
-.no-vmargin {
-	@include mkdo-no-vmargin;
-}
-
-// Remove Padding.
-// -------------------------------------
-.no-padding {
-	padding: 0;
-}
-
-.no-hpadding {
-	@include mkdo-no-hpadding;
-}
-
-.no-vpadding {
-	@include mkdo-no-vpadding;
-}
-
 // Reset ul/ol list styles.
 // -------------------------------------
 // Removes list margin and padding.
 .reset-list {
 	@include mkdo-reset-list;
-}
-
-// As above but with no list item style.
-.reset-list-style {
-	@include mkdo-reset-list;
-}
-
-// As above but with `float: left` on list items.
-.make-list-nav {
-	@include mkdo-reset-list(true);
 }
 
 // Reset buttons
@@ -129,15 +69,4 @@
 .sr-only,
 .visuallyhidden {
 	@include mkdo-visuallyhidden;
-}
-
-// Classes to quickly flip an element
-// on a particular axis using CSS3.
-// -------------------------------------
-.flip-x {
-	@include mkdo-flip-axis(X);
-}
-
-.flip-y {
-	@include mkdo-flip-axis(Y);
 }
