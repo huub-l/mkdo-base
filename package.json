@@ -30,11 +30,10 @@
 		"clean-webpack-plugin": "^3.0.0",
 		"copy-webpack-plugin": "^6.0.2",
 		"cross-env": "^7.0.2",
-		"css-loader": "^3.6.0",
+		"css-loader": "^4.2.1",
 		"cssnano": "^4.1.10",
 		"eslint": "^7.2.0",
 		"eslint-config-prettier": "^6.11.0",
-		"eslint-config-wordpress": "^2.0.0",
 		"eslint-loader": "^4.0.2",
 		"file-loader": "^6.0.0",
 		"friendly-errors-webpack-plugin": "^1.7.0",
@@ -42,7 +41,7 @@
 		"husky": "^4.2.5",
 		"imagemin-webpack-plugin": "^2.4.2",
 		"lint-staged": "^10.2.10",
-		"mini-css-extract-plugin": "^0.9.0",
+		"mini-css-extract-plugin": "^0.10.0",
 		"minimatch": "^3.0.4",
 		"node-sass": "^4.14.1",
 		"node-sass-glob-importer": "^5.3.2",
@@ -50,7 +49,7 @@
 		"postcss-loader": "^3.0.0",
 		"prettier": "^2.0.5",
 		"raw-loader": "^4.0.1",
-		"sass-loader": "^8.0.2",
+		"sass-loader": "^9.0.3",
 		"style-loader": "^1.2.1",
 		"stylelint": "^13.6.0",
 		"stylelint-config-prettier": "^8.0.1",
@@ -59,19 +58,14 @@
 		"stylelint-webpack-plugin": "^2.0.0",
 		"svgo": "^1.3.2",
 		"svgo-loader": "^2.2.1",
-		"terser-webpack-plugin": "^3.0.5",
+		"terser-webpack-plugin": "^4.1.0",
 		"webpack": "^4.43.0",
 		"webpack-cli": "^3.3.11",
 		"webpack-dev-server": "^3.11.0",
 		"webpack-livereload-plugin": "^2.3.0"
 	},
 	"dependencies": {
-		"imagesloaded": "^4.1.4",
-		"jquery": "^3.5.1",
-		"normalize-scss": "^7.0.1",
-		"select2": "^4.0.13",
-		"selectivizr": "^1.0.3",
-		"underscore": "^1.10.2"
+		"normalize-scss": "^7.0.1"
 	},
 	"husky": {
 		"hooks": {
@@ -80,20 +74,16 @@
 	},
 	"lint-staged": {
 		"assets/**/*.css": [
-			"stylelint --fix",
-			"git add"
+			"stylelint --fix"
 		],
 		"assets/**/*.scss": [
-			"stylelint --fix --syntax=scss",
-			"git add"
+			"stylelint --fix --syntax=scss"
 		],
 		"assets/**/*.js": [
-			"eslint --fix",
-			"git add"
+			"eslint --fix"
 		],
 		"assets/**/*.{js,scss,md,html}": [
-			"prettier --write",
-			"git add"
+			"prettier --write"
 		]
 	}
 }

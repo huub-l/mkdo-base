@@ -19,10 +19,13 @@ class MiniCssExtractPluginCleanup {
 				Object.keys(compilation.assets)
 					.filter((asset) => {
 						return [
+							'themes/my-project/assets/dist/scripts/*.js.LICENSE.txt',
 							'themes/my-project/assets/dist/styles/*.js',
 							'themes/my-project/assets/dist/styles/*.js.map',
+							'themes/my-project/assets/dist/styles/*.js.LICENSE.txt',
 							'themes/my-project/style.js',
 							'themes/my-project/style.js.map',
+							'themes/my-project/style.js.LICENSE.txt',
 						].some((pattern) => {
 							return minimatch(asset, pattern);
 						});
@@ -126,12 +129,7 @@ module.exports = {
 							sourceMap: true,
 						},
 					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							sourceMap: true,
-						},
-					},
+					'postcss-loader',
 					{
 						loader: 'sass-loader',
 						options: {
@@ -145,7 +143,7 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(png|jpg|gif)$/,
+				test: /\.(png|jpg|jpeg|gif|webp)$/,
 				exclude: /(node_modules|bower_components)/,
 				use: [
 					{
@@ -158,7 +156,7 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(woff(2)?|ttf|eot)$/,
+				test: /\.(woff(2)?|ttf|eot|otf)$/,
 				exclude: /(node_modules|bower_components)/,
 				use: [
 					{
