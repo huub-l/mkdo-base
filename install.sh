@@ -24,8 +24,13 @@ hash yarn 2>&- || { echo >&2 "Yarn is required but missing. Exiting."; exit 1; }
 echo "$(tput setaf 3)Creating MySQL database (if it's not already there)...$(tput setaf 9)"
 echo
 
+# Cater for those with `root` as as the `root` user password.
 mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS $underslug" &> /dev/null
 mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON $underslug.* TO wp@localhost IDENTIFIED BY 'wp';" &> /dev/null
+
+# Cater for those with no `root` user password.
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS $underslug" &> /dev/null
+mysql -u root -e "GRANT ALL PRIVILEGES ON $underslug.* TO wp@localhost IDENTIFIED BY 'wp';" &> /dev/null
 
 # Do WordPress Things.
 echo "$(tput setaf 3)Installing and configuring WordPress using WP CLI....$(tput setaf 9)"
@@ -70,6 +75,7 @@ curl -Ls https://raw.githubusercontent.com/mkdo/mkdo-base/master/local-config.ph
 
 bakfile=".bak"
 sed -i$bakfile "s/my_project/$underslug/g" local-config.php
+sed -i$bakfile "s/pickard_properties/$underslug/g" local-config.php.bak
 
 # Build the project.
 echo "$(tput setaf 3)Building front-end assets...$(tput setaf 9)"
