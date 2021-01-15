@@ -75,7 +75,7 @@ curl -Ls https://raw.githubusercontent.com/mkdo/mkdo-base/master/local-config.ph
 
 bakfile=".bak"
 sed -i$bakfile "s/my_project/$underslug/g" local-config.php
-sed -i$bakfile "s/pickard_properties/$underslug/g" local-config.php.bak
+sed -i$bakfile "s/my_project/$underslug/g" local-config.php.bak
 
 # Build the project.
 echo "$(tput setaf 3)Building front-end assets...$(tput setaf 9)"
