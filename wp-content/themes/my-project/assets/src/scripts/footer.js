@@ -1,14 +1,6 @@
 // Hello? What's all this jQuery? We'll have no libraries here!
 // Are you vanilla? This is a vanilla file, for vanilla people! There's nothing for jQuery folk here!
 
-// Images, svgs and fonts.
-function requireAll(r) {
-	r.keys().forEach(r);
-}
-requireAll(require.context('../images/', true, /\.(png|jpg|gif)$/));
-requireAll(require.context('../svgs/', true, /\.(svg)$/));
-requireAll(require.context('../fonts/', true, /\.(woff(2)?|ttf|eot)$/));
-
 // JS
 import userAgentClasses from './modules/user-agent-classes.js';
 
