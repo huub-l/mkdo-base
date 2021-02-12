@@ -4,13 +4,13 @@
 //
 // @TODO - Is this needed, or can it be merged in with other navigation JS?
 // ----------------------------------------------------------------------------
-const skipLink = function() {
+const skipLink = function () {
 	var isIe = /(trident|msie)/i.test(navigator.userAgent);
 
 	if (isIe && document.getElementById && window.addEventListener) {
 		window.addEventListener(
 			'hashchange',
-			function() {
+			function () {
 				var id = location.hash.substring(1),
 					element;
 

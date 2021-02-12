@@ -8,20 +8,14 @@ import userAgentClasses from './modules/user-agent-classes.js';
 userAgentClasses();
 
 // Modules.
-import {
-	deBounce,
-	isHighDensity,
-	isRetina,
-	compareRetina,
-	compareBreakpoint,
-} from './modules/utils.js';
+import { deBounce } from './modules/utils.js';
 import trackFocus from './modules/track-focus.js';
 import skipLink from './modules/skip-link.js';
 import styleGuide from './modules/style-guide.js';
 import { menuToggle } from './modules/toggles.js';
 
 // Ready.
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
 	// Replace no-js with js on the root HTML element.
 	document.documentElement.className =
 		document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
@@ -32,7 +26,10 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 // Load.
-window.addEventListener('load', function() {});
+window.addEventListener('load', function () {});
 
 // Resize
-window.addEventListener('resize', deBounce(() => {}, 100));
+window.addEventListener(
+	'resize',
+	deBounce(() => {}, 100),
+);

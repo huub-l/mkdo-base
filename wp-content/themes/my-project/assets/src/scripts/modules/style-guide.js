@@ -1,4 +1,4 @@
-const styleGuide = function() {
+const styleGuide = function () {
 	if (document.querySelector('.static-main')) {
 		// View changing JS
 		const staticNav = Array.from(
@@ -29,13 +29,13 @@ const styleGuide = function() {
 				`section.static-page.${targetName}`,
 			);
 
-			staticNav.forEach(link => link.classList.remove('active'));
+			staticNav.forEach((link) => link.classList.remove('active'));
 			this.classList.add('active');
 
-			staticPages.forEach(page => page.classList.remove('active'));
+			staticPages.forEach((page) => page.classList.remove('active'));
 
-			setTimeout(function() {
-				staticPages.forEach(page => page.classList.remove('display'));
+			setTimeout(function () {
+				staticPages.forEach((page) => page.classList.remove('display'));
 				target.classList.add('display');
 			}, 150);
 
@@ -47,20 +47,20 @@ const styleGuide = function() {
 			return currentView;
 		}
 
-		staticNav.forEach(link => link.addEventListener('click', toggleOpen));
+		staticNav.forEach((link) => link.addEventListener('click', toggleOpen));
 
 		// Tabbed Display
 		const tabbedFlag = Array.from(
 			document.querySelectorAll('.staticflag-tabbed'),
 		);
 
-		tabbedFlag.forEach(function(tabbed) {
+		tabbedFlag.forEach(function (tabbed) {
 			// Get the list of elements
 			const elms = Array.from(tabbed.children);
 
 			// Output tab links for each elm
 			let int = 0;
-			elms.forEach(function(elm) {
+			elms.forEach(function (elm) {
 				let modifier = 'Default';
 
 				if (elm.className.match(/--([^\s]+)/g)) {
@@ -75,7 +75,7 @@ const styleGuide = function() {
 			});
 
 			// Generate tab markup
-			elms.forEach(function(elm) {
+			elms.forEach(function (elm) {
 				const tab = document.createElement('div');
 				tab.classList.add('staticflag-tabbed__tab');
 				tab.style.display = 'none';
@@ -93,12 +93,12 @@ const styleGuide = function() {
 			links[0].classList.add('staticflag-tabbed__link--active');
 			tabs[0].style.display = 'block';
 
-			links.forEach(function(link) {
-				link.addEventListener('click', function() {
-					links.forEach(link =>
+			links.forEach(function (link) {
+				link.addEventListener('click', function () {
+					links.forEach((link) =>
 						link.classList.remove('staticflag-tabbed__link--active'),
 					);
-					tabs.forEach(tab => (tab.style.display = 'none'));
+					tabs.forEach((tab) => (tab.style.display = 'none'));
 					links[this.dataset.target].classList.add(
 						'staticflag-tabbed__link--active',
 					);

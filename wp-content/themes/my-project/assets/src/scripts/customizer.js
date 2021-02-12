@@ -5,12 +5,12 @@
 import { deBounce } from './modules/utils.js';
 
 // Ready.
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
 	// Do something.
 });
 
 // Load.
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
 	// Do something.
 });
 
