@@ -70,16 +70,16 @@
 		"normalize-scss": "^7.0.1"
 	},
 	"lint-staged": {
-		"assets/**/*.css": [
+		"wp-content/themes/my-project/assets/src/**/*.css": [
 			"stylelint --fix"
 		],
-		"assets/**/*.scss": [
+		"wp-content/themes/my-project/assets/src/**/*.scss": [
 			"stylelint --fix --syntax=scss"
 		],
-		"assets/**/*.js": [
+		"wp-content/themes/my-project/assets/src/**/*.js": [
 			"eslint --fix"
 		],
-		"assets/**/*.{js,scss,md,html}": [
+		"wp-content/themes/my-project/assets/src/**/*.{js,scss,md,html}": [
 			"prettier --write"
 		]
 	}
