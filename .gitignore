@@ -5,11 +5,13 @@
 # -------------------------------------
 .DS_Store
 yarn-error.log
+imgcache
 node_modules
 wpcs-errors.md
 **/.git
 **/.gitignore
 **/.gitmodules
+!.gitignore
 
 # WordPress.
 # -------------------------------------

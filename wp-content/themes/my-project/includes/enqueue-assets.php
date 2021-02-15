@@ -60,10 +60,21 @@ add_action( 'wp_enqueue_scripts', 'mkdo_theme_enqueue_assets', 10 );
  */
 function mkdo_theme_enqueue_admin_assets() {
 
+	// Admin scripts.
+	$admin_script_url  = get_stylesheet_directory_uri() . '/assets/dist/scripts/admin.js';
+	$admin_script_path = dirname( MKDO_THEME_ROOT ) . '/assets/dist/scripts/admin.js';
+	wp_enqueue_script(
+		'mkdo-theme-admin-script',
+		$admin_script_url,
+		array(),
+		filemtime( $admin_script_path ),
+		false
+	);
+
 	// Admin stylesheet.
 	$admin_style_url  = get_stylesheet_directory_uri() . '/assets/dist/styles/admin.css';
 	$admin_style_path = dirname( MKDO_THEME_ROOT ) . '/assets/dist/styles/admin.css';
-	wp_enqueue_script(
+	wp_enqueue_style(
 		'mkdo-theme-admin-style',
 		$admin_style_url,
 		array(),

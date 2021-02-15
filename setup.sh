@@ -206,7 +206,7 @@ if [ -d "$bpdir" ]
 	cp -r "$bpdir"/.eslintrc.js .
 	cp -r "$bpdir"/.gitignore .
 	cp -r "$bpdir"/.github .
-	cp -r "$bpdir"/.postcssrc.js .
+	cp -r "$bpdir"/postcssrc.config.js .
 	cp -r "$bpdir"/.prettierrc.js .
 	cp -r "$bpdir"/.stylelintrc.js .
 fi
