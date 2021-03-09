@@ -42,26 +42,7 @@ module.exports = {
 		minimize: true,
 		minimizer: [new TerserPlugin()],
 	},
-	stats: {
-		assets: !devMode,
-		builtAt: !devMode,
-		children: false,
-		chunks: false,
-		colors: true,
-		entrypoints: !devMode,
-		env: false,
-		errors: !devMode,
-		errorDetails: false,
-		hash: false,
-		modules: false,
-		performance: !devMode,
-		publicPath: false,
-		reasons: false,
-		source: false,
-		timings: !devMode,
-		version: false,
-		warnings: !devMode,
-	},
+	stats: devMode ? 'none' : 'normal',
 	module: {
 		rules: [
 			{
@@ -138,12 +119,10 @@ module.exports = {
 					{
 						loader: 'svgo-loader',
 						options: {
-							plugins: [
-								{ removeTitle: false },
-								{ convertColors: { shorthex: false } },
-								{ convertPathData: false },
-								{ removeViewBox: false },
-							],
+							removeTitle: false,
+							convertColors: { shorthex: false },
+							convertPathData: false,
+							removeViewBox: false,
 						},
 					},
 				],
@@ -153,7 +132,7 @@ module.exports = {
 	plugins: [
 		devMode &&
 			new FriendlyErrorsPlugin({
-				clearConsole: false,
+				clearConsole: true,
 			}),
 		new CleanWebpackPlugin({
 			cleanOnceBeforeBuildPatterns: [
