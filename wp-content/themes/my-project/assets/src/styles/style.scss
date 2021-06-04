@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/*!
+Theme Name: My Project
+Author: Make Do <hello@makedo.net>
+Author URI: http://www.makedo.net
+Version: 1.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: mkdo-theme
+*/
+
+// Vendor.
+// -------------------------------------
+@import 'node_modules/normalize-scss/sass/normalize/_import-now.scss';
+// @import "slick-carousel/slick/slick.scss";
+// @import "select2/src/scss/core.scss";
+
+// Config.
+// -------------------------------------
+@import '1_globals/_globals';
+
+// Project Sass.
+// -------------------------------------
+@import '2_components/*.scss';
+@import '3_modules/*.scss';
+@import '4_structures/*.scss';
+@import '5_templates/*.scss';
+
+// Hacks (to be refactored).
+// -------------------------------------
+@import 'hacks';

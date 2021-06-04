@@ -133,19 +133,22 @@ if [ ! -d "$gitdir" ]
 				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request DELETE "https://api.github.com/repos/"$githuborg"/"$slug"/labels/good%20first%20issue"
 
 				# Add our custom labels.
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Epic","description":"Epic issue that consists of multiple sub-issues.","color":"0052cc"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Sub","description":"Sub-issue belonging to the parent Epic issue.","color":"b60205"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Bug (Confirmed)","description":"Bug that has been confirmed and requires a fix.","color":"b60205"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Bug (Reported)","description":"Bug that has been reported, but not confirmed.","color":"e99695"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Blocked","description":"Blocked by matters that are outside our control.","color":"fbca04"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"On Hold","description":"Feature that is to be frozen until further notice.","color":"d93f0b"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Help Needed","description":"Request for assistance from another Engineer.","color":"d4c5f9"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Do Not Merge","description":"Pull Request that cannot not be merged in yet.","color":"d93f0b"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Needs Merge","description":"Pull Request that can be merged into master.","color":"0e8a16"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Client Review","description":"Feature is now on the Client Review site.","color":"fef2c0"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: MKDO Review","description":"Feature is now on the Make Do Review site.","color":"c2e0c6"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"PR: Needs Testing","description":"Pull Request that is ready for independent testing.","color":"#6e5abc"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
-				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"Needs Detail","description":"Issue that is not sufficiently fleshed out.","color":"111111"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"f: Planned","description":"","color":"AAE3D2"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"f: Unplanned","description":"","color":"AAE3D2"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"p: Could","description":"","color":"f99157"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"p: Should","description":"","color":"f99157"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"p: Must","description":"","color":"f99157"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"s: XS","description":"","color":"ffcc66"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"s: S","description":"","color":"ffcc66"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"s: M","description":"","color":"ffcc66"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"s: L","description":"","color":"ffcc66"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"t: Admin","description":"","color":"99cc99"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"t: Code","description":"","color":"99cc99"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"t: Design","description":"","color":"99cc99"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"x: Blocked","description":"","color":"2d2d2d"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"x: Bug","description":"","color":"cc0000"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"x: On Hold","description":"","color":"d0abfc"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
+				curl -s -u "$githubuser:$OAUTHTOKEN" -H "Authorization: token $OAUTHTOKEN" --request POST --data '{"name":"x: Reference","description":"","color":"c7f1fc"}' "https://api.github.com/repos/"$githuborg"/"$slug"/labels" &> /dev/null
 
 				# Clone the new repository.
 				git clone git@github.com:"$githuborg"/"$slug".git &> /dev/null
@@ -200,11 +203,10 @@ if [ -d "$bpdir" ]
 	then
 	cp -r "$bpdir"/* .
 	cp -r "$bpdir"/.babelrc.js .
-	cp -r "$bpdir"/.deployignore .
 	cp -r "$bpdir"/.eslintrc.js .
 	cp -r "$bpdir"/.gitignore .
 	cp -r "$bpdir"/.github .
-	cp -r "$bpdir"/.postcssrc.js .
+	cp -r "$bpdir"/postcssrc.config.js .
 	cp -r "$bpdir"/.prettierrc.js .
 	cp -r "$bpdir"/.stylelintrc.js .
 fi
@@ -243,56 +245,61 @@ done
 find . -name '*.bak' -delete
 
 # Rename the Theme
-mv build/wp-content/themes/my-project build/wp-content/themes/"$slug"
+mv wp-content/themes/my-project wp-content/themes/"$slug"
 
 # Create MySQL database.
 echo "$(tput setaf 3)Creating MySQL database (if it's not already there)...$(tput setaf 9)"
 echo
 underslug=$(echo $slug|tr '-' '_')
 
+# Cater for those with `root` as as the `root` user password.
 mysql -u root --password=root -e "CREATE DATABASE IF NOT EXISTS $underslug" &> /dev/null
 mysql -u root --password=root -e "GRANT ALL PRIVILEGES ON $underslug.* TO wp@localhost IDENTIFIED BY 'wp';" &> /dev/null
+
+# Cater for those with no `root` user password.
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS $underslug" &> /dev/null
+mysql -u root -e "GRANT ALL PRIVILEGES ON $underslug.* TO wp@localhost IDENTIFIED BY 'wp';" &> /dev/null
 
 # Do WordPress Things.
 echo "$(tput setaf 3)Installing and configuring WordPress using WP CLI....$(tput setaf 9)"
 echo
 
-if [ ! -d build/wordpress/wp-admin ]
+if [ ! -d wordpress/wp-admin ]
 	then
 
 	# Download the latest stable release of WordPress.
 	echo "$(tput setaf 3)Downloading WordPress core....$(tput setaf 9)"
 	echo
-	wp core download --path=build/wordpress --allow-root &> /dev/null
+	wp core download --path=wordpress --allow-root &> /dev/null
 
 	# Install the database tables and configure WordPress.
 	echo "$(tput setaf 3)Installing WordPress database...$(tput setaf 9)"
 	echo
-	wp core install --url=my-project.test --title="My Project" --admin_user=admin --admin_password=password --admin_email=hello@makedo.net --allow-root --path=build/wordpress &> /dev/null
+	wp core install --url=my-project.test --title="My Project" --admin_user=admin --admin_password=password --admin_email=hello@makedo.net --allow-root --path=wordpress &> /dev/null
 
 	# Remove/Install/Activate Plugins.
 	echo "$(tput setaf 3)Tinkering with plugins...$(tput setaf 9)"
 	echo
 
 	# Remove.
-	rm -rf build/wp-content/plugins/akismet
+	rm -rf wp-content/plugins/akismet
 
 	# Install.
-	wp plugin install better-search-replace --activate --path=build/wordpress &> /dev/null
-	wp plugin install debug-bar --activate --path=build/wordpress &> /dev/null
-	wp plugin install regenerate-thumbnails --activate --path=build/wordpress &> /dev/null
-	wp plugin install imsanity --activate --path=build/wordpress &> /dev/null
-	wp plugin install wp-smushit --activate --path=build/wordpress &> /dev/null
-	wp plugin install so-clean-up-wp-seo --activate --path=build/wordpress &> /dev/null
-	wp plugin install user-switching --activate --path=build/wordpress &> /dev/null
-	wp plugin install wp-mail-catcher --activate --path=build/wordpress &> /dev/null
-	wp plugin install wordpress-seo --activate --path=build/wordpress &> /dev/null
-	wp plugin install https://github.com/wp-premium/gravityforms/archive/master.zip --activate --path=build/wordpress &> /dev/null
+	wp plugin install better-search-replace --activate --path=wordpress &> /dev/null
+	wp plugin install debug-bar --activate --path=wordpress &> /dev/null
+	wp plugin install regenerate-thumbnails --activate --path=wordpress &> /dev/null
+	wp plugin install imsanity --activate --path=wordpress &> /dev/null
+	wp plugin install wp-smushit --activate --path=wordpress &> /dev/null
+	wp plugin install so-clean-up-wp-seo --activate --path=wordpress &> /dev/null
+	wp plugin install user-switching --activate --path=wordpress &> /dev/null
+	wp plugin install wp-mail-catcher --activate --path=wordpress &> /dev/null
+	wp plugin install wordpress-seo --activate --path=wordpress &> /dev/null
+	wp plugin install https://github.com/wp-premium/gravityforms/archive/master.zip --activate --path=wordpress &> /dev/null
 
 	# Copy the MKDO Core configuration template
 	# into the theme includes folder.
-	mkdocoredir="build/wp-content/mu-plugins/mkdo-core"
-	themeincludesdir="build/wp-content/themes/$slug/inc"
+	mkdocoredir="wp-content/mu-plugins/mkdo-core"
+	themeincludesdir="wp-content/themes/$slug/inc"
 
 	if [ -d "$themeincludesdir" ]
 		then
@@ -303,21 +310,21 @@ if [ ! -d build/wordpress/wp-admin ]
 	# Generate Salts.
 	echo "$(tput setaf 3)Generating salts...$(tput setaf 9)"
 	echo
-	echo '<?php' > build/salt.php && curl -Ls https://api.wordpress.org/secret-key/1.1/salt/ >> build/salt.php
+	echo '<?php' > salt.php && curl -Ls https://api.wordpress.org/secret-key/1.1/salt/ >> salt.php
 
 	# Update WP Options.
 	echo "$(tput setaf 3)Updating WordPress options...$(tput setaf 9)"
 	echo
 
 	# Set the site name to the supplied nice name.
-	wp option update blogname "$nicename" --allow-root --path=build/wordpress &> /dev/null
+	wp option update blogname "$nicename" --allow-root --path=wordpress &> /dev/null
 
 	# Set the permalink structure to 'post name'.
-	wp option update permalink_structure '/%postname%' --allow-root --path=build/wordpress &> /dev/null
+	wp option update permalink_structure '/%postname%' --allow-root --path=wordpress &> /dev/null
 
 	# Set the default 'Sample Page' as the front page.
-	wp option update show_on_front 'page' --allow-root --path=build/wordpress &> /dev/null
-	wp option update page_on_front 2 --allow-root --path=build/wordpress &> /dev/null
+	wp option update show_on_front 'page' --allow-root --path=wordpress &> /dev/null
+	wp option update page_on_front 2 --allow-root --path=wordpress &> /dev/null
 fi
 
 # Install All The Things(tm).
@@ -327,8 +334,8 @@ yarn install &> /dev/null
 
 # Ignore local-config.php
 gitignorefile=".gitignore"
-gitignoretarget="!build/local-config.php"
-gitignorereplace="build/local-config.php"
+gitignoretarget="!local-config.php"
+gitignorereplace="local-config.php"
 
 if [ -f "$gitignorefile" ]
 	then
@@ -354,7 +361,7 @@ if [ -d "$gitdir" ]
 	git commit -m "Initial MKDO Base instance." --no-verify  &> /dev/null
 	git push origin master  &> /dev/null
 
-	echo "$(tput setaf 3)Creating the addition default branches (staging, review)...$(tput setaf 9)"
+	echo "$(tput setaf 3)Creating the addition default branches (staging, develop)...$(tput setaf 9)"
 	echo
 
 	# Staging
@@ -362,10 +369,10 @@ if [ -d "$gitdir" ]
 	git push origin staging  &> /dev/null
 	git branch --set-upstream-to=origin/staging staging  &> /dev/null
 
-	# Review
-	git checkout -b review  &> /dev/null
-	git push origin review  &> /dev/null
-	git branch --set-upstream-to=origin/review review  &> /dev/null
+	# Develop
+	git checkout -b develop  &> /dev/null
+	git push origin develop  &> /dev/null
+	git branch --set-upstream-to=origin/develop develop  &> /dev/null
 
 	# Back to Master
 	git checkout master  &> /dev/null
@@ -385,11 +392,8 @@ if [ "$configurevalet" = "y" ] || [ "$configurevalet" = "Y" ]
 
 	hash valet 2>&- || { echo >&2 "$(tput setaf 1)Valet is not installed. Exiting.$(tput setaf 9)"; exit 1; }
 
-	cd build
 	valet link "$slug" &> /dev/null
 	valet secure &> /dev/null
-	cd ..
-
 fi
 
 # Remove MKDO Base Setup script.
@@ -400,8 +404,8 @@ setupscript="setup.sh"
 if [ -f "$setupscript" ]
 	then
 
-	rm setup.sh
 	rm README.md
+	mv README-WORKFLOW.md README.md
 	cd ..
 	rm setup.sh
 	cd "$slug"

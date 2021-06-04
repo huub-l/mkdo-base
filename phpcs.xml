@@ -40,10 +40,7 @@
 	<exclude-pattern>phpcs.xml</exclude-pattern>
 	<exclude-pattern>phpcs.xml.dist</exclude-pattern>
 
-	<!--
-		Don't get angry about checking files that don't contain code
-		@link https://github.com/stevegrunwell/wp-enforcer/issues/12
-	-->
+	<!-- Don't get angry about checking files that don't contain code -->
 	<rule ref="Internal.NoCodeFound">
 		<severity>0</severity>
 	</rule>
@@ -116,7 +113,7 @@
 	<!-- Ensure that any i18n functions have a valid project-specific textdomain -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="mkdo-theme,mkdo-core" />
+			<property name="text_domain" type="array" value="mkdo-theme,mkdo-data-model,mkdo-essentials" />
 		</properties>
 	</rule>
 
@@ -125,5 +122,22 @@
 		<properties>
 			<property name="minimum_supported_version" value="4.8" />
 		</properties>
+	</rule>
+
+	<!-- Ignore prefix naming conventions -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedFunctionFound">
+		<severity>0</severity>
+	</rule>
+	
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound">
+		<severity>0</severity>
 	</rule>
 </ruleset>

@@ -3,7 +3,7 @@
  * WordPress Coding Standard.
  *
  * @package WPCS\WordPressCodingStandards
- * @link    https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+ * @link    https://github.com/WordPress/WordPress-Coding-Standards
  * @license https://opensource.org/licenses/MIT MIT
  */
 
@@ -69,6 +69,7 @@ class PreparedSQLSniff extends Sniff {
 		\T_INT_CAST                 => true,
 		\T_DOUBLE_CAST              => true,
 		\T_BOOL_CAST                => true,
+		\T_NS_SEPARATOR             => true,
 	);
 
 	/**

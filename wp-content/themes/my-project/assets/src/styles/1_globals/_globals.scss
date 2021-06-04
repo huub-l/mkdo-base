@@ -1,0 +1,34 @@
+// Change the variables in the partials included below to meet your specific
+// project needs!
+
+@import 'variables/colours';
+@import 'variables/typography';
+@import 'variables/base-values';
+@import 'variables/media-queries';
+
+// Functions
+// Avoid making direct changes to any of these core functions.
+
+@import 'functions/colours';
+@import 'functions/utilities';
+
+// Mixins
+// Avoid making direct changes to any of the core mixins.
+
+@import 'mixins/utility';
+@import 'mixins/hide';
+@import 'mixins/layout';
+@import 'mixins/resets';
+@import 'mixins/typography';
+@import 'mixins/z-index';
+
+// Resets
+@import 'reset/reset';
+@import 'reset/print';
+@import 'reset/wordpress';
+
+@import 'helpers';
+@import 'font-face';
+@import 'base';
+
+@import 'static-styleguide/main';

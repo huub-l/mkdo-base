@@ -1,0 +1,178 @@
+// Alignment - centered for mobiles and
+// floated for everything else.
+// ------------------------------------
+.aligncenter,
+.alignleft,
+.alignright,
+.alignnone {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+	margin-bottom: mkdo-rem($global--spacing-common);
+	margin-top: mkdo-rem($global--spacing-common);
+}
+
+@include mkdo-mq(sm) {
+	.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.alignleft {
+		display: inline;
+		float: left;
+		margin-left: 0;
+		margin-right: mkdo-rem($global--spacing-common);
+	}
+
+	.alignright {
+		display: inline;
+		float: right;
+		margin-left: mkdo-rem($global--spacing-common);
+		margin-right: 0;
+	}
+
+	.alignnone {
+		clear: both;
+		display: inline;
+		float: none;
+	}
+}
+
+// Captions.
+// ------------------------------------
+.wp-caption {
+	margin-bottom: mkdo-rem($global--spacing-common);
+	max-width: 100%;
+
+	.wp-caption-text {
+		margin: mkdo-rem(8px);
+	}
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+// Comments.
+// ------------------------------------
+.bypostauthor {
+	display: block;
+}
+
+.comment-content {
+	a {
+		word-wrap: break-word;
+	}
+}
+
+// Edit link - makes it a fixed link in
+// the bottom left hand corner.
+// ------------------------------------
+.edit-link {
+	background-color: $mkdo--primary;
+	bottom: 0;
+	color: $mkdo--white;
+	display: block;
+	font-weight: $mkdo-font-weight--bold;
+	left: 0;
+	padding: mkdo-rem($global--spacing-common / 2);
+	position: fixed;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color ease-in-out 0.3s;
+	z-index: 9999;
+
+	@include mkdo-on-event {
+		background-color: darken($mkdo--primary, 20%);
+		color: $mkdo--white;
+	}
+}
+
+.post-edit-link {
+	color: $mkdo--white;
+	text-decoration: none;
+
+	@include mkdo-on-event {
+		color: $mkdo--white;
+	}
+}
+
+// Gallery - fully responsive.
+// ------------------------------------
+.gallery {
+	margin-bottom: mkdo-rem($global--spacing-common);
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 50%;
+
+	@include mkdo-mq(xs) {
+		max-width: 33.333%;
+		width: 33.333%;
+	}
+
+	@include mkdo-mq(sm) {
+		max-width: 25%;
+		width: 25%;
+	}
+
+	@include mkdo-mq(md) {
+		width: auto;
+
+		.gallery-columns-2 & {
+			max-width: 50%;
+		}
+
+		.gallery-columns-3 & {
+			max-width: 33.33%;
+		}
+
+		.gallery-columns-4 & {
+			max-width: 25%;
+		}
+
+		.gallery-columns-5 & {
+			max-width: 20%;
+		}
+
+		.gallery-columns-6 & {
+			max-width: 16.66%;
+		}
+
+		.gallery-columns-7 & {
+			max-width: 14.28%;
+		}
+
+		.gallery-columns-8 & {
+			max-width: 12.5%;
+		}
+
+		.gallery-columns-9 & {
+			max-width: 11.11%;
+		}
+	}
+}
+
+.gallery-caption {
+	display: block;
+	margin: mkdo-rem(8px);
+}
+
+// Page Links.
+// -------------------------------------
+.page-links {
+	clear: both;
+	margin: 0 0 mkdo-rem($global--spacing-common);
+}
+
+// Sticky Posts.
+// -------------------------------------
+.sticky {
+	display: block;
+}
